@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  /* 
+   * 🎨 全局主题色变量 (Global Theme Color Variables)
+   * 您可以直接在此处修改颜色代码，全站所有按钮、边框、高亮、徽章将一键自动同步更新！
+   * You can edit the HEX values here to instantly rebrand the whole website!
+   */
+  --color-primary: #0284c7;
+  --color-primary-hover: #0369a1;
+  --color-primary-light: #f0f9ff;
+  --color-primary-ring: rgba(2, 132, 199, 0.25);
+
+  --color-secondary: #f59e0b;
+  --color-secondary-light: #fef3c7;
+  
+  --color-accent: #10b981;
+  --color-accent-light: #ecfdf5;
+
+  --color-bg-base: #fbfbf9;
+  --color-card-bg: #ffffff;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+  --color-border-subtle: #e2e8f0;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 优雅平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 主题专用动态类 */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--color-primary-ring);
+}
+
+.text-primary-theme {
+  color: var(--color-primary);
+}
+
+.bg-primary-theme {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-light-theme {
+  background-color: var(--color-primary-light);
+}
+
+.border-primary-theme {
+  border-color: var(--color-primary);
+}
+
+.badge-primary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-hover);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--color-primary-ring);
+}

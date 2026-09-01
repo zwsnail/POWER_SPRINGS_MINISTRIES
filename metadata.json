@@ -1,0 +1,6 @@
+{
+  "name": "Power Springs Ministries INC",
+  "description": "Non-profit community ministry supporting students, scholars, families, and new immigrants with shelter, meals, counseling, and practical aid.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
