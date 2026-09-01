@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { Waves, Globe, ArrowUp, PhoneCall } from 'lucide-react';
+import { Logo } from './Logo';
+import { Globe, ArrowUp, PhoneCall } from 'lucide-react';
 
 interface FooterProps {
   language: Language;
@@ -27,8 +28,8 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand & Purpose Column */}
           <div className="md:col-span-5 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform">
-                <Waves className="w-6 h-6" />
+              <div className="shrink-0 group-hover:scale-105 transition-transform">
+                <Logo size={42} className="w-10 h-10 sm:w-11 sm:h-11" />
               </div>
               <div>
                 <span className="font-extrabold text-white text-lg tracking-tight block">
