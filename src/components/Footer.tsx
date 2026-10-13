@@ -9,7 +9,7 @@ interface FooterProps {
   language: Language;
   setLanguage: (lang: Language) => void;
 }
-
+ 
 export const Footer: React.FC<FooterProps> = ({
   language,
   setLanguage,
