@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
 import { 
-  Sparkles, 
   Mail, 
   Clock, 
   Video, 
-  MapPin, 
-  User, 
   Check, 
   Copy, 
   HelpCircle,
@@ -19,15 +16,19 @@ import {
 
 interface ContactSectionProps {
   language: Language;
+  hideHeader?: boolean;
 }
 
-export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
+export const ContactSection: React.FC<ContactSectionProps> = ({
+  language,
+  hideHeader = false,
+}) => {
   const t = translations[language];
   const c = t.contact;
   const [copied, setCopied] = useState(false);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
 
-  const emailAddress = 'peter.qu@powerspringsministries.org';
+  const emailAddress = 'peter.qu@powerspringministries.org';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -38,57 +39,47 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
   const faqs = language === 'zh' ? [
     {
       q: '涌泉事工提供的临时住宿和救助收费吗？',
-      a: '完全免费！涌泉事工是一家 501(c)(3) 非营利公益慈善机构（NGO），所有临时安置、爱心餐食、蔬果领取、道路急难救援、英语角及心理辅导均不收取任何服务费用。',
+      a: '完全免费！涌泉事工是一家 501(c)(3) 非营利公益慈善机构（NGO），所有临时安置、爱心餐食、蔬果领取、道路急难救援、英语角及心灵辅导均不收取任何服务费用。',
     },
     {
-      q: '如何参加每周六由 Philip & Dora Wu 牧师带领的 Zoom 心理辅导？',
-      a: '请发送邮件至 peter.qu@powerspringsministries.org，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
+      q: '如何参加每周六由 Philip & Dora Wu 牧师带领的 Zoom 心灵辅导？',
+      a: '请发送邮件至 peter.qu@powerspringministries.org，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
     },
     {
       q: '我想向事工捐赠二手车或闲置家具物资，流程是怎样的？',
       a: '非常感谢您的爱心！请直接发送邮件与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供 501(c)(3) 免税捐赠收据。',
     },
-    {
-      q: '突发爆胎或发生小事故需要道路急难援助怎么办？',
-      a: '如遇紧急情况，请发送邮件注明您的具体位置与联系电话，我们的志愿爱心车队会根据人手情况尽快为您提供备胎更换、现场安全陪伴与相关指引。',
-    },
   ] : [
     {
       q: 'Are services such as temporary lodging and meals completely free?',
-      a: 'Yes, 100% free! Power Springs Ministries INC is a 501(c)(3) non-profit charity. All temporary shelter, hot meals, groceries, emergency roadside aid, and counseling are provided free of charge.',
+      a: 'Yes, 100% free! Power Spring Ministries INC is a 501(c)(3) non-profit charity. All temporary shelter, hot meals, groceries, emergency roadside aid, and counseling are provided free of charge.',
     },
     {
-      q: 'How do I join the Saturday Zoom mental health counseling seminar?',
-      a: 'Please email peter.qu@powerspringsministries.org to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
+      q: 'How do I join the Saturday Zoom spiritual counseling seminar?',
+      a: 'Please email peter.qu@powerspringministries.org to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
     },
     {
       q: 'How does the vehicle or in-kind donation process work?',
       a: 'Thank you for your generosity! Reach out via email to Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide 501(c)(3) tax exemption receipts upon request.',
     },
-    {
-      q: 'What should I do if I experience a flat tire or need emergency roadside help?',
-      a: 'Please email us with your location and phone number. Our volunteer team will respond as quickly as possible to assist with tire changes, on-site safety, and guidance.',
-    },
   ];
 
   return (
-    <section id="contact" className="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-200/80">
+    <section id="contact" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-16 sm:py-20'} bg-slate-50/70 border-b border-slate-200/80`}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-1.5 badge-primary px-3 py-1 rounded-full text-xs font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{c.badge}</span>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              {c.sectionTitle}
+            </h2>
+            <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed">
+              {language === 'zh'
+                ? '欢迎通过电子邮箱与涌泉事工取得联系，负责人 Peter Qu 将尽快为您答复。'
+                : 'Feel free to contact Power Spring Ministries via email. Director Peter Qu will respond promptly.'}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            {c.sectionTitle}
-          </h2>
-          <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed">
-            {language === 'zh'
-              ? '欢迎通过电子邮箱与涌泉事工取得联系，负责人 Peter Qu 将尽快为您答复。'
-              : 'Feel free to contact Power Springs Ministries via email. Director Peter Qu will respond promptly.'}
-          </p>
-        </div>
+        )}
 
         {/* Main Grid of Contact Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -159,7 +150,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
 
               <div>
                 <h3 className="text-xl font-bold text-slate-900">
-                  {language === 'zh' ? '周六 Zoom 心理辅导讲座' : 'Saturday Pastoral Counseling'}
+                  {language === 'zh' ? '周六 Zoom 心灵辅导讲座' : 'Saturday Pastoral & Spiritual Counseling'}
                 </h3>
                 <p className="text-slate-500 text-xs sm:text-sm mt-1">
                   {language === 'zh' ? '主领教牧：Philip & Dora Wu 牧师' : 'Led by Rev. Philip & Dora Wu'}
@@ -187,49 +178,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
 
             <div className="pt-6 border-t border-slate-100 mt-6">
               <a
-                href={`mailto:${emailAddress}?subject=${encodeURIComponent(language === 'zh' ? '申请参加周六Zoom心理辅导讲座' : 'Inquiry about Saturday Zoom Counseling')}`}
+                href={`mailto:${emailAddress}?subject=${encodeURIComponent(language === 'zh' ? '参加周六Zoom心灵辅导讲座' : 'Inquiry about Saturday Zoom Counseling')}`}
                 className="w-full bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{language === 'zh' ? '邮件索取 Zoom 会议号' : 'Email to Request Zoom ID'}</span>
               </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Service Details & Area Information */}
-        <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-xs mb-12">
-          <h3 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2 mb-4">
-            <User className="w-5 h-5 text-primary-theme" />
-            <span>{c.infoCardTitle}</span>
-          </h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs sm:text-sm text-slate-700">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 font-bold text-slate-900">
-                <User className="w-4 h-4 text-primary-theme" />
-                <span>{language === 'zh' ? '机构负责人' : 'Leadership'}</span>
-              </div>
-              <p className="text-slate-600 pl-6">{c.leaderName}</p>
-              <p className="text-slate-400 text-xs pl-6">Power Springs Ministries INC</p>
-            </div>
-
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 font-bold text-slate-900">
-                <Clock className="w-4 h-4 text-amber-600" />
-                <span>{language === 'zh' ? '服务与响应时间' : 'Response Hours'}</span>
-              </div>
-              <p className="text-slate-600 pl-6">{c.serviceHours}</p>
-              <p className="text-slate-400 text-xs pl-6">{c.feeNote}</p>
-            </div>
-
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 font-bold text-slate-900">
-                <MapPin className="w-4 h-4 text-emerald-600" />
-                <span>{language === 'zh' ? '关怀服务范围' : 'Service Reach'}</span>
-              </div>
-              <p className="text-slate-600 pl-6">{c.regionNote}</p>
-              <p className="text-slate-400 text-xs pl-6">{language === 'zh' ? '安居 · 餐食 · 出行 · 辅导' : 'Shelter · Food · Mobility'}</p>
             </div>
           </div>
         </div>

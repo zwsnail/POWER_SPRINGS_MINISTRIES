@@ -1,7 +1,7 @@
 import React from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { PageHeader } from '../components/PageHeader';
+import { PageBanner } from '../components/PageBanner';
 import { GallerySection } from '../components/GallerySection';
 
 interface GalleryPageProps {
@@ -13,15 +13,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({ language }) => {
 
   return (
     <div className="animate-in fade-in duration-200">
-      <PageHeader
-        language={language}
-        badge={language === 'zh' ? '事工剪影与爱心记录' : 'Visual Stories'}
+      <PageBanner
         title={t.gallery.sectionTitle}
-        description={t.gallery.sectionSubtitle}
-        currentPageName={language === 'zh' ? '爱心图集' : 'Gallery'}
+        subtitle={t.gallery.sectionSubtitle}
       />
-
-      <GallerySection language={language} />
+      <GallerySection language={language} hideHeader />
     </div>
   );
 };

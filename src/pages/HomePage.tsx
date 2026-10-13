@@ -5,7 +5,6 @@ import { Language } from '../types';
 import { Hero } from '../components/Hero';
 import { ImpactStats } from '../components/ImpactStats';
 import { SaturdaySeminarBanner } from '../components/SaturdaySeminarBanner';
-import { HomeMinistriesOverview } from '../components/HomeMinistriesOverview';
 import { 
   ArrowRight, 
   Layers, 
@@ -39,14 +38,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
         }}
       />
 
-      {/* 4. 5 Core Pillars Preview Cards */}
-      <HomeMinistriesOverview
-        language={language}
-        onNavigateToMinistries={() => navigate('/ministries')}
-        onRequestMinistry={(ministryId) => navigate(`/contact?category=${ministryId}`)}
-      />
-
-      {/* 5. Clean Navigation Bento Section to Site Pages */}
+      {/* 4. Clean Navigation Bento Section to Site Pages */}
       <section className="py-16 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -57,12 +49,12 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
                   <Layers className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  {language === 'zh' ? '五大关怀事工' : 'Our 5 Core Ministries'}
+                  {language === 'zh' ? '核心关怀事工' : 'Core Ministries'}
                 </h3>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
                   {language === 'zh' 
-                    ? '提供临时安居、爱心餐饮与蔬果站、出行与道路救援、英语角与生活报税、心灵关怀与周六心理辅导。'
-                    : 'Providing emergency shelter, food pantry, mobility support, conversational English, tax help, and pastoral counseling.'}
+                    ? '提供临时安居、查经聚会餐饮、出行与道路救援、英语角与生活报税、心灵关怀与周六心灵辅导。'
+                    : 'Providing emergency shelter, Bible study fellowship meals, mobility support, conversational English, tax help, and pastoral counseling.'}
                 </p>
               </div>
 
@@ -70,7 +62,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
                 onClick={() => navigate('/ministries')}
                 className="btn-primary w-full py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>{language === 'zh' ? '查看五大事工详情' : 'Explore All Ministries'}</span>
+                <span>{language === 'zh' ? '查看事工详情' : 'Explore Ministries'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -86,8 +78,8 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
                 </h3>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
                   {language === 'zh'
-                    ? '浏览社区安居、2000份热餐、长者陪伴、道路救援以及每周心理辅导研讨会的温暖剪影。'
-                    : 'Browse through our visual moments of warm meals, shelter hosting, senior care, and seminar gatherings.'}
+                    ? '浏览社区安居、查经聚会餐饮、长者陪伴、道路救援以及每周心灵辅导研讨会的温暖剪影。'
+                    : 'Browse through our visual moments of warm meals at Bible studies, shelter hosting, senior care, and seminar gatherings.'}
                 </p>
               </div>
 
@@ -134,13 +126,13 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
           <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
             {language === 'zh' 
               ? '欢迎与涌泉事工取得联系' 
-              : 'Get in Touch with Power Springs Ministries'}
+              : 'Get in Touch with Power Spring Ministries'}
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             {language === 'zh'
-              ? '如需咨询事工服务、了解周六心理辅导讲座或任何社区交流，请随时通过联系页面与我们联络。'
-              : 'For inquiries about our ministries, Saturday counseling seminars, or general questions, please reach out.'}
+              ? '如需咨询事工服务、了解周六心灵辅导讲座或任何社区交流，请随时通过联系页面与我们联络。'
+              : 'For inquiries about our ministries, Saturday spiritual & pastoral counseling seminars, or general questions, please reach out.'}
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center items-center gap-4">

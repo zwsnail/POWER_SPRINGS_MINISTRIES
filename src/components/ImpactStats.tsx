@@ -65,12 +65,9 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
               className="bg-slate-50/70 hover:bg-white border border-slate-200/90 hover:border-primary-theme/40 rounded-xl p-5 card-hover-effect transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="p-2.5 rounded-lg bg-white shadow-2xs border border-slate-200/80">
+                <div className="mb-3">
+                  <span className="inline-flex p-2.5 rounded-lg bg-white shadow-2xs border border-slate-200/80">
                     {renderIcon(stat.icon)}
-                  </span>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-200/60 text-slate-600">
-                    {language === 'zh' ? '年度实录' : 'Milestone'}
                   </span>
                 </div>
 

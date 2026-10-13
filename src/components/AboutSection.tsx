@@ -1,36 +1,36 @@
 import React from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { Sparkles, Shield, Heart, Users, CheckCircle2, UserCheck, Video } from 'lucide-react';
+import { Shield, Heart, Users, CheckCircle2, UserCheck, Video } from 'lucide-react';
 
 interface AboutSectionProps {
   language: Language;
   onContactDirector: () => void;
+  hideHeader?: boolean;
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({
   language,
   onContactDirector,
+  hideHeader = false,
 }) => {
   const t = translations[language];
   const a = t.about;
 
   return (
-    <section id="about" className="py-20 bg-white border-b border-slate-200/80">
+    <section id="about" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-20'} bg-white border-b border-slate-200/80`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 badge-primary px-3 py-1 rounded-full text-xs font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{a.badge}</span>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              {a.sectionTitle}
+            </h2>
+            <p className="text-slate-600 mt-3 text-base sm:text-lg">
+              {a.sectionSubtitle}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            {a.sectionTitle}
-          </h2>
-          <p className="text-slate-600 mt-3 text-base sm:text-lg">
-            {a.sectionSubtitle}
-          </p>
-        </div>
+        )}
 
         {/* Mission & Vision Block */}
         <div className="bg-gradient-to-br from-slate-50 to-sky-50/40 border border-slate-200/80 rounded-3xl p-8 sm:p-12 mb-16 shadow-xs">

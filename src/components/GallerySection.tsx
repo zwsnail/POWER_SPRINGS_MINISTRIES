@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { translations } from '../locales/translations';
 import { Language, GalleryItem } from '../types';
-import { Sparkles, Maximize2, X, Image as ImageIcon, Calendar } from 'lucide-react';
+import { Maximize2, X, Calendar } from 'lucide-react';
 
 interface GallerySectionProps {
   language: Language;
+  hideHeader?: boolean;
 }
 
-export const GallerySection: React.FC<GallerySectionProps> = ({ language }) => {
+export const GallerySection: React.FC<GallerySectionProps> = ({
+  language,
+  hideHeader = false,
+}) => {
   const t = translations[language];
   const g = t.gallery;
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -15,11 +19,11 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ language }) => {
 
   const filterButtons = [
     { key: 'all', label: g.filterAll },
+    { key: 'community', label: g.filterCommunity },
+    { key: 'counseling', label: g.filterCounseling },
     { key: 'housing', label: g.filterHousing },
     { key: 'meals', label: g.filterMeals },
     { key: 'mobility', label: g.filterMobility },
-    { key: 'counseling', label: g.filterCounseling },
-    { key: 'community', label: g.filterCommunity },
   ];
 
   const filteredItems = activeCategory === 'all'
@@ -27,27 +31,19 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ language }) => {
     : g.items.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-slate-50/60 border-b border-slate-200/80">
+    <section id="gallery" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-20'} bg-slate-50/60 border-b border-slate-200/80`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 badge-primary px-3 py-1 rounded-full text-xs font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{g.badge}</span>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              {g.sectionTitle}
+            </h2>
+            <p className="text-slate-600 mt-3 text-base sm:text-lg">
+              {g.sectionSubtitle}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            {g.sectionTitle}
-          </h2>
-          <p className="text-slate-600 mt-3 text-base sm:text-lg">
-            {g.sectionSubtitle}
-          </p>
-
-          {/* Friendly Note */}
-          <div className="mt-4 inline-flex items-center gap-2 bg-amber-50 border border-amber-200/80 text-amber-900 text-xs px-4 py-2 rounded-xl text-left">
-            <ImageIcon className="w-4 h-4 text-amber-600 shrink-0" />
-            <span>{g.note}</span>
-          </div>
-        </div>
+        )}
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-10">

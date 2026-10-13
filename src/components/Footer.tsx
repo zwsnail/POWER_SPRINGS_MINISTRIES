@@ -52,12 +52,12 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div>
                 <strong className="text-slate-300">{language === 'zh' ? '电子邮箱' : 'Email'}: </strong>
-                <a href="mailto:peter.qu@powerspringsministries.org" className="text-sky-400 hover:underline">
-                  peter.qu@powerspringsministries.org
+                <a href="mailto:peter.qu@powerspringministries.org" className="text-sky-400 hover:underline">
+                  peter.qu@powerspringministries.org
                 </a>
               </div>
               <div>
-                <strong className="text-slate-300">{language === 'zh' ? '心理辅导教牧' : 'Pastoral Counselors'}: </strong>
+                <strong className="text-slate-300">{language === 'zh' ? '心灵辅导教牧' : 'Pastoral Counselors'}: </strong>
                 Philip & Dora Wu 牧师
               </div>
             </div>
@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>• {language === 'zh' ? '临时安居与长者关怀' : 'Temporary Shelter & Senior Care'}</li>
               <li>• {language === 'zh' ? '爱心餐饮与每周蔬果食品站' : '2,000+ Warm Meals & Food Pantry'}</li>
               <li>• {language === 'zh' ? '二手车捐赠与道路急难救援' : 'Vehicle Support & Roadside Rescues'}</li>
-              <li>• {language === 'zh' ? '每周六 Zoom 心理辅导讲座 (30+人)' : 'Saturday Zoom Counseling Seminars'}</li>
+              <li>• {language === 'zh' ? '每周六 Zoom 心灵辅导讲座 (30+人)' : 'Saturday Zoom Counseling Seminars'}</li>
               <li>• {language === 'zh' ? '英语会话角与生活报税协助' : 'Conversational English & Tax Clinic'}</li>
             </ul>
 
@@ -140,21 +140,38 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Sub-bar */}
         <div className="pt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2">
-            <span>© {new Date().getFullYear()} Power Springs Ministries INC. {f.rights}</span>
+            <span>© {new Date().getFullYear()} Power Spring Ministries INC. {f.rights}</span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
-              className="text-slate-400 hover:text-white flex items-center gap-1.5 cursor-pointer transition-colors"
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>{f.switchLangText}</span>
-            </button>
+          <div className="flex items-center gap-3">
+            {/* Clear, refined language switcher */}
+            <div className="flex items-center gap-1 bg-slate-800/90 py-1 px-1.5 rounded-xl border border-slate-700/80 shadow-2xs">
+              <Globe className="w-3.5 h-3.5 text-slate-400 ml-1 shrink-0" />
+              <button
+                onClick={() => setLanguage('zh')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  language === 'zh'
+                    ? 'bg-primary-theme text-white font-bold shadow-2xs'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                中文
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  language === 'en'
+                    ? 'bg-primary-theme text-white font-bold shadow-2xs'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                English
+              </button>
+            </div>
 
             <button
               onClick={scrollToTop}
-              className="text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
+              className="text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors py-1.5 px-2.5 rounded-lg hover:bg-slate-800"
               title="Back to Top"
             >
               <ArrowUp className="w-3.5 h-3.5" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { PageHeader } from '../components/PageHeader';
+import { PageBanner } from '../components/PageBanner';
 import { MinistriesSection } from '../components/MinistriesSection';
 
 interface MinistriesPageProps {
@@ -19,17 +19,14 @@ export const MinistriesPage: React.FC<MinistriesPageProps> = ({ language }) => {
 
   return (
     <div className="animate-in fade-in duration-200">
-      <PageHeader
-        language={language}
-        badge={language === 'zh' ? '五大关怀事工' : 'Our 5 Core Ministries'}
+      <PageBanner
         title={t.ministries.sectionTitle}
-        description={t.ministries.sectionSubtitle}
-        currentPageName={language === 'zh' ? '五大事工' : 'Ministries'}
+        subtitle={t.ministries.sectionSubtitle}
       />
-
       <MinistriesSection
         language={language}
         onRequestService={handleRequestService}
+        hideHeader
       />
     </div>
   );

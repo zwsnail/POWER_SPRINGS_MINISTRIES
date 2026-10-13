@@ -8,19 +8,18 @@ import {
   BookOpen, 
   Video, 
   Check, 
-  ArrowRight, 
-  HeartHandshake,
-  Sparkles
+  HeartHandshake
 } from 'lucide-react';
 
 interface MinistriesSectionProps {
   language: Language;
-  onRequestService: (ministryId: string) => void;
+  onRequestService?: (ministryId: string) => void;
+  hideHeader?: boolean;
 }
 
 export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
   language,
-  onRequestService,
+  hideHeader = false,
 }) => {
   const t = translations[language];
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
@@ -47,21 +46,19 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
     : t.ministries.items.filter((item) => item.id === selectedFilter);
 
   return (
-    <section id="ministries" className="py-20 bg-slate-50/60 border-b border-slate-200/80">
+    <section id="ministries" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-20'} bg-slate-50/60 border-b border-slate-200/80`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 badge-primary px-3 py-1 rounded-full text-xs font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{t.ministries.badge}</span>
+        {!hideHeader && (
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              {t.ministries.sectionTitle}
+            </h2>
+            <p className="text-slate-600 mt-3 text-base sm:text-lg">
+              {t.ministries.sectionSubtitle}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            {t.ministries.sectionTitle}
-          </h2>
-          <p className="text-slate-600 mt-3 text-base sm:text-lg">
-            {t.ministries.sectionSubtitle}
-          </p>
-        </div>
+        )}
 
         {/* Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
@@ -145,20 +142,6 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                {/* Action CTA */}
-                <div className="pt-2 flex items-center gap-3">
-                  <button
-                    onClick={() => onRequestService(item.id)}
-                    className="btn-primary px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 cursor-pointer"
-                  >
-                    <span>{t.ministries.learnMore}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <span className="text-xs text-slate-400">
-                    {language === 'zh' ? '免费登记 · 保密无忧' : '100% Free & Confidential'}
-                  </span>
                 </div>
               </div>
             </div>

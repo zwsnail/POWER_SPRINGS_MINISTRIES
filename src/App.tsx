@@ -33,8 +33,8 @@ function TitleUpdater({ language }: { language: Language }) {
     };
 
     const title = language === 'zh'
-      ? `${pageTitlesZh[path] || '页面'} | Power Springs Ministries INC (涌泉事工)`
-      : `${pageTitlesEn[path] || 'Page'} | Power Springs Ministries INC`;
+      ? `${pageTitlesZh[path] || '页面'} | Power Spring Ministries INC (涌泉事工)`
+      : `${pageTitlesEn[path] || 'Page'} | Power Spring Ministries INC`;
 
     document.title = title;
   }, [location.pathname, language]);

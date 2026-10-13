@@ -19,7 +19,7 @@ export const Logo: React.FC<LogoProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label="Power Springs Ministries Logo with Cross and Living Water"
+      aria-label="Power Spring Ministries Logo with Cross and Living Water"
     >
       <defs>
         {/* Background Gradient */}
@@ -70,7 +70,7 @@ export const Logo: React.FC<LogoProps> = ({
         strokeWidth="2"
       />
 
-      {/* Living Water Streams (Ascending Flow from Springs) */}
+      {/* Living Water Streams (Ascending Flow from Spring) */}
       {/* Wave Left */}
       <path
         d="M20 74 C 28 66, 36 68, 44 60 C 48 56, 48 46, 44 38 C 42 34, 38 32, 34 35"

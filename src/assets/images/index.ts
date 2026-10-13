@@ -28,4 +28,18 @@ export const APP_IMAGES = {
   zoomCounseling: counselingImg,
   vehicleRescue: carRoadsideImg,
   englishClub: englishTaxImg,
+
+  // 待替换真实照片的爱心图集新项目 (New Gallery Items - Ready for real photos)
+  galleryEntrepreneurshipForum: '/images/gallery/entrepreneurship_forum.svg',
+  galleryRoadTrips: '/images/gallery/road_trips.svg',
+  galleryBusinessSeminar: '/images/gallery/business_seminar.svg',
+  galleryMaumeeRetreat: '/images/gallery/maumee_retreat.svg',
+  galleryChristmasParty: '/images/gallery/christmas_party.svg',
+  galleryAiSeminar: '/images/gallery/ai_seminar.svg',
+  galleryLakeMichiganBaptism: '/images/gallery/lake_michigan_baptism.svg',
+  galleryHunanVisit: '/images/gallery/hunan_visit.svg',
+  galleryFloridaTrip: '/images/gallery/florida_trip.svg',
+  galleryBibleStudy: '/images/gallery/bible_study.svg',
+  galleryBeautifulMoms: '/images/gallery/beautiful_moms.svg',
+  galleryPlaceholder: '/images/gallery/placeholder_blank.svg',
 };

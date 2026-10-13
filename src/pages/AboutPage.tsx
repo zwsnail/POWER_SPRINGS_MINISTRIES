@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { PageHeader } from '../components/PageHeader';
+import { PageBanner } from '../components/PageBanner';
 import { AboutSection } from '../components/AboutSection';
 
 interface AboutPageProps {
@@ -15,17 +15,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ language }) => {
 
   return (
     <div className="animate-in fade-in duration-200">
-      <PageHeader
-        language={language}
-        badge={language === 'zh' ? '关于涌泉事工' : 'About Our Ministry'}
+      <PageBanner
         title={t.about.sectionTitle}
-        description={t.about.sectionSubtitle}
-        currentPageName={language === 'zh' ? '关于我们' : 'About Us'}
+        subtitle={t.about.sectionSubtitle}
       />
-
       <AboutSection
         language={language}
         onContactDirector={() => navigate('/contact')}
+        hideHeader
       />
     </div>
   );
