@@ -4,6 +4,7 @@ import { translations } from '../locales/translations';
 import { Language } from '../types';
 import { Logo } from './Logo';
 import { Globe, ArrowUp, PhoneCall } from 'lucide-react';
+import { CrossOliveDivider } from './WaterMotifs';
 
 interface FooterProps {
   language: Language;
@@ -137,8 +138,13 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
+        {/* 圣洁十字橄榄枝中轴线描 (Delicate Cross & Olive Branch Divider) */}
+        <div className="pt-6 pb-2 opacity-60">
+          <CrossOliveDivider className="my-0" lineWidth="w-16 sm:w-32" />
+        </div>
+
         {/* Bottom Sub-bar */}
-        <div className="pt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2">
             <span>© {new Date().getFullYear()} Power Spring Ministries INC. {f.rights}</span>
           </div>

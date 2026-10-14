@@ -5,6 +5,7 @@ import { Language } from '../types';
 import { Hero } from '../components/Hero';
 import { ImpactStats } from '../components/ImpactStats';
 import { SaturdaySeminarBanner } from '../components/SaturdaySeminarBanner';
+import { SpringWaveDivider, CloudWaterMotif, CrossOliveDivider, ChristianCrossMotif } from '../components/WaterMotifs';
 import { 
   ArrowRight, 
   Layers, 
@@ -120,21 +121,29 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
         </div>
       </section>
 
-      {/* 5. Dignified Direct Contact Banner */}
-      <section className="py-16 bg-slate-900 text-white border-t border-slate-800">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5">
-          <div className="text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
-            GET IN TOUCH
+      {/* 5. Dignified Direct Contact Banner with subtle water and cross motif */}
+      <section className="py-16 bg-slate-900 text-white border-t border-slate-800 relative overflow-hidden">
+        {/* 简笔十字架微水印 (左下) */}
+        <div className="absolute -left-4 sm:left-10 -bottom-4 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
+          <ChristianCrossMotif className="w-36 h-48 sm:w-44 sm:h-56" strokeWidth={1.2} />
+        </div>
+
+        {/* 祥云流水简笔水纹微水印 (右侧) */}
+        <div className="absolute right-4 sm:right-16 top-1/2 -translate-y-1/2 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
+          <CloudWaterMotif className="w-56 h-28 sm:w-72 sm:h-36" strokeWidth={1.2} />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 relative z-10">
+          <div className="flex items-center justify-center gap-1.5 text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
+            <span>✝</span>
+            <span>GET IN TOUCH</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-serif font-bold tracking-normal">
             {language === 'zh' 
               ? '欢迎与涌泉事工取得联系' 
               : 'Get in Touch with Power Spring Ministries'}
           </h2>
-          <div className="flex items-center justify-center gap-1.5 mx-auto my-2">
-            <div className="w-10 h-0.5 bg-primary-theme" />
-            <div className="w-3.5 h-0.5 bg-accent-theme" />
-          </div>
+          <CrossOliveDivider className="my-2.5" lineWidth="w-12 sm:w-16" />
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             {language === 'zh'

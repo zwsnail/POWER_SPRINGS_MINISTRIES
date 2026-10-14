@@ -1,6 +1,7 @@
 import React from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
+import { SpringWaveDivider } from './WaterMotifs';
 import { 
   Utensils, 
   Home, 
@@ -31,10 +32,6 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
         return <HeartPulse className="w-5 h-5 text-accent-theme" />;
       case 'HeartHandshake':
         return <HeartHandshake className="w-5 h-5 text-accent-theme" />;
-      case 'Utensils':
-        return <Utensils className="w-5 h-5 text-amber-600" />;
-      case 'Home':
-        return <Home className="w-5 h-5 text-primary-theme" />;
       case 'ShoppingBag':
         return <ShoppingBag className="w-5 h-5 text-slate-700" />;
       case 'Car':
@@ -59,10 +56,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-normal">
             {t.impact.sectionTitle}
           </h2>
-          <div className="flex items-center justify-center gap-1.5 mx-auto my-3">
-            <div className="w-10 h-0.5 bg-primary-theme" />
-            <div className="w-3.5 h-0.5 bg-accent-theme" />
-          </div>
+          <SpringWaveDivider className="my-3.5" lineWidth="w-12 sm:w-16" />
           <p className="text-slate-600 text-sm sm:text-base">
             {t.impact.sectionSubtitle}
           </p>

@@ -10,6 +10,7 @@ import {
   Check, 
   HeartHandshake
 } from 'lucide-react';
+import { SpringWaveDivider, CrossOliveDivider } from './WaterMotifs';
 
 interface MinistriesSectionProps {
   language: Language;
@@ -57,7 +58,7 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {t.ministries.sectionTitle}
             </h2>
-            <div className="w-12 h-0.5 bg-primary-theme/60 mx-auto my-3" />
+            <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
             <p className="text-slate-600 text-base">
               {t.ministries.sectionSubtitle}
             </p>

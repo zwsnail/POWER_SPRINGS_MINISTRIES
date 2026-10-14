@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   SendHorizontal
 } from 'lucide-react';
+import { CrossOliveDivider, ChristianDoveMotif } from './WaterMotifs';
 
 interface ContactSectionProps {
   language: Language;
@@ -76,7 +77,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {c.sectionTitle}
             </h2>
-            <div className="w-12 h-0.5 bg-primary-theme/60 mx-auto my-3" />
+            <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
             <p className="text-slate-600 text-base leading-relaxed">
               {language === 'zh'
                 ? '欢迎通过电子邮箱与涌泉事工取得联系，负责人 Peter Qu 将尽快为您答复。'
@@ -146,8 +147,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           </div>
 
           {/* Card 2: Pastoral Counseling & Seminars */}
-          <div className="bg-white border border-slate-200 rounded-xs p-7 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
-            <div className="space-y-4">
+          <div className="bg-white border border-slate-200 rounded-xs p-7 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between relative overflow-hidden">
+            {/* 简笔平安圣鸽微水印 */}
+            <div className="absolute top-2 right-2 pointer-events-none opacity-10 text-accent-theme">
+              <ChristianDoveMotif className="w-24 h-20" />
+            </div>
+
+            <div className="space-y-4 relative z-10">
               <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-slate-700 flex items-center justify-center">
                 <Video className="w-5 h-5" />
               </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
 import { Shield, Heart, Users, CheckCircle2, UserCheck, Video } from 'lucide-react';
+import { SpringWaveDivider, CornerWaveAccent, CrossOliveDivider, ChristianCrossMotif } from './WaterMotifs';
 
 interface AboutSectionProps {
   language: Language;
@@ -29,19 +30,30 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {a.sectionTitle}
             </h2>
-            <div className="w-12 h-0.5 bg-primary-theme/60 mx-auto my-3" />
+            <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
             <p className="text-slate-600 text-base">
               {a.sectionSubtitle}
             </p>
           </div>
         )}
 
-        {/* Mission & Vision Block: Classical Ledger Plaque */}
-        <div className="bg-slate-50/70 border border-slate-200 rounded-xs p-8 sm:p-12 mb-16">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
+        {/* Mission & Vision Block: Classical Ledger Plaque with Subtle Water & Cross Motif */}
+        <div className="bg-slate-50/70 border border-slate-200 rounded-xs p-8 sm:p-12 mb-16 relative overflow-hidden">
+          {/* 简笔水纹角饰 (右上) */}
+          <div className="absolute top-2 right-2 pointer-events-none opacity-15 text-accent-theme">
+            <CornerWaveAccent className="w-16 h-16 sm:w-20 sm:h-20" />
+          </div>
+
+          {/* 简笔十字架活水微水印 (左下) */}
+          <div className="absolute -bottom-6 left-2 pointer-events-none opacity-10 text-accent-theme">
+            <ChristianCrossMotif className="w-24 h-32" />
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center space-y-3 relative z-10">
             <h3 className="font-serif font-bold text-2xl text-slate-900 tracking-normal">
               {a.missionTitle}
             </h3>
+            <CrossOliveDivider className="my-2" lineWidth="w-10 sm:w-14" />
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
               {a.missionText}
             </p>

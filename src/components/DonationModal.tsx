@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Language } from '../types';
 import { DONATION_CONFIG } from '../config/donation';
+import { ChristianCrossMotif } from './WaterMotifs';
 
 interface DonationModalProps {
   isOpen: boolean;
@@ -73,6 +74,11 @@ export const DonationModal: React.FC<DonationModalProps> = ({
       {/* Modal Container: Classical Institutional Framing */}
       <div className="relative bg-white rounded-xs shadow-2xl border border-slate-300 max-w-2xl w-full p-6 sm:p-8 z-10 my-8 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
+        {/* 简笔十字架活水背景微水印 */}
+        <div className="absolute -right-4 -bottom-6 pointer-events-none opacity-8 text-accent-theme">
+          <ChristianCrossMotif className="w-36 h-48" strokeWidth={1.2} />
+        </div>
+
         {/* Top Close Button */}
         <button
           onClick={onClose}

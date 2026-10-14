@@ -3,6 +3,7 @@ import { translations } from '../locales/translations';
 import { Language } from '../types';
 import { APP_IMAGES } from '../assets/images';
 import { Video, Calendar, Users, CheckCircle, Sparkles, ArrowRight, Shield } from 'lucide-react';
+import { CornerWaveAccent, ChristianDoveMotif } from './WaterMotifs';
 
 interface SaturdaySeminarBannerProps {
   language: Language;
@@ -22,12 +23,23 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
       <div className="absolute top-0 right-0 -mt-10 -mr-10 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* 简笔泉浪回纹角饰 (Delicate Spring Wave Corner Motif) */}
+      <div className="absolute top-3 right-3 pointer-events-none opacity-20 sm:opacity-25 text-accent-theme">
+        <CornerWaveAccent className="w-16 h-16 sm:w-20 sm:h-20" />
+      </div>
+
+      {/* 简笔圣灵和平白鸽微水印 (Subtle Holy Spirit Dove Line Art) */}
+      <div className="absolute -bottom-2 -left-2 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
+        <ChristianDoveMotif className="w-36 h-28 sm:w-44 sm:h-32" strokeWidth={1.2} />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Details & Action */}
           <div className="lg:col-span-7 space-y-4">
-            <div className="text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
-              WEEKLY ZOOM MENTAL HEALTH & COUNSELING
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
+              <span>✝</span>
+              <span>WEEKLY ZOOM MENTAL HEALTH & COUNSELING</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-normal leading-snug">
