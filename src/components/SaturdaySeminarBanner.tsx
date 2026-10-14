@@ -25,17 +25,16 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Details & Action */}
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-400/30 text-xs font-semibold">
-              <Sparkles className="w-3.5 h-3.5 text-sky-300" />
-              <span>{s.badge}</span>
+          <div className="lg:col-span-7 space-y-4">
+            <div className="text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
+              WEEKLY ZOOM MENTAL HEALTH & COUNSELING
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-normal leading-snug">
               {s.title}
             </h2>
 
-            <p className="text-amber-300 font-medium text-sm sm:text-base">
+            <p className="font-serif text-accent-theme text-sm sm:text-base italic">
               {s.subtitle}
             </p>
 
@@ -43,40 +42,40 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
               {s.desc}
             </p>
 
-            {/* Time & Attendance Highlights */}
+            {/* Time & Attendance Highlights: Classical Framing */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              <div className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 p-3 rounded-xl">
-                <Calendar className="w-5 h-5 text-sky-400 shrink-0" />
+              <div className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 p-3 rounded-xs">
+                <Calendar className="w-4 h-4 text-primary-theme shrink-0" />
                 <div className="text-xs">
-                  <div className="text-slate-400">{language === 'zh' ? '讲座时间' : 'Schedule'}</div>
-                  <div className="text-white font-semibold">{s.scheduleTime}</div>
+                  <div className="text-slate-400 uppercase tracking-wider text-[10px]">{language === 'zh' ? '讲座时间' : 'Schedule'}</div>
+                  <div className="text-white font-medium">{s.scheduleTime}</div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 p-3 rounded-xl">
-                <Users className="w-5 h-5 text-amber-400 shrink-0" />
+              <div className="flex items-center gap-3 bg-slate-800/80 border border-slate-700 p-3 rounded-xs">
+                <Users className="w-4 h-4 text-accent-theme shrink-0" />
                 <div className="text-xs">
-                  <div className="text-slate-400">{language === 'zh' ? '交流规模' : 'Community'}</div>
-                  <div className="text-white font-semibold">{s.attendeeCount}</div>
+                  <div className="text-slate-400 uppercase tracking-wider text-[10px]">{language === 'zh' ? '交流规模' : 'Community'}</div>
+                  <div className="text-white font-medium">{s.attendeeCount}</div>
                 </div>
               </div>
             </div>
 
             {/* Features check list */}
-            <ul className="space-y-2 pt-1 text-xs text-slate-300">
+            <ul className="space-y-1.5 pt-1 text-xs text-slate-300">
               {s.features.map((feat, idx) => (
                 <li key={idx} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <span>{feat}</span>
                 </li>
               ))}
             </ul>
 
-            {/* CTA Button */}
+            {/* CTA Button - Uses btn-accent */}
             <div className="pt-2">
               <button
                 onClick={onJoinZoom}
-                className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 cursor-pointer hover:scale-102"
+                className="btn-accent px-6 py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 cursor-pointer shadow-sm"
               >
                 <Video className="w-4 h-4" />
                 <span>{s.btnJoin}</span>
@@ -85,22 +84,22 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Cartoon Illustration of Zoom Pastoral Care */}
+          {/* Right Column: Framed Archival Illustration */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-800 p-2">
+            <div className="relative rounded-xs overflow-hidden border border-slate-700 bg-slate-850 p-1.5 shadow-lg">
               <img
                 src={APP_IMAGES.counseling}
                 alt="Saturday Zoom Pastoral Counseling with Philip & Dora Wu"
-                className="w-full h-72 sm:h-80 object-cover rounded-xl"
+                className="w-full h-72 sm:h-80 object-cover rounded-xs"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-3 rounded-xl border border-slate-700 text-xs flex items-center gap-3">
-                <Shield className="w-5 h-5 text-emerald-400 shrink-0" />
+              <div className="absolute bottom-3 left-3 right-3 bg-slate-900/95 backdrop-blur-md p-3 rounded-xs border border-slate-700 text-xs flex items-center gap-3">
+                <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
                 <div>
-                  <div className="font-semibold text-white">
+                  <div className="font-serif font-semibold text-white">
                     {language === 'zh' ? '主领教牧：Philip & Dora Wu 牧师' : 'Led by Rev. Philip & Dora Wu'}
                   </div>
-                  <div className="text-slate-400 text-[11px]">
+                  <div className="text-slate-400 text-[11px] font-sans">
                     {language === 'zh' ? '关怀陪伴 · 保密守诺 · 共同成长' : 'Compassionate, Confidential & Loving Care'}
                   </div>
                 </div>

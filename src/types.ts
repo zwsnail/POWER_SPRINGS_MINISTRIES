@@ -62,5 +62,10 @@ export interface ThemePalette {
   primaryHover: string;
   primaryLight: string;
   accent: string;
+  accentHover?: string;
+  accentLight?: string;
+  accentBorder?: string;
+  accentText?: string;
+  accentNameZh?: string;
   bgWarm: string;
 }

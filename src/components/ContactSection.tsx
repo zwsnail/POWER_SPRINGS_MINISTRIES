@@ -70,10 +70,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Section Header */}
         {!hideHeader && (
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
+              INQUIRIES & PASTORAL CARE
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {c.sectionTitle}
             </h2>
-            <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed">
+            <div className="w-12 h-0.5 bg-primary-theme/60 mx-auto my-3" />
+            <p className="text-slate-600 text-base leading-relaxed">
               {language === 'zh'
                 ? '欢迎通过电子邮箱与涌泉事工取得联系，负责人 Peter Qu 将尽快为您答复。'
                 : 'Feel free to contact Power Spring Ministries via email. Director Peter Qu will respond promptly.'}
@@ -82,37 +86,37 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         )}
 
         {/* Main Grid of Contact Information Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {/* Card 1: Primary Email & Direct Contact */}
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 sm:p-9 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
-            <div className="space-y-5">
+          <div className="bg-white border border-slate-200 rounded-xs p-7 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-primary-light-theme text-primary-theme flex items-center justify-center">
-                  <Mail className="w-6 h-6" />
+                <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
+                  <Mail className="w-5 h-5" />
                 </div>
-                <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+                <span className="inline-flex items-center gap-1 text-[11px] font-mono uppercase px-2 py-0.5 rounded-xs bg-slate-100 text-slate-700 border border-slate-200">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   <span>501(c)(3) NGO</span>
                 </span>
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="font-serif font-bold text-xl text-slate-900">
                   {language === 'zh' ? '负责人直通电子邮箱' : 'Director Direct Email'}
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-sm mt-1">
+                <p className="text-slate-500 text-xs mt-1">
                   {language === 'zh' ? '机构负责人: Peter Qu' : 'Executive Director: Peter Qu'}
                 </p>
               </div>
 
               {/* Highlighted Email Box */}
-              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <div className="break-all font-mono font-bold text-slate-900 text-sm sm:text-base">
+              <div className="bg-slate-50 border border-slate-200 rounded-xs p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="break-all font-mono font-bold text-slate-900 text-sm">
                   {emailAddress}
                 </div>
                 <button
                   onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
+                  className="px-3 py-1 rounded-xs text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
@@ -130,10 +134,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 mt-6">
+            <div className="pt-5 border-t border-slate-100 mt-5">
               <a
                 href={`mailto:${emailAddress}`}
-                className="btn-primary w-full py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="btn-primary w-full py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer"
               >
                 <SendHorizontal className="w-4 h-4" />
                 <span>{language === 'zh' ? '直接打开邮箱发信' : 'Open Email Client'}</span>
@@ -142,22 +146,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           </div>
 
           {/* Card 2: Pastoral Counseling & Seminars */}
-          <div className="bg-white border border-slate-200/90 rounded-3xl p-7 sm:p-9 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
-            <div className="space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
-                <Video className="w-6 h-6" />
+          <div className="bg-white border border-slate-200 rounded-xs p-7 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-slate-700 flex items-center justify-center">
+                <Video className="w-5 h-5" />
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-slate-900">
+                <h3 className="font-serif font-bold text-xl text-slate-900">
                   {language === 'zh' ? '周六 Zoom 心灵辅导讲座' : 'Saturday Pastoral & Spiritual Counseling'}
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-sm mt-1">
+                <p className="text-slate-500 text-xs mt-1">
                   {language === 'zh' ? '主领教牧：Philip & Dora Wu 牧师' : 'Led by Rev. Philip & Dora Wu'}
                 </p>
               </div>
 
-              <div className="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 <div className="flex items-start gap-2.5">
                   <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <div>
@@ -176,40 +180,40 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 mt-6">
+            <div className="pt-5 border-t border-slate-100 mt-5">
               <a
                 href={`mailto:${emailAddress}?subject=${encodeURIComponent(language === 'zh' ? '参加周六Zoom心灵辅导讲座' : 'Inquiry about Saturday Zoom Counseling')}`}
-                className="w-full bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors"
+                className="w-full bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-300 py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 text-slate-500" />
                 <span>{language === 'zh' ? '邮件索取 Zoom 会议号' : 'Email to Request Zoom ID'}</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-xs space-y-4">
-          <h4 className="text-lg font-bold text-slate-900 flex items-center gap-2 mb-2">
-            <HelpCircle className="w-5 h-5 text-primary-theme" />
+        {/* FAQ Accordion: Classical Archival Format */}
+        <div className="bg-white border border-slate-200 rounded-xs p-6 sm:p-8 space-y-4">
+          <h4 className="font-serif font-bold text-lg text-slate-900 flex items-center gap-2 mb-2">
+            <HelpCircle className="w-4 h-4 text-primary-theme" />
             <span>{language === 'zh' ? '常见关怀问题解答 (FAQ)' : 'Frequently Asked Questions'}</span>
           </h4>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIdx === idx;
               return (
-                <div key={idx} className="border border-slate-200/80 rounded-2xl overflow-hidden bg-slate-50/50">
+                <div key={idx} className="border border-slate-200 rounded-xs overflow-hidden bg-slate-50/50">
                   <button
                     type="button"
                     onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
-                    className="w-full p-4 text-left font-bold text-xs sm:text-sm text-slate-800 flex items-center justify-between gap-3 hover:bg-slate-100/60 cursor-pointer transition-colors"
+                    className="w-full p-3.5 text-left font-serif font-semibold text-xs sm:text-sm text-slate-800 flex items-center justify-between gap-3 hover:bg-slate-100/60 cursor-pointer transition-colors"
                   >
                     <span>{faq.q}</span>
                     {isOpen ? <ChevronUp className="w-4 h-4 text-slate-500 shrink-0" /> : <ChevronDown className="w-4 h-4 text-slate-500 shrink-0" />}
                   </button>
                   {isOpen && (
-                    <div className="p-4 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                    <div className="p-3.5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
                       {faq.a}
                     </div>
                   )}

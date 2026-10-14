@@ -51,23 +51,27 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
         {/* Section Header */}
         {!hideHeader && (
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
+              MINISTRY PROGRAMS & INITIATIVES
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {t.ministries.sectionTitle}
             </h2>
-            <p className="text-slate-600 mt-3 text-base sm:text-lg">
+            <div className="w-12 h-0.5 bg-primary-theme/60 mx-auto my-3" />
+            <p className="text-slate-600 text-base">
               {t.ministries.sectionSubtitle}
             </p>
           </div>
         )}
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        {/* Filter Controls (Classical Segmented Tabs) */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-10">
           <button
             onClick={() => setSelectedFilter('all')}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+            className={`px-3.5 py-1.5 rounded-xs text-xs sm:text-sm font-medium transition-colors cursor-pointer border ${
               selectedFilter === 'all'
-                ? 'btn-primary shadow-xs'
-                : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+                ? 'btn-primary border-primary-theme'
+                : 'bg-white border-slate-300 text-slate-700 hover:bg-slate-50'
             }`}
           >
             {language === 'zh' ? '全部 5 大事工' : 'All 5 Ministries'}
@@ -76,10 +80,10 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
             <button
               key={item.id}
               onClick={() => setSelectedFilter(item.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 cursor-pointer ${
+              className={`px-3.5 py-1.5 rounded-xs text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 cursor-pointer border ${
                 selectedFilter === item.id
-                  ? 'btn-primary shadow-xs'
-                  : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
+                  ? 'btn-primary border-primary-theme'
+                  : 'bg-white border-slate-300 text-slate-700 hover:bg-slate-50'
               }`}
             >
               {getMinistryIcon(item.icon)}
@@ -93,19 +97,19 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
           {filteredItems.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-shadow grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 items-center"
+              className="bg-white border border-slate-200 rounded-xs overflow-hidden shadow-xs hover:border-slate-300 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 items-center"
             >
               {/* Image side */}
               <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
-                <div className="relative rounded-xl overflow-hidden border border-slate-100 shadow-xs h-64 sm:h-72">
+                <div className="relative rounded-xs overflow-hidden border border-slate-200 h-64 sm:h-72">
                   <img
                     src={item.image}
                     alt={language === 'zh' ? item.titleZh : item.titleEn}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Floating Tag */}
-                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-lg border border-slate-200 text-xs font-bold text-slate-800 shadow-2xs flex items-center gap-1.5">
+                  {/* Classical Tag */}
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-xs border border-slate-200 text-xs font-semibold text-slate-800 shadow-2xs flex items-center gap-1.5">
                     <span className="text-primary-theme">{getMinistryIcon(item.icon)}</span>
                     <span>{language === 'zh' ? item.tagZh : item.tagEn}</span>
                   </div>
@@ -114,11 +118,12 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
 
               {/* Content side */}
               <div className={`lg:col-span-7 space-y-4 ${idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                  <h3 className="font-serif font-bold text-2xl text-slate-900 tracking-normal flex items-center gap-2">
+                    <span className="text-slate-400 font-mono text-lg font-normal">0{idx + 1}.</span>
                     <span>{language === 'zh' ? item.titleZh : item.titleEn}</span>
                   </h3>
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  <span className="text-xs font-medium px-2.5 py-1 rounded-xs bg-slate-100 text-slate-700 border border-slate-200">
                     {language === 'zh' ? item.keyStatZh : item.keyStatEn}
                   </span>
                 </div>
@@ -128,16 +133,14 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
                 </p>
 
                 {/* Bullet Points */}
-                <div className="bg-slate-50/80 rounded-xl p-4 border border-slate-200/70">
-                  <div className="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2.5">
+                <div className="bg-slate-50/70 rounded-xs p-4 border border-slate-200">
+                  <div className="text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2.5 font-mono">
                     {language === 'zh' ? '具体服务内容 (Services Provided):' : 'Key Offerings & Impact:'}
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                     {(language === 'zh' ? item.detailsZh : item.detailsEn).map((detail, dIdx) => (
                       <li key={dIdx} className="flex items-start gap-2">
-                        <div className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
-                          <Check className="w-3 h-3 stroke-[3]" />
-                        </div>
+                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{detail}</span>
                       </li>
                     ))}

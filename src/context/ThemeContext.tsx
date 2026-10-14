@@ -3,54 +3,79 @@ import { ThemePalette } from '../types';
 
 export const THEME_PRESETS: ThemePalette[] = [
   {
-    id: 'spring-blue',
-    nameZh: '涌泉蔚蓝 (经典标准)',
-    nameEn: 'Spring Blue (Classic)',
-    primary: '#0284c7',
-    primaryHover: '#0369a1',
-    primaryLight: '#f0f9ff',
-    accent: '#10b981',
-    bgWarm: '#fbfbf9',
+    id: 'jilan-gold',
+    nameZh: '霁蓝·宣和泥金 (明宣德霁蓝 · 庄严殿堂 ★推荐)',
+    nameEn: 'Sacrificial Blue & Gold (Xuande Imperial)',
+    primary: '#163b65',
+    primaryHover: '#0f2846',
+    primaryLight: '#f0f4f8',
+    accent: '#c89b3c',
+    accentHover: '#b0852e',
+    accentLight: '#fdf8ee',
+    accentBorder: '#e6c888',
+    accentText: '#8a6214',
+    accentNameZh: '宣和泥金',
+    bgWarm: '#fbfbf8',
   },
   {
-    id: 'forest-emerald',
-    nameZh: '常青希望 (生机与平安)',
-    nameEn: 'Forest Emerald (Hope & Peace)',
-    primary: '#059669',
-    primaryHover: '#047857',
-    primaryLight: '#ecfdf5',
-    accent: '#d97706',
-    bgWarm: '#fafaf8',
+    id: 'canglang-water',
+    nameZh: '沧浪·清泉碧波 (孟子沧浪水 · 清润活泉)',
+    nameEn: 'Canglang Blue & Jade Spring (Clear Waters)',
+    primary: '#20556f',
+    primaryHover: '#143c50',
+    primaryLight: '#ecf4f7',
+    accent: '#267d6c',
+    accentHover: '#1c6254',
+    accentLight: '#eef8f5',
+    accentBorder: '#8bd1c2',
+    accentText: '#155649',
+    accentNameZh: '翠微玉泉',
+    bgWarm: '#f8faf9',
   },
   {
-    id: 'warm-amber',
-    nameZh: '暖阳金曦 (温情与热情)',
-    nameEn: 'Warm Sunshine (Warmth & Energy)',
-    primary: '#ea580c',
-    primaryHover: '#c2410c',
-    primaryLight: '#fff7ed',
-    accent: '#0284c7',
-    bgWarm: '#fffcf7',
+    id: 'dailan-bronze',
+    nameZh: '远山黛·古铜墨韵 (文人水墨 · 历史厚重)',
+    nameEn: 'Distant Mountain Indigo & Bronze (Archive)',
+    primary: '#243447',
+    primaryHover: '#162230',
+    primaryLight: '#f1f4f6',
+    accent: '#b8743b',
+    accentHover: '#9c5f2d',
+    accentLight: '#fcf6ef',
+    accentBorder: '#deb58e',
+    accentText: '#7b4417',
+    accentNameZh: '汉柏古铜',
+    bgWarm: '#faf8f4',
   },
   {
-    id: 'royal-indigo',
-    nameZh: '典雅靛蓝 (庄重与专业)',
-    nameEn: 'Royal Indigo (Trust & Dignity)',
-    primary: '#4f46e5',
-    primaryHover: '#4338ca',
-    primaryLight: '#eef2ff',
-    accent: '#059669',
-    bgWarm: '#f8fafc',
+    id: 'tianqing-silk',
+    nameZh: '天青·雨过云破 (宋徽宗汝窑 · 温润如玉)',
+    nameEn: 'Song Ru Sky Cyan & Amber Silk (Serene)',
+    primary: '#34617e',
+    primaryHover: '#234459',
+    primaryLight: '#eef5f8',
+    accent: '#d49e42',
+    accentHover: '#ba862d',
+    accentLight: '#fdf9f0',
+    accentBorder: '#eccb86',
+    accentText: '#8e6215',
+    accentNameZh: '汝窑落晖',
+    bgWarm: '#f9f9f5',
   },
   {
-    id: 'compassion-rose',
-    nameZh: '仁爱红枫 (关怀与怜悯)',
-    nameEn: 'Rose Compassion (Love & Grace)',
-    primary: '#e11d48',
-    primaryHover: '#be123c',
-    primaryLight: '#fff1f2',
-    accent: '#d97706',
-    bgWarm: '#fffbfb',
+    id: 'jingtai-blue',
+    nameZh: '景泰蓝·矿物群青 (传统掐丝珐琅 · 端庄典雅)',
+    nameEn: 'Cloisonné Blue & Cinnabar Vermilion (Vibrant)',
+    primary: '#175185',
+    primaryHover: '#103c64',
+    primaryLight: '#eff5fa',
+    accent: '#b93a2b',
+    accentHover: '#982c1f',
+    accentLight: '#fdf2f0',
+    accentBorder: '#eea69d',
+    accentText: '#8a2012',
+    accentNameZh: '朱砂茜红',
+    bgWarm: '#fdfdfc',
   },
 ];
 
@@ -58,6 +83,7 @@ interface ThemeContextType {
   currentTheme: ThemePalette;
   setThemeById: (id: string) => void;
   setCustomPrimary: (hex: string) => void;
+  setCustomAccent: (hex: string) => void;
   isThemeModalOpen: boolean;
   setIsThemeModalOpen: (open: boolean) => void;
 }
@@ -74,14 +100,30 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     root.style.setProperty('--color-primary', currentTheme.primary);
     root.style.setProperty('--color-primary-hover', currentTheme.primaryHover);
     root.style.setProperty('--color-primary-light', currentTheme.primaryLight);
-    root.style.setProperty('--color-accent', currentTheme.accent);
-    root.style.setProperty('--color-bg-base', currentTheme.bgWarm);
     root.style.setProperty(
       '--color-primary-ring',
       currentTheme.primary.startsWith('#')
         ? `${currentTheme.primary}40`
-        : 'rgba(2, 132, 199, 0.25)'
+        : 'rgba(22, 59, 101, 0.25)'
     );
+
+    const accent = currentTheme.accent;
+    const accentHover = currentTheme.accentHover || accent;
+    const accentLight = currentTheme.accentLight || `${accent}18`;
+    const accentBorder = currentTheme.accentBorder || `${accent}45`;
+    const accentText = currentTheme.accentText || accent;
+
+    root.style.setProperty('--color-accent', accent);
+    root.style.setProperty('--color-accent-hover', accentHover);
+    root.style.setProperty('--color-accent-light', accentLight);
+    root.style.setProperty('--color-accent-border', accentBorder);
+    root.style.setProperty('--color-accent-text', accentText);
+    root.style.setProperty(
+      '--color-accent-ring',
+      accent.startsWith('#') ? `${accent}40` : 'rgba(200, 155, 60, 0.3)'
+    );
+
+    root.style.setProperty('--color-bg-base', currentTheme.bgWarm);
   }, [currentTheme]);
 
   const setThemeById = (id: string) => {
@@ -95,11 +137,25 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setCurrentTheme((prev) => ({
       ...prev,
       id: 'custom',
-      nameZh: '自定义主题色',
+      nameZh: '自定义主色',
       nameEn: 'Custom Theme Color',
       primary: hex,
       primaryHover: hex,
       primaryLight: `${hex}15`,
+    }));
+  };
+
+  const setCustomAccent = (hex: string) => {
+    setCurrentTheme((prev) => ({
+      ...prev,
+      id: 'custom',
+      nameZh: '自定义辅色',
+      nameEn: 'Custom Accent Color',
+      accent: hex,
+      accentHover: hex,
+      accentLight: `${hex}18`,
+      accentBorder: `${hex}50`,
+      accentText: hex,
     }));
   };
 
@@ -109,6 +165,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         currentTheme,
         setThemeById,
         setCustomPrimary,
+        setCustomAccent,
         isThemeModalOpen,
         setIsThemeModalOpen,
       }}

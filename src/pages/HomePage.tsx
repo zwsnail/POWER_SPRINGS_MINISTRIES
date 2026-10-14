@@ -38,17 +38,17 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
         }}
       />
 
-      {/* 4. Clean Navigation Bento Section to Site Pages */}
+      {/* 4. Classical Institutional Navigation Grid */}
       <section className="py-16 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Box 1: Core Ministries */}
-            <div className="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            {/* Box 1: Core Ministries (Accent Theme Border Highlight) */}
+            <div className="bg-white p-7 rounded-xs border border-slate-200 border-t-2 border-t-accent-theme hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-sky-50 text-primary-theme flex items-center justify-center mb-4">
-                  <Layers className="w-6 h-6" />
+                <div className="w-10 h-10 border border-accent-subtle rounded-xs bg-accent-light-theme text-accent-dark flex items-center justify-center mb-4">
+                  <Layers className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                <h3 className="font-serif font-bold text-xl text-slate-900 mb-2 tracking-normal">
                   {language === 'zh' ? '核心关怀事工' : 'Core Ministries'}
                 </h3>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
@@ -60,20 +60,20 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
 
               <button
                 onClick={() => navigate('/ministries')}
-                className="btn-primary w-full py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
+                className="btn-primary w-full py-2.5 rounded-xs text-xs font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer shadow-2xs"
               >
                 <span>{language === 'zh' ? '查看事工详情' : 'Explore Ministries'}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
 
             {/* Box 2: Photo Gallery Preview */}
-            <div className="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="bg-white p-7 rounded-xs border border-slate-200 border-t-2 border-t-primary-theme hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-                  <Images className="w-6 h-6" />
+                <div className="w-10 h-10 border border-slate-200 rounded-xs bg-slate-50 text-slate-700 flex items-center justify-center mb-4">
+                  <Images className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                <h3 className="font-serif font-bold text-xl text-slate-900 mb-2 tracking-normal">
                   {language === 'zh' ? '爱心图集 · 见证温暖足迹' : 'Our Gallery · Moments of Love'}
                 </h3>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
@@ -85,20 +85,20 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
 
               <button
                 onClick={() => navigate('/gallery')}
-                className="px-4 py-2.5 rounded-xl border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="px-4 py-2.5 rounded-xs border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
                 <span>{language === 'zh' ? '浏览活动图集' : 'View Visual Gallery'}</span>
-                <ArrowRight className="w-4 h-4 text-slate-500" />
+                <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
               </button>
             </div>
 
             {/* Box 3: Leadership & About Us */}
-            <div className="bg-white p-7 rounded-3xl border border-slate-200/90 shadow-2xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="bg-white p-7 rounded-xs border border-slate-200 border-t-2 border-t-slate-400 hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
-                  <ShieldCheck className="w-6 h-6" />
+                <div className="w-10 h-10 border border-slate-200 rounded-xs bg-slate-50 text-slate-700 flex items-center justify-center mb-4">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                <h3 className="font-serif font-bold text-xl text-slate-900 mb-2 tracking-normal">
                   {language === 'zh' ? '了解我们 · Peter Qu & 牧师团队' : 'About Us · Leadership & Vision'}
                 </h3>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
@@ -110,24 +110,31 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
 
               <button
                 onClick={() => navigate('/about')}
-                className="px-4 py-2.5 rounded-xl border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer"
+                className="px-4 py-2.5 rounded-xs border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs flex items-center justify-center gap-2 transition-colors cursor-pointer"
               >
                 <span>{language === 'zh' ? '了解机构与团队' : 'Read Our Story'}</span>
-                <ArrowRight className="w-4 h-4 text-slate-500" />
+                <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. Clean Direct Contact Banner */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
-          <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
+      {/* 5. Dignified Direct Contact Banner */}
+      <section className="py-16 bg-slate-900 text-white border-t border-slate-800">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5">
+          <div className="text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
+            GET IN TOUCH
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-serif font-bold tracking-normal">
             {language === 'zh' 
               ? '欢迎与涌泉事工取得联系' 
               : 'Get in Touch with Power Spring Ministries'}
           </h2>
+          <div className="flex items-center justify-center gap-1.5 mx-auto my-2">
+            <div className="w-10 h-0.5 bg-primary-theme" />
+            <div className="w-3.5 h-0.5 bg-accent-theme" />
+          </div>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             {language === 'zh'
@@ -138,7 +145,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
           <div className="pt-2 flex flex-wrap justify-center items-center gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="bg-primary-theme hover:bg-primary-theme-hover text-white font-bold px-8 py-3.5 rounded-xl text-sm shadow-lg flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer"
+              className="bg-primary-theme hover:bg-primary-theme-hover text-white font-semibold px-7 py-3 rounded-xs text-xs sm:text-sm flex items-center gap-2 transition-colors cursor-pointer tracking-wide"
             >
               <Mail className="w-4 h-4" />
               <span>{language === 'zh' ? '前往联系页面' : 'Go to Contact Page'}</span>

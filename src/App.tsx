@@ -51,7 +51,7 @@ export default function App() {
         <ScrollToTop />
         <TitleUpdater language={language} />
 
-        <div className="min-h-screen flex flex-col bg-[var(--color-bg-base)] text-slate-900 selection:bg-sky-500 selection:text-white">
+        <div className="min-h-screen flex flex-col bg-[var(--color-bg-base)] text-slate-900 selection:bg-slate-800 selection:text-white">
           {/* Header Navigation */}
           <Header
             language={language}

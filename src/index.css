@@ -1,23 +1,29 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: "Cormorant Garamond", "Songti SC", "SimSun", "STSong", Georgia, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
 :root {
   /* 
    * 🎨 全局主题色变量 (Global Theme Color Variables)
-   * 您可以直接在此处修改颜色代码，全站所有按钮、边框、高亮、徽章将一键自动同步更新！
-   * You can edit the HEX values here to instantly rebrand the whole website!
+   * 采用中国传统色：明宣德霁蓝 (#163b65) 与 宣和泥金 (#c89b3c)
+   * 搭配宣纸温润底白 (#fbfbf8)，营造庄严典雅的历史与慈善殿堂氛围
    */
-  --color-primary: #0284c7;
-  --color-primary-hover: #0369a1;
-  --color-primary-light: #f0f9ff;
-  --color-primary-ring: rgba(2, 132, 199, 0.25);
+  --color-primary: #163b65;
+  --color-primary-hover: #0f2846;
+  --color-primary-light: #f0f4f8;
+  --color-primary-ring: rgba(22, 59, 101, 0.22);
 
-  --color-secondary: #f59e0b;
-  --color-secondary-light: #fef3c7;
-  
-  --color-accent: #10b981;
-  --color-accent-light: #ecfdf5;
+  --color-accent: #c89b3c;
+  --color-accent-hover: #b0852e;
+  --color-accent-light: #fdf8ee;
+  --color-accent-border: #e6c888;
+  --color-accent-text: #8a6214;
+  --color-accent-ring: rgba(200, 155, 60, 0.3);
 
-  --color-bg-base: #fbfbf9;
+  --color-bg-base: #fbfbf8;
   --color-card-bg: #ffffff;
   --color-text-main: #1e293b;
   --color-text-muted: #64748b;
@@ -27,7 +33,7 @@
 body {
   background-color: var(--color-bg-base);
   color: var(--color-text-main);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,16 +43,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 主题专用动态类 */
+/* 🎨 主题主色 (Primary Theme) */
 .btn-primary {
   background-color: var(--color-primary);
   color: #ffffff;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 .btn-primary:hover {
   background-color: var(--color-primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px var(--color-primary-ring);
+  box-shadow: 0 2px 8px var(--color-primary-ring);
 }
 
 .text-primary-theme {
@@ -68,13 +73,72 @@ html {
 .badge-primary {
   background-color: var(--color-primary-light);
   color: var(--color-primary-hover);
-  border: 1px solid rgba(2, 132, 199, 0.2);
+  border: 1px solid var(--color-primary-ring);
+}
+
+/* 🎨 主题辅色与爱心捐赠 (Accent Theme - 传统点睛泥金/古铜/翠微/朱砂) */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  transition: all 0.15s ease-in-out;
+}
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: 0 2px 10px var(--color-accent-ring);
+}
+
+/* 核心爱心捐赠按钮：告别生硬粉色，随主题辅色优雅联动 */
+.btn-donate {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-text);
+  border: 1px solid var(--color-accent-border);
+  transition: all 0.2s ease-in-out;
+}
+.btn-donate:hover {
+  background-color: var(--color-accent);
+  color: #ffffff !important;
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 12px var(--color-accent-ring);
+}
+.btn-donate:hover * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.text-accent-theme {
+  color: var(--color-accent);
+}
+
+.text-accent-dark {
+  color: var(--color-accent-text);
+}
+
+.bg-accent-theme {
+  background-color: var(--color-accent);
+}
+
+.bg-accent-light-theme {
+  background-color: var(--color-accent-light);
+}
+
+.border-accent-theme {
+  border-color: var(--color-accent);
+}
+
+.border-accent-subtle {
+  border-color: var(--color-accent-border);
+}
+
+.badge-accent {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-text);
+  border: 1px solid var(--color-accent-border);
 }
 
 .card-hover-effect {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .card-hover-effect:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--color-primary-ring);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
 }

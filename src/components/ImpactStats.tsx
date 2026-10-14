@@ -26,19 +26,23 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
         return <Utensils className="w-5 h-5 text-amber-600" />;
       case 'Home':
         return <Home className="w-5 h-5 text-sky-600" />;
-      case 'HeartHandshake':
-        return <HeartHandshake className="w-5 h-5 text-emerald-600" />;
       case 'ShieldHeart':
       case 'HeartPulse':
-        return <HeartPulse className="w-5 h-5 text-rose-600" />;
+        return <HeartPulse className="w-5 h-5 text-accent-theme" />;
+      case 'HeartHandshake':
+        return <HeartHandshake className="w-5 h-5 text-accent-theme" />;
+      case 'Utensils':
+        return <Utensils className="w-5 h-5 text-amber-600" />;
+      case 'Home':
+        return <Home className="w-5 h-5 text-primary-theme" />;
       case 'ShoppingBag':
-        return <ShoppingBag className="w-5 h-5 text-indigo-600" />;
+        return <ShoppingBag className="w-5 h-5 text-slate-700" />;
       case 'Car':
-        return <Car className="w-5 h-5 text-blue-600" />;
+        return <Car className="w-5 h-5 text-primary-theme" />;
       case 'Wrench':
-        return <Wrench className="w-5 h-5 text-orange-600" />;
+        return <Wrench className="w-5 h-5 text-slate-600" />;
       case 'Video':
-        return <Video className="w-5 h-5 text-purple-600" />;
+        return <Video className="w-5 h-5 text-accent-theme" />;
       default:
         return <HeartHandshake className="w-5 h-5 text-primary-theme" />;
     }
@@ -49,38 +53,48 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <div className="text-xs uppercase tracking-widest text-slate-400 font-medium mb-1">
+            ANNUAL MILESTONES & REPORT
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-normal">
             {t.impact.sectionTitle}
           </h2>
-          <p className="text-slate-600 mt-2 text-sm sm:text-base">
+          <div className="flex items-center justify-center gap-1.5 mx-auto my-3">
+            <div className="w-10 h-0.5 bg-primary-theme" />
+            <div className="w-3.5 h-0.5 bg-accent-theme" />
+          </div>
+          <p className="text-slate-600 text-sm sm:text-base">
             {t.impact.sectionSubtitle}
           </p>
         </div>
 
-        {/* 8-Grid Impact Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* 8-Grid Impact Stats: Classical Institutional Ledger Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {t.impact.items.map((stat) => (
             <div
               key={stat.id}
-              className="bg-slate-50/70 hover:bg-white border border-slate-200/90 hover:border-primary-theme/40 rounded-xl p-5 card-hover-effect transition-all flex flex-col justify-between"
+              className="bg-white border border-slate-200 rounded-xs p-5 hover:border-primary-theme/50 transition-colors flex flex-col justify-between"
             >
               <div>
-                <div className="mb-3">
-                  <span className="inline-flex p-2.5 rounded-lg bg-white shadow-2xs border border-slate-200/80">
+                <div className="flex items-center justify-between mb-3 text-slate-500">
+                  <span className="p-1.5 border border-slate-200 rounded-xs bg-slate-50">
                     {renderIcon(stat.icon)}
+                  </span>
+                  <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
+                    501(c)(3)
                   </span>
                 </div>
 
-                <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight text-primary-theme">
+                <div className="text-2xl sm:text-3xl font-serif font-bold text-primary-theme tracking-normal tabular-nums">
                   {stat.number}
                 </div>
 
-                <div className="font-bold text-slate-800 text-sm mt-1">
+                <div className="font-serif font-semibold text-slate-900 text-sm mt-1">
                   {language === 'zh' ? stat.labelZh : stat.labelEn}
                 </div>
               </div>
 
-              <p className="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-200/60 leading-relaxed">
+              <p className="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-100 leading-relaxed">
                 {language === 'zh' ? stat.descZh : stat.descEn}
               </p>
             </div>

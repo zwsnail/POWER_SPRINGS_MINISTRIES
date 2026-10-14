@@ -22,40 +22,40 @@ export const Logo: React.FC<LogoProps> = ({
       aria-label="Power Spring Ministries Logo with Cross and Living Water"
     >
       <defs>
-        {/* Background Gradient */}
+        {/* Background Gradient - Traditional Jilan Blue */}
         <linearGradient id="psmBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0284c7" />
-          <stop offset="50%" stopColor="#0369a1" />
-          <stop offset="100%" stopColor="#0f172a" />
+          <stop offset="0%" stopColor="#224c7e" />
+          <stop offset="50%" stopColor="#163b65" />
+          <stop offset="100%" stopColor="#0d1f35" />
         </linearGradient>
 
-        {/* Spring Water Waves Gradient */}
+        {/* Spring Water Waves Gradient - Clear Wave / Canglang water */}
         <linearGradient id="psmWaterGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#7dd3fc" />
+          <stop offset="0%" stopColor="#5ea2c7" />
+          <stop offset="100%" stopColor="#9cc7dc" />
         </linearGradient>
 
-        {/* Cross Gold/Warm Glow Gradient */}
+        {/* Cross Glow */}
         <linearGradient id="psmCrossGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#ffffff" />
           <stop offset="60%" stopColor="#f8fafc" />
           <stop offset="100%" stopColor="#e2e8f0" />
         </linearGradient>
 
-        {/* Golden Faith Accent Gradient */}
+        {/* Traditional Xuanhe Gold Accent Gradient */}
         <linearGradient id="psmGoldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#fbbf24" />
-          <stop offset="100%" stopColor="#f59e0b" />
+          <stop offset="0%" stopColor="#e5c175" />
+          <stop offset="100%" stopColor="#c89b3c" />
         </linearGradient>
       </defs>
 
-      {/* Emblem Background Squircle */}
+      {/* Emblem Background Architectural Plaque */}
       <rect
         x="4"
         y="4"
         width="92"
         height="92"
-        rx="26"
+        rx="8"
         fill="url(#psmBgGradient)"
       />
 
@@ -65,9 +65,9 @@ export const Logo: React.FC<LogoProps> = ({
         y="4"
         width="92"
         height="92"
-        rx="26"
-        stroke="rgba(255, 255, 255, 0.18)"
-        strokeWidth="2"
+        rx="8"
+        stroke="rgba(255, 255, 255, 0.22)"
+        strokeWidth="1.5"
       />
 
       {/* Living Water Streams (Ascending Flow from Spring) */}

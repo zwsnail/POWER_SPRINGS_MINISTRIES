@@ -28,11 +28,11 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand & Purpose Column */}
           <div className="md:col-span-5 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="shrink-0 group-hover:scale-105 transition-transform">
+              <div className="shrink-0">
                 <Logo size={42} className="w-10 h-10 sm:w-11 sm:h-11" />
               </div>
               <div>
-                <span className="font-extrabold text-white text-lg tracking-tight block">
+                <span className="font-serif font-bold text-white text-lg tracking-normal block">
                   {t.brand.name}
                 </span>
                 <span className="text-xs text-sky-400 font-semibold">
@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="pt-2">
               <Link
                 to="/contact"
-                className="w-full btn-primary font-bold px-4 py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="w-full btn-primary font-semibold px-4 py-2.5 rounded-xs text-xs flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 <span>{language === 'zh' ? '前往联系页面' : 'Contact Us'}</span>
@@ -145,11 +145,11 @@ export const Footer: React.FC<FooterProps> = ({
 
           <div className="flex items-center gap-3">
             {/* Clear, refined language switcher */}
-            <div className="flex items-center gap-1 bg-slate-800/90 py-1 px-1.5 rounded-xl border border-slate-700/80 shadow-2xs">
+            <div className="flex items-center gap-1 bg-slate-800/90 py-1 px-1.5 rounded-xs border border-slate-700/80 shadow-2xs">
               <Globe className="w-3.5 h-3.5 text-slate-400 ml-1 shrink-0" />
               <button
                 onClick={() => setLanguage('zh')}
-                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-2.5 py-1 rounded-xs text-xs font-semibold transition-all cursor-pointer ${
                   language === 'zh'
                     ? 'bg-primary-theme text-white font-bold shadow-2xs'
                     : 'text-slate-400 hover:text-slate-200'
@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-2.5 py-1 rounded-xs text-xs font-semibold transition-all cursor-pointer ${
                   language === 'en'
                     ? 'bg-primary-theme text-white font-bold shadow-2xs'
                     : 'text-slate-400 hover:text-slate-200'
@@ -171,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             <button
               onClick={scrollToTop}
-              className="text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors py-1.5 px-2.5 rounded-lg hover:bg-slate-800"
+              className="text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors py-1.5 px-2.5 rounded-xs hover:bg-slate-800"
               title="Back to Top"
             >
               <ArrowUp className="w-3.5 h-3.5" />
