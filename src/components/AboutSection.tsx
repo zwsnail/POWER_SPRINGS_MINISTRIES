@@ -120,7 +120,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs gap-2">
                   <span className="text-slate-500 font-medium flex items-center gap-1.5">
                     {idx === 0 ? <UserCheck className="w-4 h-4 text-emerald-600" /> : <Video className="w-4 h-4 text-purple-600" />}
                     <span>{language === 'zh' ? leader.contactNoteZh : leader.contactNoteEn}</span>

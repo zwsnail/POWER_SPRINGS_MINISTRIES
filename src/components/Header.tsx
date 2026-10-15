@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Brand Logo with Cross & Living Water */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 sm:gap-3 text-left group cursor-pointer focus:outline-none shrink-0 min-w-0"
+            className="flex items-center gap-2 sm:gap-3 text-left group cursor-pointer focus:outline-none min-w-0 flex-1 sm:flex-initial"
           >
             <div className="shrink-0">
               <Logo size={46} className="w-10 h-10 sm:w-[46px] sm:h-[46px] drop-shadow-xs" />

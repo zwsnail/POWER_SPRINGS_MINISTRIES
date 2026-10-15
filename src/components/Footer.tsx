@@ -53,8 +53,8 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div>
                 <strong className="text-slate-300">{language === 'zh' ? '电子邮箱' : 'Email'}: </strong>
-                <a href="mailto:peter.qu@powerspringministries.org" className="text-sky-400 hover:underline">
-                  peter.qu@powerspringministries.org
+                <a href="mailto:powerspringorg@gmail.com" className="text-sky-400 hover:underline">
+                  powerspringorg@gmail.com
                 </a>
               </div>
               <div>
@@ -144,12 +144,24 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Bottom Sub-bar */}
-        <div className="pt-4 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-2">
+        <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 leading-relaxed">
             <span>© {new Date().getFullYear()} Power Spring Ministries INC. {f.rights}</span>
+            <span className="text-slate-700 hidden sm:inline">|</span>
+            <Link to="/terms" className="hover:text-slate-300 transition-colors underline-offset-2 hover:underline">
+              {language === 'zh' ? '服务条款与免责声明' : 'Terms & Disclaimers'}
+            </Link>
+            <span className="text-slate-700 hidden sm:inline">·</span>
+            <Link to="/privacy" className="hover:text-slate-300 transition-colors underline-offset-2 hover:underline">
+              {language === 'zh' ? '隐私政策' : 'Privacy Policy'}
+            </Link>
+            <span className="text-slate-700 hidden sm:inline">·</span>
+            <Link to="/donate/thank-you" className="hover:text-slate-300 transition-colors underline-offset-2 hover:underline text-accent-theme/80 hover:text-accent-theme">
+              {language === 'zh' ? '捐赠致谢' : 'Donation Gratitude'}
+            </Link>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-800">
             {/* Clear, refined language switcher */}
             <div className="flex items-center gap-1 bg-slate-800/90 py-1 px-1.5 rounded-xs border border-slate-700/80 shadow-2xs">
               <Globe className="w-3.5 h-3.5 text-slate-400 ml-1 shrink-0" />

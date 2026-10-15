@@ -9,6 +9,8 @@ import { MinistriesPage } from './pages/MinistriesPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
+import { TermsPage } from './pages/TermsPage';
+import { DonationThankYouPage } from './pages/DonationThankYouPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Language } from './types';
 
@@ -23,6 +25,9 @@ function TitleUpdater({ language }: { language: Language }) {
       '/gallery': '爱心图集',
       '/about': '关于我们',
       '/contact': '联系我们',
+      '/terms': '服务条款与免责声明',
+      '/privacy': '隐私政策',
+      '/donate/thank-you': '爱心捐赠致谢',
     };
     const pageTitlesEn: Record<string, string> = {
       '/': 'Home',
@@ -30,6 +35,9 @@ function TitleUpdater({ language }: { language: Language }) {
       '/gallery': 'Gallery',
       '/about': 'About Us',
       '/contact': 'Contact Us',
+      '/terms': 'Terms & Disclaimers',
+      '/privacy': 'Privacy Policy',
+      '/donate/thank-you': 'Donation Gratitude',
     };
 
     const title = language === 'zh'
@@ -66,6 +74,9 @@ export default function App() {
               <Route path="/gallery" element={<GalleryPage language={language} />} />
               <Route path="/about" element={<AboutPage language={language} />} />
               <Route path="/contact" element={<ContactPage language={language} />} />
+              <Route path="/terms" element={<TermsPage language={language} />} />
+              <Route path="/privacy" element={<TermsPage language={language} />} />
+              <Route path="/donate/thank-you" element={<DonationThankYouPage language={language} />} />
               <Route path="*" element={<NotFoundPage language={language} />} />
             </Routes>
           </main>

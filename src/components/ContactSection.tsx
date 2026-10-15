@@ -29,7 +29,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const [copied, setCopied] = useState(false);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
 
-  const emailAddress = 'peter.qu@powerspringministries.org';
+  const emailAddress = 'powerspringorg@gmail.com';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -44,11 +44,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     },
     {
       q: '如何参加每周六由 Philip & Dora Wu 牧师带领的 Zoom 心灵辅导？',
-      a: '请发送邮件至 peter.qu@powerspringministries.org，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
+      a: '请发送邮件至 powerspringorg@gmail.com，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
     },
     {
       q: '我想向事工捐赠二手车或闲置家具物资，流程是怎样的？',
-      a: '非常感谢您的爱心！请直接发送邮件与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供 501(c)(3) 免税捐赠收据。',
+      a: '非常感谢您的爱心！请直接发送邮件至 powerspringorg@gmail.com 与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供 501(c)(3) 免税捐赠收据。',
     },
   ] : [
     {
@@ -57,11 +57,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     },
     {
       q: 'How do I join the Saturday Zoom spiritual counseling seminar?',
-      a: 'Please email peter.qu@powerspringministries.org to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
+      a: 'Please email powerspringorg@gmail.com to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
     },
     {
       q: 'How does the vehicle or in-kind donation process work?',
-      a: 'Thank you for your generosity! Reach out via email to Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide 501(c)(3) tax exemption receipts upon request.',
+      a: 'Thank you for your generosity! Reach out via email to powerspringorg@gmail.com to connect with Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide 501(c)(3) tax exemption receipts upon request.',
     },
   ];
 
@@ -89,7 +89,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Main Grid of Contact Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {/* Card 1: Primary Email & Direct Contact */}
-          <div className="bg-white border border-slate-200 rounded-xs p-7 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
+          <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
@@ -147,7 +147,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           </div>
 
           {/* Card 2: Pastoral Counseling & Seminars */}
-          <div className="bg-white border border-slate-200 rounded-xs p-7 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between relative overflow-hidden">
             {/* 简笔平安圣鸽微水印 */}
             <div className="absolute top-2 right-2 pointer-events-none opacity-10 text-accent-theme">
               <ChristianDoveMotif className="w-24 h-20" />

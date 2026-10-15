@@ -87,7 +87,7 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
             <div className="pt-2">
               <button
                 onClick={onJoinZoom}
-                className="btn-accent px-6 py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 cursor-pointer shadow-sm"
+                className="btn-accent w-full sm:w-auto px-6 py-3 sm:py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
                 <Video className="w-4 h-4" />
                 <span>{s.btnJoin}</span>

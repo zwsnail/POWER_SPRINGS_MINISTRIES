@@ -44,7 +44,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Box 1: Core Ministries (Accent Theme Border Highlight) */}
-            <div className="bg-white p-7 rounded-xs border border-slate-200 border-t-2 border-t-accent-theme hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
+            <div className="bg-white p-5 sm:p-7 rounded-xs border border-slate-200 border-t-2 border-t-accent-theme hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
               <div>
                 <div className="w-10 h-10 border border-accent-subtle rounded-xs bg-accent-light-theme text-accent-dark flex items-center justify-center mb-4">
                   <Layers className="w-5 h-5" />
@@ -69,7 +69,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
             </div>
 
             {/* Box 2: Photo Gallery Preview */}
-            <div className="bg-white p-7 rounded-xs border border-slate-200 border-t-2 border-t-primary-theme hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
+            <div className="bg-white p-5 sm:p-7 rounded-xs border border-slate-200 border-t-2 border-t-primary-theme hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
               <div>
                 <div className="w-10 h-10 border border-slate-200 rounded-xs bg-slate-50 text-slate-700 flex items-center justify-center mb-4">
                   <Images className="w-5 h-5" />
@@ -94,7 +94,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
             </div>
 
             {/* Box 3: Leadership & About Us */}
-            <div className="bg-white p-7 rounded-xs border border-slate-200 border-t-2 border-t-slate-400 hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
+            <div className="bg-white p-5 sm:p-7 rounded-xs border border-slate-200 border-t-2 border-t-slate-400 hover:border-primary-theme/50 transition-colors flex flex-col justify-between shadow-xs">
               <div>
                 <div className="w-10 h-10 border border-slate-200 rounded-xs bg-slate-50 text-slate-700 flex items-center justify-center mb-4">
                   <ShieldCheck className="w-5 h-5" />
@@ -122,7 +122,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
       </section>
 
       {/* 5. Dignified Direct Contact Banner with subtle water and cross motif */}
-      <section className="py-16 bg-slate-900 text-white border-t border-slate-800 relative overflow-hidden">
+      <section className="py-14 sm:py-16 bg-slate-900 text-white border-t border-slate-800 relative overflow-hidden">
         {/* 简笔十字架微水印 (左下) */}
         <div className="absolute -left-4 sm:left-10 -bottom-4 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
           <ChristianCrossMotif className="w-36 h-48 sm:w-44 sm:h-56" strokeWidth={1.2} />
@@ -154,7 +154,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
           <div className="pt-2 flex flex-wrap justify-center items-center gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="bg-primary-theme hover:bg-primary-theme-hover text-white font-semibold px-7 py-3 rounded-xs text-xs sm:text-sm flex items-center gap-2 transition-colors cursor-pointer tracking-wide"
+              className="bg-primary-theme hover:bg-primary-theme-hover text-white font-semibold px-7 py-3 rounded-xs text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer tracking-wide w-full sm:w-auto"
             >
               <Mail className="w-4 h-4" />
               <span>{language === 'zh' ? '前往联系页面' : 'Go to Contact Page'}</span>
