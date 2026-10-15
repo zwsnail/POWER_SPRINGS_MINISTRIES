@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { Header } from './components/Header';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -55,7 +55,7 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <HashRouter>
+      <BrowserRouter>
         <ScrollToTop />
         <TitleUpdater language={language} />
 
@@ -87,7 +87,7 @@ export default function App() {
             setLanguage={setLanguage}
           />
         </div>
-      </HashRouter>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
