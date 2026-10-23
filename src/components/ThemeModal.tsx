@@ -70,7 +70,7 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({ language }) => {
             </div>
             <div>
               <h3 className="font-serif font-bold text-slate-900 text-lg sm:text-xl">
-                {language === 'zh' ? '中国传统色方案 · 涌泉主题调色盘' : 'Traditional Chinese Blue Palettes'}
+                {language === 'zh' ? '中国传统色方案 · 能量泉主题调色盘' : 'Traditional Chinese Blue Palettes'}
               </h3>
               <p className="text-xs text-slate-500">
                 {language === 'zh' 

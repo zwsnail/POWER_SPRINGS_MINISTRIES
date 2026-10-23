@@ -29,7 +29,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const [copied, setCopied] = useState(false);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
 
-  const emailAddress = 'powerspringorg@gmail.com';
+  const emailAddress = 'peterqu@powerspring.org';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
@@ -39,16 +39,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
   const faqs = language === 'zh' ? [
     {
-      q: '涌泉事工提供的临时住宿和救助收费吗？',
-      a: '完全免费！涌泉事工是一家 501(c)(3) 非营利公益慈善机构（NGO），所有临时安置、爱心餐食、蔬果领取、道路急难救援、英语角及心灵辅导均不收取任何服务费用。',
+      q: '能量泉提供的临时住宿和救助收费吗？',
+      a: '完全免费！能量泉是一家 501(c)(3) 非营利公益慈善机构（NGO），所有临时安置、爱心餐食、蔬果领取、道路急难救援、英语角及心灵辅导均不收取任何服务费用。',
     },
     {
       q: '如何参加每周六由 Philip & Dora Wu 牧师带领的 Zoom 心灵辅导？',
-      a: '请发送邮件至 powerspringorg@gmail.com，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
+      a: '请发送邮件至 peterqu@powerspring.org，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
     },
     {
       q: '我想向事工捐赠二手车或闲置家具物资，流程是怎样的？',
-      a: '非常感谢您的爱心！请直接发送邮件至 powerspringorg@gmail.com 与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供 501(c)(3) 免税捐赠收据。',
+      a: '非常感谢您的爱心！请直接发送邮件至 peterqu@powerspring.org 与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供 501(c)(3) 免税捐赠收据。',
     },
   ] : [
     {
@@ -57,11 +57,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     },
     {
       q: 'How do I join the Saturday Zoom spiritual counseling seminar?',
-      a: 'Please email powerspringorg@gmail.com to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
+      a: 'Please email peterqu@powerspring.org to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
     },
     {
       q: 'How does the vehicle or in-kind donation process work?',
-      a: 'Thank you for your generosity! Reach out via email to powerspringorg@gmail.com to connect with Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide 501(c)(3) tax exemption receipts upon request.',
+      a: 'Thank you for your generosity! Reach out via email to peterqu@powerspring.org to connect with Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide 501(c)(3) tax exemption receipts upon request.',
     },
   ];
 
@@ -80,7 +80,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
             <p className="text-slate-600 text-base leading-relaxed">
               {language === 'zh'
-                ? '欢迎通过电子邮箱与涌泉事工取得联系，负责人 Peter Qu 将尽快为您答复。'
+                ? '欢迎通过电子邮箱与能量泉取得联系，负责人 Peter Qu 将尽快为您答复。'
                 : 'Feel free to contact Power Spring Ministries via email. Director Peter Qu will respond promptly.'}
             </p>
           </div>
@@ -91,14 +91,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           {/* Card 1: Primary Email & Direct Contact */}
           <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <span className="inline-flex items-center gap-1 text-[11px] font-mono uppercase px-2 py-0.5 rounded-xs bg-slate-100 text-slate-700 border border-slate-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>501(c)(3) NGO</span>
-                </span>
+              <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
+                <Mail className="w-5 h-5" />
               </div>
 
               <div>

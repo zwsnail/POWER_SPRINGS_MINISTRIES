@@ -104,7 +104,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
                 </h3>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
                   {language === 'zh'
-                    ? '了解涌泉事工的异象、负责人 Peter Qu 的事工历程，以及 Philip & Dora Wu 牧师带领的心灵关怀团队。'
+                    ? '了解能量泉的异象、负责人 Peter Qu 的事工历程，以及 Philip & Dora Wu 牧师带领的心灵关怀团队。'
                     : 'Learn about our 501(c)(3) mission, director Peter Qu, and pastoral counselors Rev. Philip & Dora Wu.'}
                 </p>
               </div>
@@ -140,7 +140,7 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
           </div>
           <h2 className="text-2xl sm:text-4xl font-serif font-bold tracking-normal">
             {language === 'zh' 
-              ? '欢迎与涌泉事工取得联系' 
+              ? '欢迎与能量泉取得联系' 
               : 'Get in Touch with Power Spring Ministries'}
           </h2>
           <CrossOliveDivider className="my-2.5" lineWidth="w-12 sm:w-16" />

@@ -39,7 +39,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
     }
   }, [location.pathname]);
 
-  const email = 'powerspringorg@gmail.com';
+  const email = 'peterqu@powerspring.org';
 
   return (
     <div className="animate-in fade-in duration-300">
@@ -51,7 +51,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
         }
         subtitle={
           language === 'zh'
-            ? 'Power Spring Ministries INC (涌泉事工) 501(c)(3) 非营利公益机构法律合规与服务须知'
+            ? 'Power Spring Ministries INC (能量泉) 501(c)(3) 非营利公益机构法律合规与服务须知'
             : 'Legal Disclaimers, Non-Profit Governance & Privacy Policy of Power Spring Ministries INC'
         }
       />
@@ -67,7 +67,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
               </div>
               <div>
                 <h3 className="font-serif font-bold text-slate-900 text-base">
-                  Power Spring Ministries INC (涌泉事工)
+                  Power Spring Ministries INC (能量泉)
                 </h3>
                 <p className="text-xs text-slate-500 font-medium">
                   {language === 'zh' 
@@ -144,7 +144,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {language === 'zh' ? (
                     <>
-                      Power Spring Ministries INC（以下简称“涌泉事工”或“机构”）是一家依据美国《国内税收法》第 501(c)(3) 条款注册设立的非营利公共慈善机构。机构开展的所有关怀项目——包括临时应急住宿安置、爱心餐饮、果蔬食品站、道路急难救援、二手代步车捐赠、英语角交流、报税文书辅助及每周六心灵辅导研讨——均为<strong>基于社区互助与基督博爱精神的无偿慈善关怀</strong>，不构成任何商业营利买卖、专业有偿委托或法定合同担保关系。
+                      Power Spring Ministries INC（以下简称“能量泉”或“机构”）是一家依据美国《国内税收法》第 501(c)(3) 条款注册设立的非营利公共慈善机构。机构开展的所有关怀项目——包括临时应急住宿安置、爱心餐饮、果蔬食品站、道路急难救援、二手代步车捐赠、英语角交流、报税文书辅助及每周六心灵辅导研讨——均为<strong>基于社区互助与基督博爱精神的无偿慈善关怀</strong>，不构成任何商业营利买卖、专业有偿委托或法定合同担保关系。
                     </>
                   ) : (
                     <>
@@ -228,7 +228,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                   <p>
                     {language === 'zh' ? (
                       <>
-                        <strong>应急过客性质：</strong>涌泉事工提供的 1~20 天应急临时住所为慈善关怀过客接待性质（Transient Charitable Hospitality），不构成标准住宅租赁合同或租客保护法意义下的长期承租权（Landlord-Tenant Leasehold）。受助人应遵守住所的基本秩序与安宁。
+                        <strong>应急过客性质：</strong>能量泉提供的 1~20 天应急临时住所为慈善关怀过客接待性质（Transient Charitable Hospitality），不构成标准住宅租赁合同或租客保护法意义下的长期承租权（Landlord-Tenant Leasehold）。受助人应遵守住所的基本秩序与安宁。
                       </>
                     ) : (
                       <>
@@ -332,7 +332,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {language === 'zh' ? (
                     <>
-                      在涌泉事工的官方 Stripe 捐赠通道中，<strong>捐赠金额由捐赠人完全自主决定并输入</strong>。无论金额多寡，皆是对社区的一份珍贵关爱。捐款纯属自愿，机构从不以任何形式强求或摊派。
+                      在能量泉的官方 Stripe 捐赠通道中，<strong>捐赠金额由捐赠人完全自主决定并输入</strong>。无论金额多寡，皆是对社区的一份珍贵关爱。捐款纯属自愿，机构从不以任何形式强求或摊派。
                     </>
                   ) : (
                     <>
@@ -444,7 +444,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                   </p>
                   <p className="font-semibold text-slate-800">
                     {language === 'zh' ? (
-                      '涌泉事工郑重承诺：我们绝不出售、出租、交易或向任何商业第三方透露您的个人信息。所有求助与辅导咨询内容均严格遵循隐私保密原则。'
+                      '能量泉郑重承诺：我们绝不出售、出租、交易或向任何商业第三方透露您的个人信息。所有求助与辅导咨询内容均严格遵循隐私保密原则。'
                     ) : (
                       'Power Spring Ministries INC pledges to never sell, rent, trade, or disclose your personal information to commercial third parties. All pastoral and inquiry communications are treated with utmost confidentiality.'
                     )}
@@ -480,7 +480,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {language === 'zh' ? (
                     <>
-                      如果您对本隐私政策或个人信息保护有任何疑问或需要更新您的联络信息，请随时通过电子邮箱 <a href={`mailto:${email}`} className="text-sky-600 underline font-semibold">{email}</a> 与涌泉事工负责人 Peter Qu 联系。
+                      如果您对本隐私政策或个人信息保护有任何疑问或需要更新您的联络信息，请随时通过电子邮箱 <a href={`mailto:${email}`} className="text-sky-600 underline font-semibold">{email}</a> 与能量泉负责人 Peter Qu 联系。
                     </>
                   ) : (
                     <>

@@ -5,7 +5,7 @@ export const translations = {
   zh: {
     brand: {
       name: 'Power Spring Ministries INC',
-      chineseName: '涌泉事工',
+      chineseName: '能量泉',
       slogan: '伴您安居 · 爱中同行 · 扎根社区',
       shortDesc: '关怀留学生、访问学者、华人家庭与新移民的非营利社区事工',
     },
@@ -20,7 +20,7 @@ export const translations = {
     hero: {
       badge: '非营利社区关怀 · 501(c)(3) Ministry',
       title: '在陌生的异乡，为您撑起一处温暖的港湾',
-      subtitle: '过去一年，涌泉事工致力于为学生学者、新移民及社区家庭提供临时安居、查经聚会餐饮、急难救助、心灵关怀与生活融入服务。',
+      subtitle: '过去一年，能量泉致力于为学生学者、新移民及社区家庭提供临时安居、查经聚会餐饮、急难救助、心灵关怀与生活融入服务。',
       ctaServices: '了解关怀事工',
       ctaGetHelp: '寻求急难帮助',
       ctaVolunteer: '加入志愿者行列',
@@ -253,7 +253,7 @@ export const translations = {
       ],
     },
     joinSection: {
-      sectionTitle: '参与涌泉 · 携手同行',
+      sectionTitle: '参与能量泉 · 携手同行',
       sectionSubtitle: '无论您是需要帮助的朋友，还是渴望分享爱心的同路人，我们都张开双臂欢迎您',
       badge: 'Get Involved & Request Help',
       tabs: {
@@ -275,7 +275,7 @@ export const translations = {
         ],
       },
       volunteerCard: {
-        title: '成为涌泉志愿者 (Volunteer)',
+        title: '成为能量泉志愿者 (Volunteer)',
         desc: '用您的一技之长和爱心，温暖刚刚落脚的异乡学子与移民家庭。我们诚挚招募以下岗位义工：',
         btnText: '报名成为志愿者',
         items: [
@@ -288,7 +288,7 @@ export const translations = {
       },
       donateCard: {
         title: '爱心物资与车辆捐赠 (In-Kind & Vehicle Donation)',
-        desc: '涌泉事工过去一年向困难家庭赠送了 3 辆二手车及大量生活物资。您的闲置车辆、家具或物资将直接改变一个家庭的生活。',
+        desc: '能量泉过去一年向困难家庭赠送了 3 辆二手车及大量生活物资。您的闲置车辆、家具或物资将直接改变一个家庭的生活。',
         btnText: '联系捐赠闲置车辆/物资',
         items: [
           '闲置二手车捐赠（协助过户与检修）',
@@ -534,11 +534,11 @@ export const translations = {
       ] as GalleryItem[],
     },
     about: {
-      sectionTitle: '关于涌泉事工',
+      sectionTitle: '关于能量泉',
       sectionSubtitle: '以基督之爱服侍社区，作异乡游子身边的活水涌泉',
       badge: 'About Power Spring',
       missionTitle: '我们的异象与使命',
-      missionText: 'Power Spring Ministries INC（涌泉事工）是一家扎根社区的非营利慈善机构。我们坚信：每一次及时的伸手、每一碗热腾腾的饭菜、每一句真诚的倾听，都能成为异乡游子心灵深处的泉源。我们不分背景、信仰与种族，全心服务学生学者、华人家庭及新移民。',
+      missionText: 'Power Spring Ministries INC（能量泉）是一家扎根社区的非营利慈善机构。我们坚信：每一次及时的伸手、每一碗热腾腾的饭菜、每一句真诚的倾听，都能成为异乡游子心灵深处的泉源。我们不分背景、信仰与种族，全心服务学生学者、华人家庭及新移民。',
       values: [
         {
           titleZh: '无私奉献 (Compassion)',
@@ -567,7 +567,7 @@ export const translations = {
           nameEn: 'Peter Qu',
           roleZh: '机构总负责人 / Executive Director',
           roleEn: 'Executive Director / Ministry Leader',
-          bioZh: '长期深耕海外华人社区与学者关怀事工，统筹协调涌泉事工的安居、餐饮、物资救助与道路应急救援，竭诚为每一位来到社区的朋友提供最务实的帮助。',
+          bioZh: '长期深耕海外华人社区与学者关怀事工，统筹协调能量泉的安居、餐饮、物资救助与道路应急救援，竭诚为每一位来到社区的朋友提供最务实的帮助。',
           bioEn: 'Dedicated to community care, coordinating housing, meals, car donations, emergency rescues, and settlement services for scholars and families.',
           avatarPlaceholder: 'PQ',
           contactNoteZh: '随时欢迎交流与咨询事工服务',
@@ -616,7 +616,7 @@ export const translations = {
       feeNote: '所有救助与服务均为非营利公益性质，不收取任何服务费',
     },
     footer: {
-      desc: 'Power Spring Ministries INC（涌泉事工）致力于为海外学生学者、家庭与新移民提供住房、餐饮、交通救助、语言文化融入及心灵健康辅导。',
+      desc: 'Power Spring Ministries INC（能量泉）致力于为海外学生学者、家庭与新移民提供住房、餐饮、交通救助、语言文化融入及心灵健康辅导。',
       quickLinks: '快捷导航',
       serviceList: '核心事工',
       rights: '版权所有 · 非营利社区关怀机构',
@@ -636,7 +636,7 @@ export const translations = {
   en: {
     brand: {
       name: 'Power Spring Ministries INC',
-      chineseName: '涌泉事工',
+      chineseName: '能量泉',
       slogan: 'Shelter, Compassion, and Community in a New Land',
       shortDesc: 'A non-profit community ministry supporting students, scholars, families, and new immigrants.',
     },
@@ -1198,7 +1198,7 @@ export const translations = {
           nameEn: 'Peter Qu',
           roleZh: '机构总负责人 / Executive Director',
           roleEn: 'Executive Director / Ministry Leader',
-          bioZh: '长期深耕海外华人社区与学者关怀事工，统筹协调涌泉事工的安居、餐饮、物资救助与道路应急救援，竭诚为每一位来到社区的朋友提供最务实的帮助。',
+          bioZh: '长期深耕海外华人社区与学者关怀事工，统筹协调能量泉的安居、餐饮、物资救助与道路应急救援，竭诚为每一位来到社区的朋友提供最务实的帮助。',
           bioEn: 'Leads and coordinates daily ministry operations including lodging, meal distribution, vehicle donations, and emergency roadside aid with a servant’s heart.',
           avatarPlaceholder: 'PQ',
           contactNoteZh: '随时欢迎交流与咨询事工服务',

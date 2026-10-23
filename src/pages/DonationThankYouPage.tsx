@@ -36,7 +36,7 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
         }
         subtitle={
           language === 'zh'
-            ? 'Power Spring Ministries INC (涌泉事工) 谨代表所有受助学者、家庭与社区居民，向您致以最诚挚的感谢！'
+            ? 'Power Spring Ministries INC (能量泉) 谨代表所有受助学者、家庭与社区居民，向您致以最诚挚的感谢！'
             : 'Power Spring Ministries INC extends our deepest gratitude on behalf of all the students, seniors, and families we serve.'
         }
       />
@@ -78,7 +78,7 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                       尊敬的捐赠人与爱心朋友：
                     </p>
                     <p>
-                      由衷感谢您对 <strong>涌泉事工（Power Spring Ministries INC）</strong> 的慷慨支持！在异国他乡，初来乍到的学生学者面临生活环境的剧变，新移民家庭在寻找落脚点时常感孤立无援，而一些长者与面临身心困扰的朋友更需要社区的温情相托。
+                      由衷感谢您对 <strong>能量泉（Power Spring Ministries INC）</strong> 的慷慨支持！在异国他乡，初来乍到的学生学者面临生活环境的剧变，新移民家庭在寻找落脚点时常感孤立无援，而一些长者与面临身心困扰的朋友更需要社区的温情相托。
                     </p>
                     <p>
                       因为有您的爱心奉献，我们可以继续为突发困难的朋友提供安全落脚的<strong>临时过渡庇护所</strong>；可以在每周的查经团契中奉上<strong>两千余份热腾腾的丰盛饭菜与每周新鲜蔬果</strong>；可以组织义工在风雨中奔赴现场进行<strong>爆胎抢修救援与二手车赠予</strong>；也可以支持教牧同工每周六开展<strong>线上心灵关怀研讨会</strong>，抚慰焦虑与疲惫的心灵。
@@ -150,8 +150,8 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span>
                       {language === 'zh'
-                        ? '如需纸质年度抵税综合证明（Year-End Contribution Statement）或金额超过 $250 的专属书面证明，欢迎随时发送邮件至 powerspringorg@gmail.com 与负责人联系。'
-                        : 'If you need a formal year-end tax statement or an acknowledgment letter for gifts over $250, please email powerspringorg@gmail.com anytime.'}
+                        ? '如需纸质年度抵税综合证明（Year-End Contribution Statement）或金额超过 $250 的专属书面证明，欢迎随时发送邮件至 peterqu@powerspring.org 与负责人联系。'
+                        : 'If you need a formal year-end tax statement or an acknowledgment letter for gifts over $250, please email peterqu@powerspring.org anytime.'}
                     </span>
                   </div>
                 </div>

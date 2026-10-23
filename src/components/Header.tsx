@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={() => setDonationModalOpen(true)}
               className="btn-donate px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-1.5 cursor-pointer group shadow-2xs"
-              title={language === 'zh' ? '支持涌泉事工爱心捐款' : 'Donate to Power Spring Ministries'}
+              title={language === 'zh' ? '支持能量泉爱心捐款' : 'Donate to Power Spring Ministries'}
             >
               <Heart className="w-3.5 h-3.5 transition-colors" />
               <span>{t.nav.donate}</span>

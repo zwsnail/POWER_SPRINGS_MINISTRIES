@@ -53,8 +53,8 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div>
                 <strong className="text-slate-300">{language === 'zh' ? '电子邮箱' : 'Email'}: </strong>
-                <a href="mailto:powerspringorg@gmail.com" className="text-sky-400 hover:underline">
-                  powerspringorg@gmail.com
+                <a href="mailto:peterqu@powerspring.org" className="text-sky-400 hover:underline">
+                  peterqu@powerspring.org
                 </a>
               </div>
               <div>

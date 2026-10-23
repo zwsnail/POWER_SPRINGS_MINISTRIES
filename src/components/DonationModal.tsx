@@ -99,7 +99,7 @@ export const DonationModal: React.FC<DonationModalProps> = ({
           </div>
           <div className="min-w-0">
             <h3 className="font-serif font-bold text-lg sm:text-xl text-slate-900 leading-snug">
-              {language === 'zh' ? '支持涌泉事工 · 爱心奉献' : 'Support Power Spring · Giving'}
+              {language === 'zh' ? '支持能量泉 · 爱心奉献' : 'Support Power Spring · Giving'}
             </h3>
             <p className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />

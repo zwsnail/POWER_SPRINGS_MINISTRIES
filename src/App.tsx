@@ -41,7 +41,7 @@ function TitleUpdater({ language }: { language: Language }) {
     };
 
     const title = language === 'zh'
-      ? `${pageTitlesZh[path] || '页面'} | Power Spring Ministries INC (涌泉事工)`
+      ? `${pageTitlesZh[path] || '页面'} | Power Spring Ministries INC (能量泉)`
       : `${pageTitlesEn[path] || 'Page'} | Power Spring Ministries INC`;
 
     document.title = title;

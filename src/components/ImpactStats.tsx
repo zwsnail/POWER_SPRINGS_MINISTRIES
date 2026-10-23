@@ -70,12 +70,9 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
               className="bg-white border border-slate-200 rounded-xs p-5 hover:border-primary-theme/50 transition-colors flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-3 text-slate-500">
-                  <span className="p-1.5 border border-slate-200 rounded-xs bg-slate-50">
+                <div className="mb-3 text-slate-500">
+                  <span className="inline-flex p-1.5 border border-slate-200 rounded-xs bg-slate-50">
                     {renderIcon(stat.icon)}
-                  </span>
-                  <span className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
-                    501(c)(3)
                   </span>
                 </div>
 
