@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { translations } from '../locales/translations';
-import { Language, MinistryItem } from '../types';
+import { Language } from '../types';
 import { 
   Home, 
   Utensils, 
@@ -10,7 +10,6 @@ import {
   Check, 
   HeartHandshake
 } from 'lucide-react';
-import { SpringWaveDivider, CrossOliveDivider } from './WaterMotifs';
 
 interface MinistriesSectionProps {
   language: Language;
@@ -28,17 +27,17 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
   const getMinistryIcon = (iconName: string) => {
     switch (iconName) {
       case 'Home':
-        return <Home className="w-5 h-5" />;
+        return <Home className="w-4 h-4" />;
       case 'Utensils':
-        return <Utensils className="w-5 h-5" />;
+        return <Utensils className="w-4 h-4" />;
       case 'Car':
-        return <Car className="w-5 h-5" />;
+        return <Car className="w-4 h-4" />;
       case 'BookOpen':
-        return <BookOpen className="w-5 h-5" />;
+        return <BookOpen className="w-4 h-4" />;
       case 'Video':
-        return <Video className="w-5 h-5" />;
+        return <Video className="w-4 h-4" />;
       default:
-        return <HeartHandshake className="w-5 h-5" />;
+        return <HeartHandshake className="w-4 h-4" />;
     }
   };
 
@@ -47,32 +46,32 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
     : t.ministries.items.filter((item) => item.id === selectedFilter);
 
   return (
-    <section id="ministries" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-20'} bg-slate-50/60 border-b border-slate-200/80`}>
+    <section id="ministries" className={`${hideHeader ? 'py-16 sm:py-20' : 'py-24 sm:py-32'} bg-[#FBFBF8] border-b border-slate-200/70`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        
+        {/* Section Header with Generous Negative Space */}
         {!hideHeader && (
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
+          <div className="max-w-3xl mb-16 sm:mb-20">
+            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-3">
               MINISTRY PROGRAMS & INITIATIVES
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
               {t.ministries.sectionTitle}
             </h2>
-            <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
-            <p className="text-slate-600 text-base">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-light">
               {t.ministries.sectionSubtitle}
             </p>
           </div>
         )}
 
-        {/* Filter Controls (Classical Segmented Tabs) */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 mb-10">
+        {/* Filter Controls: Linear-style Segmented Buttons (Functional interactive filters) */}
+        <div className="flex flex-wrap items-center gap-2 mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 w-fit">
           <button
             onClick={() => setSelectedFilter('all')}
-            className={`px-3.5 py-1.5 rounded-xs text-xs sm:text-sm font-medium transition-colors cursor-pointer border ${
+            className={`px-3.5 py-1.5 rounded-[6px] text-xs sm:text-sm font-medium transition-all cursor-pointer ${
               selectedFilter === 'all'
-                ? 'btn-primary border-primary-theme'
-                : 'bg-white border-slate-300 text-slate-700 hover:bg-slate-50'
+                ? 'bg-white text-slate-900 shadow-2xs font-semibold'
+                : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             {language === 'zh' ? '全部 5 大事工' : 'All 5 Ministries'}
@@ -81,10 +80,10 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
             <button
               key={item.id}
               onClick={() => setSelectedFilter(item.id)}
-              className={`px-3.5 py-1.5 rounded-xs text-xs sm:text-sm font-medium transition-colors flex items-center gap-1.5 cursor-pointer border ${
+              className={`px-3.5 py-1.5 rounded-[6px] text-xs sm:text-sm font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
                 selectedFilter === item.id
-                  ? 'btn-primary border-primary-theme'
-                  : 'bg-white border-slate-300 text-slate-700 hover:bg-slate-50'
+                  ? 'bg-white text-slate-900 shadow-2xs font-semibold'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               {getMinistryIcon(item.icon)}
@@ -93,24 +92,24 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
           ))}
         </div>
 
-        {/* Ministry Cards Grid */}
-        <div className="space-y-8">
+        {/* Ministry Cards with 8px radius, generous padding & subtle diffuse shadows */}
+        <div className="space-y-10">
           {filteredItems.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white border border-slate-200 rounded-xs overflow-hidden shadow-xs hover:border-slate-300 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 items-center"
+              className="craft-card p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
             >
               {/* Image side */}
               <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
-                <div className="relative rounded-xs overflow-hidden border border-slate-200 h-64 sm:h-72">
+                <div className="relative rounded-[8px] overflow-hidden border border-slate-200/80 h-72 sm:h-80 shadow-xs">
                   <img
                     src={item.image}
                     alt={language === 'zh' ? item.titleZh : item.titleEn}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Classical Tag */}
-                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-xs border border-slate-200 text-xs font-semibold text-slate-800 shadow-2xs flex items-center gap-1.5">
+                  {/* Clean unboxed tag */}
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-[6px] border border-slate-200 text-xs font-semibold text-slate-800 shadow-xs flex items-center gap-1.5">
                     <span className="text-primary-theme">{getMinistryIcon(item.icon)}</span>
                     <span>{language === 'zh' ? item.tagZh : item.tagEn}</span>
                   </div>
@@ -118,31 +117,31 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
               </div>
 
               {/* Content side */}
-              <div className={`lg:col-span-7 space-y-4 ${idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
-                  <h3 className="font-serif font-bold text-2xl text-slate-900 tracking-normal flex items-center gap-2">
-                    <span className="text-slate-400 font-mono text-lg font-normal">0{idx + 1}.</span>
+              <div className={`lg:col-span-7 space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+                  <h3 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight flex items-center gap-2.5">
+                    <span className="text-slate-400 font-mono text-base font-normal">0{idx + 1}.</span>
                     <span>{language === 'zh' ? item.titleZh : item.titleEn}</span>
                   </h3>
-                  <span className="text-xs font-medium px-2.5 py-1 rounded-xs bg-slate-100 text-slate-700 border border-slate-200">
+                  <span className="text-xs font-mono font-medium px-2.5 py-1 rounded-[4px] bg-slate-100 text-slate-700">
                     {language === 'zh' ? item.keyStatZh : item.keyStatEn}
                   </span>
                 </div>
 
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
                   {language === 'zh' ? item.summaryZh : item.summaryEn}
                 </p>
 
                 {/* Bullet Points */}
-                <div className="bg-slate-50/70 rounded-xs p-4 border border-slate-200">
-                  <div className="text-xs font-semibold text-slate-800 uppercase tracking-wider mb-2.5 font-mono">
-                    {language === 'zh' ? '具体服务内容 (Services Provided):' : 'Key Offerings & Impact:'}
+                <div className="bg-slate-50/80 rounded-[6px] p-5 border border-slate-100">
+                  <div className="text-xs font-semibold text-slate-800 uppercase tracking-wider mb-3 font-mono">
+                    {language === 'zh' ? '服务具体内容 (Services Provided):' : 'Key Offerings & Impact:'}
                   </div>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                     {(language === 'zh' ? item.detailsZh : item.detailsEn).map((detail, dIdx) => (
-                      <li key={dIdx} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span>{detail}</span>
+                      <li key={dIdx} className="flex items-start gap-2.5">
+                        <Check className="w-4 h-4 text-primary-theme shrink-0 mt-0.5" />
+                        <span className="leading-relaxed">{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -151,6 +150,7 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
 import { Logo } from './Logo';
-import { Globe, ArrowUp, PhoneCall } from 'lucide-react';
+import { Globe, ArrowUp } from 'lucide-react';
 import { CrossOliveDivider } from './WaterMotifs';
 
 interface FooterProps {
@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="font-serif font-bold text-white text-lg tracking-normal block">
                   {t.brand.name}
                 </span>
-                <span className="text-xs text-sky-400 font-semibold">
+                <span className="text-xs text-accent-theme font-semibold">
                   {t.brand.chineseName} · {t.brand.slogan}
                 </span>
               </div>
@@ -46,22 +46,7 @@ export const Footer: React.FC<FooterProps> = ({
               {f.desc}
             </p>
 
-            <div className="pt-2 text-xs text-slate-400 space-y-1">
-              <div>
-                <strong className="text-slate-300">{language === 'zh' ? '机构负责人' : 'Executive Director'}: </strong>
-                Peter Qu
-              </div>
-              <div>
-                <strong className="text-slate-300">{language === 'zh' ? '电子邮箱' : 'Email'}: </strong>
-                <a href="mailto:peterqu@powerspring.org" className="text-sky-400 hover:underline">
-                  peterqu@powerspring.org
-                </a>
-              </div>
-              <div>
-                <strong className="text-slate-300">{language === 'zh' ? '心灵辅导教牧' : 'Pastoral Counselors'}: </strong>
-                Philip & Dora Wu 牧师
-              </div>
-            </div>
+
           </div>
 
           {/* Quick Navigation */}
@@ -125,16 +110,6 @@ export const Footer: React.FC<FooterProps> = ({
               <li>• {language === 'zh' ? '每周六 Zoom 心灵辅导讲座 (30+人)' : 'Saturday Zoom Counseling Seminars'}</li>
               <li>• {language === 'zh' ? '英语会话角与生活报税协助' : 'Conversational English & Tax Clinic'}</li>
             </ul>
-
-            <div className="pt-2">
-              <Link
-                to="/contact"
-                className="w-full btn-primary font-semibold px-4 py-2.5 rounded-xs text-xs flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-              >
-                <PhoneCall className="w-3.5 h-3.5" />
-                <span>{language === 'zh' ? '前往联系页面' : 'Contact Us'}</span>
-              </Link>
-            </div>
           </div>
         </div>
 
@@ -143,8 +118,13 @@ export const Footer: React.FC<FooterProps> = ({
           <CrossOliveDivider className="my-0" lineWidth="w-16 sm:w-32" />
         </div>
 
+        {/* Official Online Platform & 501(c)(3) Domain Notice */}
+        <div className="pt-3 pb-1 text-[11px] sm:text-xs text-slate-400 font-sans leading-relaxed text-center sm:text-left">
+          powerspring.org is the official online platform and digital domain of POWER Spring Ministries Inc. (a 501(c)(3) non-profit organization).
+        </div>
+
         {/* Bottom Sub-bar */}
-        <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 leading-relaxed">
             <span>© {new Date().getFullYear()} Power Spring Ministries INC. {f.rights}</span>
             <span className="text-slate-700 hidden sm:inline">|</span>

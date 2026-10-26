@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Language } from '../types';
 import { PageBanner } from '../components/PageBanner';
 import { 
@@ -10,10 +9,7 @@ import {
   Utensils, 
   Car, 
   Video, 
-  Mail, 
-  ArrowRight, 
-  CheckCircle2,
-  Sparkles
+  CheckCircle2
 } from 'lucide-react';
 import { ChristianCrossMotif, CrossOliveDivider } from '../components/WaterMotifs';
 
@@ -58,9 +54,9 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                   <Heart className="w-6 h-6 fill-accent-theme/40 text-accent-theme" />
                 </div>
                 <div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-xs border border-emerald-200 font-semibold mb-1">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    501(c)(3) Public Charity · Tax-Deductible
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-xs border border-slate-200 font-semibold mb-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-primary-theme" />
+                    Non-Profit Public Charity
                   </span>
                   <h2 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900">
                     {language === 'zh' ? '涓涓细流，汇聚成爱心活水' : 'A Spring of Life, Made Possible by You'}
@@ -108,7 +104,7 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
               {/* Signatures */}
               <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm text-slate-600">
                 <div>
-                  <div className="font-serif font-bold text-slate-900 text-base">Peter Qu</div>
+                  <div className="font-serif font-bold text-slate-900 text-base">Peter</div>
                   <div className="text-slate-500">{language === 'zh' ? '机构负责人 · Power Spring Ministries' : 'Executive Director, Power Spring Ministries'}</div>
                 </div>
                 <div>
@@ -120,9 +116,9 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
           </div>
 
           {/* Tax Receipt Guidance Box */}
-          <div className="bg-amber-50/70 border border-amber-200/80 rounded-xs p-6 sm:p-8 mb-10 space-y-4">
+          <div className="bg-slate-50/80 border border-slate-200 rounded-xs p-6 sm:p-8 mb-10 space-y-4">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-xs bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-8 h-8 rounded-xs bg-slate-100 text-primary-theme flex items-center justify-center shrink-0 mt-0.5">
                 <FileText className="w-4 h-4" />
               </div>
               <div className="space-y-2">
@@ -131,7 +127,7 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                 </h3>
                 <div className="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-primary-theme shrink-0 mt-0.5" />
                     <span>
                       {language === 'zh'
                         ? '通过 Stripe 在线支付的捐款，Stripe 会在支付完成后自动向您填写的电子邮箱发送即时免税电子凭证（含官方交易号与机构名称）。'
@@ -139,15 +135,15 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-primary-theme shrink-0 mt-0.5" />
                     <span>
                       {language === 'zh'
-                        ? 'Power Spring Ministries INC 是美国国税局（IRS）正式认可的 501(c)(3) 公共慈善非营利机构，所有爱心奉献依法享有最高额度联邦所得税抵免资格。'
-                        : 'Power Spring Ministries INC is an IRS-approved 501(c)(3) public charity. All contributions are tax-deductible to the fullest extent allowed by law.'}
+                        ? 'Power Spring Ministries INC 是正式注册的公共慈善非营利机构，所有爱心奉献依法享有税收抵免资格。'
+                        : 'Power Spring Ministries INC is an approved public charity. All contributions are tax-deductible to the extent allowed by law.'}
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-primary-theme shrink-0 mt-0.5" />
                     <span>
                       {language === 'zh'
                         ? '如需纸质年度抵税综合证明（Year-End Contribution Statement）或金额超过 $250 的专属书面证明，欢迎随时发送邮件至 peterqu@powerspring.org 与负责人联系。'
@@ -221,39 +217,6 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Action Links */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
-            <Link
-              to="/"
-              className="btn-primary px-6 py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center gap-2 cursor-pointer shadow-xs"
-            >
-              <span>{language === 'zh' ? '返回网站首页' : 'Return to Home'}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-
-            <Link
-              to="/ministries"
-              className="px-5 py-2.5 rounded-xs border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
-            >
-              {language === 'zh' ? '浏览五大事工' : 'Explore Ministries'}
-            </Link>
-
-            <Link
-              to="/gallery"
-              className="px-5 py-2.5 rounded-xs border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
-            >
-              {language === 'zh' ? '浏览爱心图集' : 'View Gallery'}
-            </Link>
-
-            <Link
-              to="/contact"
-              className="px-5 py-2.5 rounded-xs border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-xs sm:text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
-            >
-              <Mail className="w-3.5 h-3.5 text-slate-500" />
-              <span>{language === 'zh' ? '联系负责人' : 'Contact Us'}</span>
-            </Link>
           </div>
 
         </div>

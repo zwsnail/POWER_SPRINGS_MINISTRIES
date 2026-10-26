@@ -1,7 +1,6 @@
 import React from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { SpringWaveDivider } from './WaterMotifs';
 import { 
   Utensils, 
   Home, 
@@ -20,77 +19,104 @@ interface ImpactStatsProps {
 export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
   const t = translations[language];
 
-  // Helper to render lucide icon dynamically
+  // Helper to render lucide icon with unified institutional styling
   const renderIcon = (name: string) => {
+    const iconClass = "w-4 h-4 text-primary-theme";
     switch (name) {
       case 'Utensils':
-        return <Utensils className="w-5 h-5 text-amber-600" />;
+        return <Utensils className={iconClass} />;
       case 'Home':
-        return <Home className="w-5 h-5 text-sky-600" />;
+        return <Home className={iconClass} />;
+      case 'HeartHandshake':
+        return <HeartHandshake className={iconClass} />;
       case 'ShieldHeart':
       case 'HeartPulse':
-        return <HeartPulse className="w-5 h-5 text-accent-theme" />;
-      case 'HeartHandshake':
-        return <HeartHandshake className="w-5 h-5 text-accent-theme" />;
+        return <HeartPulse className={iconClass} />;
       case 'ShoppingBag':
-        return <ShoppingBag className="w-5 h-5 text-slate-700" />;
+        return <ShoppingBag className={iconClass} />;
       case 'Car':
-        return <Car className="w-5 h-5 text-primary-theme" />;
+        return <Car className={iconClass} />;
       case 'Wrench':
-        return <Wrench className="w-5 h-5 text-slate-600" />;
+        return <Wrench className={iconClass} />;
       case 'Video':
-        return <Video className="w-5 h-5 text-accent-theme" />;
+        return <Video className={iconClass} />;
       default:
-        return <HeartHandshake className="w-5 h-5 text-primary-theme" />;
+        return <HeartHandshake className={iconClass} />;
     }
   };
 
   return (
-    <section className="py-16 bg-white border-b border-slate-200/80">
+    <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="text-xs uppercase tracking-widest text-slate-400 font-medium mb-1">
+        
+        {/* Centered Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-2">
             ANNUAL MILESTONES & REPORT
           </div>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-normal">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
             {t.impact.sectionTitle}
           </h2>
-          <SpringWaveDivider className="my-3.5" lineWidth="w-12 sm:w-16" />
-          <p className="text-slate-600 text-sm sm:text-base">
+          
+          {/* Subtle Golden Wave Divider Motif */}
+          <div className="flex justify-center my-3 text-accent-theme">
+            <svg
+              viewBox="0 0 36 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-3.5 opacity-80"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 9 C6 9, 8 5, 12 5 C16 5, 17 9, 21 9 C25 9, 26 5, 30 5 C32 5, 34 7, 34 8"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+              />
+              <circle cx="18" cy="3" r="1.1" fill="currentColor" opacity="0.9" />
+            </svg>
+          </div>
+
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             {t.impact.sectionSubtitle}
           </p>
         </div>
 
-        {/* 8-Grid Impact Stats: Classical Institutional Ledger Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* 4x2 Grid of 8 Uniform White Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {t.impact.items.map((stat) => (
             <div
               key={stat.id}
-              className="bg-white border border-slate-200 rounded-xs p-5 hover:border-primary-theme/50 transition-colors flex flex-col justify-between"
+              className="bg-white border border-slate-200 rounded-[8px] p-5 sm:p-6 hover:border-slate-300 transition-colors flex flex-col justify-between shadow-2xs"
             >
               <div>
-                <div className="mb-3 text-slate-500">
-                  <span className="inline-flex p-1.5 border border-slate-200 rounded-xs bg-slate-50">
-                    {renderIcon(stat.icon)}
-                  </span>
+                {/* Unified subtle icon container badge */}
+                <div className="w-9 h-9 rounded-[6px] border border-slate-200 bg-slate-50 flex items-center justify-center mb-4 sm:mb-5 shadow-2xs">
+                  {renderIcon(stat.icon)}
                 </div>
 
-                <div className="text-2xl sm:text-3xl font-serif font-bold text-primary-theme tracking-normal tabular-nums">
+                {/* Large Serif Number */}
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight tabular-nums">
                   {stat.number}
                 </div>
 
-                <div className="font-serif font-semibold text-slate-900 text-sm mt-1">
+                {/* Label / Title */}
+                <div className="font-serif font-bold text-slate-800 text-sm sm:text-base mt-1.5">
                   {language === 'zh' ? stat.labelZh : stat.labelEn}
                 </div>
-              </div>
 
-              <p className="text-xs text-slate-600 mt-3 pt-3 border-t border-slate-100 leading-relaxed">
-                {language === 'zh' ? stat.descZh : stat.descEn}
-              </p>
+                {/* Subtle Divider Hairline */}
+                <div className="w-full border-t border-slate-100 my-3.5 sm:my-4" />
+
+                {/* Description */}
+                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                  {language === 'zh' ? stat.descZh : stat.descEn}
+                </p>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

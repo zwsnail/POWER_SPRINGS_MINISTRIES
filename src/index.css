@@ -8,24 +8,24 @@
 :root {
   /* 
    * 🎨 全局主题色变量 (Global Theme Color Variables)
-   * 采用中国传统色：明宣德霁蓝 (#163b65) 与 宣和泥金 (#c89b3c)
-   * 搭配宣纸温润底白 (#fbfbf8)，营造庄严典雅的历史与慈善殿堂氛围
+   * 明宣德霁蓝 (#163b65) 与 宣和泥金 (#c89b3c)
+   * 搭配宣纸温润底白 (#fbfbf8)，营造典雅、精致的手工打磨感 (Linear / Vercel 质感)
    */
   --color-primary: #163b65;
   --color-primary-hover: #0f2846;
   --color-primary-light: #f0f4f8;
-  --color-primary-ring: rgba(22, 59, 101, 0.22);
+  --color-primary-ring: rgba(22, 59, 101, 0.18);
 
   --color-accent: #c89b3c;
   --color-accent-hover: #b0852e;
   --color-accent-light: #fdf8ee;
   --color-accent-border: #e6c888;
   --color-accent-text: #8a6214;
-  --color-accent-ring: rgba(200, 155, 60, 0.3);
+  --color-accent-ring: rgba(200, 155, 60, 0.25);
 
   --color-bg-base: #fbfbf8;
   --color-card-bg: #ffffff;
-  --color-text-main: #1e293b;
+  --color-text-main: #0f172a;
   --color-text-muted: #64748b;
   --color-border-subtle: #e2e8f0;
 }
@@ -43,15 +43,147 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 🎨 主题主色 (Primary Theme) */
+/* 🎨 精致微质感按钮与卡片系统 (Linear / Vercel Craftsmanship: Hairline Borders, Micro-Gradients & Diffuse Multi-Layer Shadows) */
 .btn-primary {
   background-color: var(--color-primary);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 100%);
   color: #ffffff;
-  transition: all 0.15s ease-in-out;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 2px 5px -1px rgba(0, 0, 0, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-primary:hover {
   background-color: var(--color-primary-hover);
-  box-shadow: 0 2px 8px var(--color-primary-ring);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  box-shadow: 0 4px 16px -2px var(--color-primary-ring), 0 2px 8px -1px rgba(0, 0, 0, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), inset 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  color: #1e293b;
+  border-radius: 6px;
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover {
+  background-color: #f8fafc;
+  background-image: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  border-color: rgba(148, 163, 184, 0.95);
+  color: #0f172a;
+  box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), inset 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 100%);
+  color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 3px 8px -1px var(--color-accent-ring), inset 0 1px 0 0 rgba(255, 255, 255, 0.32);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.05) 100%);
+  box-shadow: 0 6px 20px -2px var(--color-accent-ring), 0 2px 8px -1px rgba(0, 0, 0, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+.btn-accent:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* 核心爱心捐赠按钮：宣和泥金质感，微光微阴影微圆角 (Vercel / Linear Sheen) */
+.btn-donate {
+  background-color: var(--color-accent-light);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(253, 248, 238, 0.95) 100%);
+  color: var(--color-accent-text);
+  border-radius: 6px;
+  border: 1px solid var(--color-accent-border);
+  box-shadow: 0 1px 2px 0 rgba(200, 155, 60, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-donate:hover {
+  background-color: var(--color-accent);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  color: #ffffff !important;
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 18px -2px var(--color-accent-ring), 0 2px 6px -1px rgba(0, 0, 0, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+.btn-donate:hover * {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+.btn-donate:active {
+  transform: translateY(0);
+}
+
+/* 高级手作质感卡片 (Linear / Vercel Craftsmanship Card) */
+.craft-card {
+  border-radius: 8px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 0 rgba(15, 23, 42, 0.02), 0 3px 10px -2px rgba(15, 23, 42, 0.03), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  transition: border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.craft-card:hover {
+  border-color: rgba(203, 213, 225, 0.95);
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.03), 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 20px 32px -8px rgba(15, 23, 42, 0.03);
+  transform: translateY(-1.5px);
+}
+
+/* 深色磨砂质感卡片 (Linear Dark Surface) */
+.craft-card-dark {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.28), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+.craft-card-dark:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.38), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+/* 分段控制交互微质感 (Linear Filter / Segmented Button) */
+.segmented-tab {
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.segmented-tab-active {
+  background-color: var(--color-primary);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 2px 6px -1px var(--color-primary-ring), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+.segmented-tab-inactive {
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+.segmented-tab-inactive:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+  border-color: rgba(203, 213, 225, 1);
+  box-shadow: 0 2px 8px -1px rgba(15, 23, 42, 0.06);
+  transform: translateY(-1px);
 }
 
 .text-primary-theme {
@@ -68,41 +200,6 @@ html {
 
 .border-primary-theme {
   border-color: var(--color-primary);
-}
-
-.badge-primary {
-  background-color: var(--color-primary-light);
-  color: var(--color-primary-hover);
-  border: 1px solid var(--color-primary-ring);
-}
-
-/* 🎨 主题辅色与爱心捐赠 (Accent Theme - 传统点睛泥金/古铜/翠微/朱砂) */
-.btn-accent {
-  background-color: var(--color-accent);
-  color: #ffffff;
-  transition: all 0.15s ease-in-out;
-}
-.btn-accent:hover {
-  background-color: var(--color-accent-hover);
-  box-shadow: 0 2px 10px var(--color-accent-ring);
-}
-
-/* 核心爱心捐赠按钮：告别生硬粉色，随主题辅色优雅联动 */
-.btn-donate {
-  background-color: var(--color-accent-light);
-  color: var(--color-accent-text);
-  border: 1px solid var(--color-accent-border);
-  transition: all 0.2s ease-in-out;
-}
-.btn-donate:hover {
-  background-color: var(--color-accent);
-  color: #ffffff !important;
-  border-color: var(--color-accent);
-  box-shadow: 0 2px 12px var(--color-accent-ring);
-}
-.btn-donate:hover * {
-  color: #ffffff !important;
-  fill: #ffffff !important;
 }
 
 .text-accent-theme {
@@ -127,18 +224,4 @@ html {
 
 .border-accent-subtle {
   border-color: var(--color-accent-border);
-}
-
-.badge-accent {
-  background-color: var(--color-accent-light);
-  color: var(--color-accent-text);
-  border: 1px solid var(--color-accent-border);
-}
-
-.card-hover-effect {
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.card-hover-effect:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
 }

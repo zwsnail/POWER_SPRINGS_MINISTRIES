@@ -24,12 +24,8 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl space-y-4">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xs text-[11px] font-mono tracking-wider bg-white/5 border border-white/10 text-slate-300">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-theme inline-block animate-pulse" />
-              <span>501(c)(3) PUBLIC CHARITY</span>
-            </span>
-            <span className="text-xs text-accent-theme font-serif tracking-widest font-semibold flex items-center gap-1.5">
+          <div>
+            <span className="text-xs sm:text-sm text-accent-theme font-serif tracking-widest font-semibold inline-flex items-center gap-1.5">
               <span>{language === 'zh' ? '主恩如泉 · 润泽社区' : 'Grace Like Living Waters'}</span>
             </span>
           </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   X, 
@@ -6,11 +6,8 @@ import {
   CreditCard, 
   ExternalLink, 
   Check, 
-  Copy, 
-  Mail, 
   FileText,
   ShieldCheck,
-  Building2,
   Lock
 } from 'lucide-react';
 import { Language } from '../types';
@@ -29,8 +26,6 @@ export const DonationModal: React.FC<DonationModalProps> = ({
   language,
 }) => {
   const navigate = useNavigate();
-  const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedOrg, setCopiedOrg] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -47,18 +42,6 @@ export const DonationModal: React.FC<DonationModalProps> = ({
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(DONATION_CONFIG.contactEmail);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const handleCopyOrg = () => {
-    navigator.clipboard.writeText(DONATION_CONFIG.organizationName);
-    setCopiedOrg(true);
-    setTimeout(() => setCopiedOrg(false), 2000);
-  };
 
   const goToTerms = () => {
     onClose();
@@ -102,8 +85,8 @@ export const DonationModal: React.FC<DonationModalProps> = ({
               {language === 'zh' ? '支持能量泉 · 爱心奉献' : 'Support Power Spring · Giving'}
             </h3>
             <p className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5 font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-              <span>{language === 'zh' ? '美国 IRS 501(c)(3) 非营利免税机构 · 依法抵税' : '501(c)(3) Non-Profit Public Charity · Tax-Deductible'}</span>
+              <ShieldCheck className="w-3.5 h-3.5 text-primary-theme shrink-0" />
+              <span>{language === 'zh' ? '非营利社区慈善 · 爱心奉献' : 'Non-Profit Community Charity'}</span>
             </p>
           </div>
         </div>
@@ -112,11 +95,11 @@ export const DonationModal: React.FC<DonationModalProps> = ({
         <div className="bg-slate-50 border border-slate-200 rounded-xs p-3 sm:p-3.5 mb-4 text-xs text-slate-700 leading-relaxed">
           {language === 'zh' ? (
             <p>
-              感谢您的善心与支持！您的每一笔奉献都将直接用于<strong>紧急临时庇护住所、每周查经聚会暖心餐饮、学生学者急难救助、道路救援与爱心赠车</strong>。所有捐款均依法享有美国联邦免税资格。
+              感谢您的善心与支持！您的每一笔奉献都将直接用于<strong>紧急临时庇护住所、每周查经聚会暖心餐饮、学生学者急难救助、道路救援与爱心赠车</strong>。
             </p>
           ) : (
             <p>
-              Thank you for your generosity! Contributions directly support <strong>temporary shelter lodging, fellowship warm meals, emergency roadside aid, and student scholar assistance</strong>. All donations are 100% tax-deductible under IRS code 501(c)(3).
+              Thank you for your generosity! Contributions directly support <strong>temporary shelter lodging, fellowship warm meals, emergency roadside aid, and student scholar assistance</strong>.
             </p>
           )}
         </div>
@@ -160,77 +143,21 @@ export const DonationModal: React.FC<DonationModalProps> = ({
 
           {/* Receipt Note */}
           <div className="mt-2.5 pt-2 text-[11px] text-slate-500 flex items-center gap-1.5">
-            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span>{language === 'zh' ? '完成支付后，Stripe 会自动发送免税电子收据至您的邮箱' : 'Stripe automatically delivers a 501(c)(3) tax receipt to your email'}</span>
+            <Check className="w-3.5 h-3.5 text-primary-theme shrink-0" />
+            <span>{language === 'zh' ? '完成支付后，Stripe 会自动发送电子收据至您的邮箱' : 'Stripe automatically delivers an official receipt to your email'}</span>
           </div>
         </div>
 
-        {/* Option 2: Check by Mail / Direct Contact (Responsive Stack) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-          {/* Check by mail */}
-          <div className="border border-slate-200 rounded-xs p-3.5 bg-slate-50/70">
-            <div className="flex items-center gap-1.5 mb-1.5">
-              <Building2 className="w-3.5 h-3.5 text-primary-theme shrink-0" />
-              <h5 className="font-serif font-bold text-slate-900 text-xs sm:text-sm">
-                {language === 'zh' ? '支票捐赠 (Check)' : 'Check by Mail'}
-              </h5>
-            </div>
-            <p className="text-[11px] text-slate-500 mb-1.5">
-              {language === 'zh' ? '支票抬头 (Payable to):' : 'Payable to:'}
-            </p>
-            <div className="flex items-center justify-between bg-white border border-slate-200 rounded-xs px-2 py-1 text-xs font-semibold text-slate-800 gap-1">
-              <span className="truncate text-[11px]">Power Spring Ministries INC</span>
-              <button
-                onClick={handleCopyOrg}
-                className="text-primary-theme hover:underline shrink-0 text-[11px] flex items-center gap-0.5 cursor-pointer font-medium"
-                title="Copy organization name"
-              >
-                {copiedOrg ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
-                <span>{copiedOrg ? (language === 'zh' ? '已复制' : 'Copied') : (language === 'zh' ? '复制' : 'Copy')}</span>
-              </button>
-            </div>
-          </div>
 
-          {/* Direct Contact & Receipts */}
-          <div className="border border-slate-200 rounded-xs p-3.5 bg-slate-50/70">
-            <div className="flex items-center gap-1.5 mb-1.5">
-              <Mail className="w-3.5 h-3.5 text-primary-theme shrink-0" />
-              <h5 className="font-serif font-bold text-slate-900 text-xs sm:text-sm">
-                {language === 'zh' ? '赠车与物资联络' : 'Vehicle & In-Kind Gifts'}
-              </h5>
-            </div>
-            <p className="text-[11px] text-slate-500 mb-1.5">
-              {language === 'zh' ? '车辆过户与大额捐赠：' : 'Contact for vehicle or goods:'}
-            </p>
-            <div className="flex items-center justify-between bg-white border border-slate-200 rounded-xs px-2 py-1 text-xs font-semibold text-slate-800 gap-1">
-              <span className="truncate text-[11px] text-slate-700">{DONATION_CONFIG.contactEmail}</span>
-              <button
-                onClick={handleCopyEmail}
-                className="text-primary-theme hover:underline shrink-0 text-[11px] flex items-center gap-0.5 cursor-pointer font-medium"
-                title="Copy email address"
-              >
-                {copiedEmail ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
-                <span>{copiedEmail ? (language === 'zh' ? '已复制' : 'Copied') : (language === 'zh' ? '复制' : 'Copy')}</span>
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Footer Info & Disclaimers Link */}
-        <div className="flex items-center justify-between pt-3 border-t border-slate-200 text-xs text-slate-500 gap-2">
+        <div className="pt-3 border-t border-slate-100 flex items-center justify-center text-xs text-slate-500">
           <button
             onClick={goToTerms}
-            className="text-slate-500 hover:text-slate-800 hover:underline cursor-pointer text-[11px] flex items-center gap-1"
+            className="text-slate-400 hover:text-slate-700 hover:underline cursor-pointer text-[11px] flex items-center gap-1 transition-colors"
           >
             <FileText className="w-3 h-3 text-slate-400" />
             <span>{language === 'zh' ? '非营利捐赠免责声明' : 'Giving Terms & Disclaimers'}</span>
-          </button>
-          
-          <button
-            onClick={onClose}
-            className="px-3.5 py-1.5 rounded-xs text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-semibold cursor-pointer text-xs border border-slate-200"
-          >
-            {language === 'zh' ? '关闭' : 'Close'}
           </button>
         </div>
 

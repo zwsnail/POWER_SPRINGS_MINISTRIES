@@ -3,17 +3,14 @@ import { translations } from '../locales/translations';
 import { Language } from '../types';
 import { 
   Mail, 
-  Clock, 
-  Video, 
   Check, 
   Copy, 
   HelpCircle,
   ChevronDown,
   ChevronUp,
-  ShieldCheck,
   SendHorizontal
 } from 'lucide-react';
-import { CrossOliveDivider, ChristianDoveMotif } from './WaterMotifs';
+import { CrossOliveDivider } from './WaterMotifs';
 
 interface ContactSectionProps {
   language: Language;
@@ -40,39 +37,39 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   const faqs = language === 'zh' ? [
     {
       q: '能量泉提供的临时住宿和救助收费吗？',
-      a: '完全免费！能量泉是一家 501(c)(3) 非营利公益慈善机构（NGO），所有临时安置、爱心餐食、蔬果领取、道路急难救援、英语角及心灵辅导均不收取任何服务费用。',
+      a: '完全免费！能量泉是一家非营利公益慈善机构（NGO），所有临时安置、爱心餐食、蔬果派发、道路急难救援、二手车捐赠及英语角交流均不收取任何服务费用。',
     },
     {
-      q: '如何参加每周六由 Philip & Dora Wu 牧师带领的 Zoom 心灵辅导？',
-      a: '请发送邮件至 peterqu@powerspring.org，我们会在周五前将当周 Zoom 会议号及密码发送给您；该讲座完全免费、保密并面向所有人开放。',
+      q: '如遇车辆故障抛锚或临时住宿急难，如何联系救助？',
+      a: '请直接发送邮件至 peterqu@powerspring.org 说明您的紧急需求与当前位置，负责人 Peter Qu 及义工同工收到后会尽快协同对接支援。',
     },
     {
       q: '我想向事工捐赠二手车或闲置家具物资，流程是怎样的？',
-      a: '非常感谢您的爱心！请直接发送邮件至 peterqu@powerspring.org 与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供 501(c)(3) 免税捐赠收据。',
+      a: '非常感谢您的爱心！请直接发送邮件至 peterqu@powerspring.org 与负责人 Peter Qu 联络，事工会与您对接车辆过户手续（Title Transfer）或物资交接，并可根据需要提供爱心捐赠收据。',
     },
   ] : [
     {
       q: 'Are services such as temporary lodging and meals completely free?',
-      a: 'Yes, 100% free! Power Spring Ministries INC is a 501(c)(3) non-profit charity. All temporary shelter, hot meals, groceries, emergency roadside aid, and counseling are provided free of charge.',
+      a: 'Yes, 100% free! Power Spring Ministries INC is a non-profit charity. All temporary shelter, hot meals, groceries, emergency roadside aid, and language support are provided free of charge.',
     },
     {
-      q: 'How do I join the Saturday Zoom spiritual counseling seminar?',
-      a: 'Please email peterqu@powerspring.org to request the weekly Zoom meeting ID and passcode. It is confidential, free, and open to all.',
+      q: 'How do I request emergency roadside assistance or urgent shelter?',
+      a: 'Please send an email directly to peterqu@powerspring.org detailing your urgent situation and location. Director Peter Qu and our ministry volunteers will coordinate to assist you as promptly as possible.',
     },
     {
       q: 'How does the vehicle or in-kind donation process work?',
-      a: 'Thank you for your generosity! Reach out via email to peterqu@powerspring.org to connect with Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide 501(c)(3) tax exemption receipts upon request.',
+      a: 'Thank you for your generosity! Reach out via email to peterqu@powerspring.org to connect with Director Peter Qu. Our team will coordinate title transfer or item drop-off and provide tax donation receipts upon request.',
     },
   ];
 
   return (
     <section id="contact" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-16 sm:py-20'} bg-slate-50/70 border-b border-slate-200/80`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         {!hideHeader && (
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
-              INQUIRIES & PASTORAL CARE
+              INQUIRIES & DIRECT CONTACT
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {c.sectionTitle}
@@ -80,48 +77,47 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
             <p className="text-slate-600 text-base leading-relaxed">
               {language === 'zh'
-                ? '欢迎通过电子邮箱与能量泉取得联系，负责人 Peter Qu 将尽快为您答复。'
+                ? '欢迎通过官方电子邮箱与能量泉取得联系，负责人 Peter Qu 将尽快为您答复。'
                 : 'Feel free to contact Power Spring Ministries via email. Director Peter Qu will respond promptly.'}
             </p>
           </div>
         )}
 
-        {/* Main Grid of Contact Information Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {/* Card 1: Primary Email & Direct Contact */}
-          <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
-                <Mail className="w-5 h-5" />
+        {/* Single Dedicated Contact Card (只有一个联系版面) */}
+        <div className="mb-10">
+          <div className="bg-white border border-slate-200 rounded-xs p-6 sm:p-10 hover:border-slate-300 transition-colors shadow-2xs">
+            <div className="space-y-5">
+              <div className="w-12 h-12 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
+                <Mail className="w-6 h-6" />
               </div>
 
               <div>
-                <h3 className="font-serif font-bold text-xl text-slate-900">
+                <h3 className="font-serif font-bold text-2xl text-slate-900">
                   {language === 'zh' ? '负责人直通电子邮箱' : 'Director Direct Email'}
                 </h3>
-                <p className="text-slate-500 text-xs mt-1">
+                <p className="text-slate-500 text-sm mt-1">
                   {language === 'zh' ? '机构负责人: Peter Qu' : 'Executive Director: Peter Qu'}
                 </p>
               </div>
 
-              {/* Highlighted Email Box */}
-              <div className="bg-slate-50 border border-slate-200 rounded-xs p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <div className="break-all font-mono font-bold text-slate-900 text-sm">
+              {/* Highlighted Email Box with Copy Action */}
+              <div className="bg-slate-50 border border-slate-200 rounded-xs p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="break-all font-mono font-bold text-slate-900 text-base sm:text-lg">
                   {emailAddress}
                 </div>
                 <button
                   onClick={handleCopyEmail}
-                  className="px-3 py-1 rounded-xs text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
+                  className="px-4 py-2 rounded-xs text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer shrink-0 shadow-2xs"
                   title="Copy email to clipboard"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-600" />
-                      <span className="text-emerald-700">{language === 'zh' ? '已复制' : 'Copied'}</span>
+                      <Check className="w-4 h-4 text-primary-theme" />
+                      <span className="text-primary-theme font-medium">{language === 'zh' ? '已复制' : 'Copied'}</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5 text-slate-500" />
+                      <Copy className="w-4 h-4 text-slate-500" />
                       <span>{language === 'zh' ? '复制邮箱' : 'Copy'}</span>
                     </>
                   )}
@@ -129,64 +125,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-5 border-t border-slate-100 mt-5">
+            <div className="pt-6 border-t border-slate-100 mt-6">
               <a
                 href={`mailto:${emailAddress}`}
-                className="btn-primary w-full py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer"
+                className="btn-primary w-full py-3 rounded-xs text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
                 <SendHorizontal className="w-4 h-4" />
                 <span>{language === 'zh' ? '直接打开邮箱发信' : 'Open Email Client'}</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Card 2: Pastoral Counseling & Seminars */}
-          <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between relative overflow-hidden">
-            {/* 简笔平安圣鸽微水印 */}
-            <div className="absolute top-2 right-2 pointer-events-none opacity-10 text-accent-theme">
-              <ChristianDoveMotif className="w-24 h-20" />
-            </div>
-
-            <div className="space-y-4 relative z-10">
-              <div className="w-10 h-10 rounded-xs border border-slate-200 bg-slate-50 text-slate-700 flex items-center justify-center">
-                <Video className="w-5 h-5" />
-              </div>
-
-              <div>
-                <h3 className="font-serif font-bold text-xl text-slate-900">
-                  {language === 'zh' ? '周六 Zoom 心灵辅导讲座' : 'Saturday Pastoral & Spiritual Counseling'}
-                </h3>
-                <p className="text-slate-500 text-xs mt-1">
-                  {language === 'zh' ? '主领教牧：Philip & Dora Wu 牧师' : 'Led by Rev. Philip & Dora Wu'}
-                </p>
-              </div>
-
-              <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                <div className="flex items-start gap-2.5">
-                  <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-slate-800">{language === 'zh' ? '讲座时间：' : 'Schedule: '}</strong>
-                    <span>{language === 'zh' ? '每周六上午（线上 Zoom 视频会议）' : 'Every Saturday Morning (Zoom)'}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-slate-800">{language === 'zh' ? '参与说明：' : 'Access: '}</strong>
-                    <span>{language === 'zh' ? '免费开放、严格保密，适合所有寻求心灵慰藉的朋友。' : '100% free, confidential, and open to the community.'}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-5 border-t border-slate-100 mt-5">
-              <a
-                href={`mailto:${emailAddress}?subject=${encodeURIComponent(language === 'zh' ? '参加周六Zoom心灵辅导讲座' : 'Inquiry about Saturday Zoom Counseling')}`}
-                className="w-full bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-300 py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer transition-colors"
-              >
-                <Mail className="w-4 h-4 text-slate-500" />
-                <span>{language === 'zh' ? '邮件索取 Zoom 会议号' : 'Email to Request Zoom ID'}</span>
               </a>
             </div>
           </div>
@@ -221,6 +166,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               );
             })}
           </div>
+        </div>
+
+        {/* Official Domain & Nonprofit Disclaimer Note */}
+        <div className="mt-8 text-center text-xs text-slate-500 font-sans leading-relaxed">
+          powerspring.org is the official online platform and digital domain of POWER Spring Ministries Inc. (a 501(c)(3) non-profit organization).
         </div>
       </div>
     </section>

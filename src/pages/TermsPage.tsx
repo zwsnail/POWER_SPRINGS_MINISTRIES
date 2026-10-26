@@ -51,7 +51,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
         }
         subtitle={
           language === 'zh'
-            ? 'Power Spring Ministries INC (能量泉) 501(c)(3) 非营利公益机构法律合规与服务须知'
+            ? 'Power Spring Ministries INC (能量泉) 非营利公益机构服务须知与法律合规'
             : 'Legal Disclaimers, Non-Profit Governance & Privacy Policy of Power Spring Ministries INC'
         }
       />
@@ -71,8 +71,8 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                 </h3>
                 <p className="text-xs text-slate-500 font-medium">
                   {language === 'zh' 
-                    ? '美国联邦税局 IRS 正式注册 501(c)(3) 免税公共慈善机构 (Public Charity)' 
-                    : 'IRS-recognized 501(c)(3) Tax-Exempt Public Charity'}
+                    ? '正式注册非营利公共慈善机构 (Public Charity)' 
+                    : 'Registered Non-Profit Public Charity'}
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
               }`}
             >
               <Heart className="w-4 h-4" />
-              <span>{language === 'zh' ? '非营利捐赠与免税政策' : 'Donation & 501(c)(3) Policy'}</span>
+              <span>{language === 'zh' ? '爱心捐赠与相关政策' : 'Donation & Giving Policies'}</span>
             </button>
 
             <button
@@ -155,9 +155,9 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
               </div>
 
               {/* Section 2: Pastoral & Spiritual Counseling Disclaimer (Crucial) */}
-              <div className="border border-amber-200 bg-amber-50/60 rounded-xs p-5 space-y-3">
-                <h3 className="font-serif font-bold text-base sm:text-lg text-amber-950 flex items-center gap-2">
-                  <Video className="w-5 h-5 text-amber-700 shrink-0" />
+              <div className="border border-slate-200 bg-slate-50/70 rounded-xs p-5 space-y-3">
+                <h3 className="font-serif font-bold text-base sm:text-lg text-slate-900 flex items-center gap-2">
+                  <Video className="w-5 h-5 text-primary-theme shrink-0" />
                   <span>{language === 'zh' ? '心灵关怀与教牧辅导重要免责声明 (Pastoral Counseling Disclaimer)' : 'Pastoral & Spiritual Counseling Disclaimer'}</span>
                 </h3>
                 <div className="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
@@ -172,7 +172,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                       </>
                     )}
                   </p>
-                  <div className="bg-white border border-amber-300/80 rounded-xs p-3 text-xs text-amber-900 font-medium">
+                  <div className="bg-white border border-slate-300 rounded-xs p-3 text-xs text-slate-800 font-medium">
                     ⚠️ {language === 'zh' ? (
                       <>
                         <strong>紧急生命危机警示：</strong>如果您或您身边的人正在面临严重的自杀念头、急性精神危机或人身安全危险，请<strong>立即拨打美国全天候自杀与危机生命热线 988 或紧急报警电话 911</strong>，或前往就近医院急诊室寻求即时专业救治。
@@ -277,7 +277,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
             <div className="bg-white border border-slate-200 rounded-xs p-6 sm:p-10 space-y-8 shadow-xs">
               <div>
                 <h2 className="font-serif font-bold text-2xl text-slate-900 mb-2">
-                  {language === 'zh' ? '非营利捐赠须知与 501(c)(3) 免税政策' : 'Non-Profit Giving & 501(c)(3) Policies'}
+                  {language === 'zh' ? '爱心捐赠须知与相关说明' : 'Giving & Donation Policies'}
                 </h2>
                 <p className="text-xs text-slate-500">
                   {language === 'zh' ? '依照美国 IRS 联邦税法规范与机构章程订立' : 'Formulated in accordance with IRS regulations and organizational bylaws'}
@@ -288,7 +288,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
               {/* Tax-Deductibility */}
               <div className="space-y-3">
                 <h3 className="font-serif font-bold text-lg text-slate-900 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <ShieldCheck className="w-5 h-5 text-primary-theme shrink-0" />
                   <span>{language === 'zh' ? '1. 捐款性质与税收抵免资格 (Tax-Deductibility)' : '1. Tax-Deductible Charitable Contributions'}</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -363,11 +363,11 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                   <p>
                     {language === 'zh' ? (
                       <>
-                        <strong>退款政策：</strong>依据美国非营利税法惯例，由于慈善捐款在扣缴后即进入机构公益账户并统筹用于庇护救助，一般情况下<strong>慈善捐款一经完成即不可撤销退款</strong>。若因系统偶发重复扣款、输入金额发生明显笔误等特殊情况，请于交易发生后 7 日内发送邮件至 <a href={`mailto:${email}`} className="text-sky-600 underline font-semibold">{email}</a>，负责人将核实并协助处理。
+                        <strong>退款政策：</strong>依据美国非营利税法惯例，由于慈善捐款在扣缴后即进入机构公益账户并统筹用于庇护救助，一般情况下<strong>慈善捐款一经完成即不可撤销退款</strong>。若因系统偶发重复扣款、输入金额发生明显笔误等特殊情况，请于交易发生后 7 日内发送邮件至 <a href={`mailto:${email}`} className="text-primary-theme underline font-semibold">{email}</a>，负责人将核实并协助处理。
                       </>
                     ) : (
                       <>
-                        <strong>Non-Refundability:</strong> Under standard IRS non-profit regulations, charitable donations are irrevocable gifts once disbursed into charitable accounts. In the rare event of an accidental duplicate transaction or typographical error, please contact us at <a href={`mailto:${email}`} className="text-sky-600 underline font-semibold">{email}</a> within 7 days.
+                        <strong>Non-Refundability:</strong> Under standard IRS non-profit regulations, charitable donations are irrevocable gifts once disbursed into charitable accounts. In the rare event of an accidental duplicate transaction or typographical error, please contact us at <a href={`mailto:${email}`} className="text-primary-theme underline font-semibold">{email}</a> within 7 days.
                       </>
                     )}
                   </p>
@@ -378,7 +378,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-xs text-xs sm:text-sm text-slate-700 flex items-center justify-between gap-3">
                 <span>
                   {language === 'zh'
-                    ? '需要年度累计奉献抵税证明信？欢迎邮件联系负责人 Peter Qu 开具官方 501(c)(3) 证明。'
+                    ? '需要年度累计奉献证明信？欢迎邮件联系负责人 Peter Qu 开具官方证明。'
                     : 'Need a comprehensive year-end contribution statement? Email Director Peter Qu to request an official letter.'}
                 </span>
                 <Link
@@ -480,11 +480,11 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   {language === 'zh' ? (
                     <>
-                      如果您对本隐私政策或个人信息保护有任何疑问或需要更新您的联络信息，请随时通过电子邮箱 <a href={`mailto:${email}`} className="text-sky-600 underline font-semibold">{email}</a> 与能量泉负责人 Peter Qu 联系。
+                      如果您对本隐私政策或个人信息保护有任何疑问或需要更新您的联络信息，请随时通过电子邮箱 <a href={`mailto:${email}`} className="text-primary-theme underline font-semibold">{email}</a> 与能量泉负责人 Peter 联系。
                     </>
                   ) : (
                     <>
-                      If you have questions regarding our privacy practices or wish to update your contact preferences, please reach out to Director Peter Qu at <a href={`mailto:${email}`} className="text-sky-600 underline font-semibold">{email}</a>.
+                      If you have questions regarding our privacy practices or wish to update your contact preferences, please reach out to Director Peter at <a href={`mailto:${email}`} className="text-primary-theme underline font-semibold">{email}</a>.
                     </>
                   )}
                 </p>
@@ -507,6 +507,11 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
                 {language === 'zh' ? '捐赠致谢' : 'Donation Gratitude'}
               </Link>
             </div>
+          </div>
+
+          {/* Official Domain & Nonprofit Disclaimer Note */}
+          <div className="mt-6 text-center text-xs text-slate-400 font-sans leading-relaxed">
+            powerspring.org is the official online platform and digital domain of POWER Spring Ministries Inc. (a 501(c)(3) non-profit organization).
           </div>
 
         </div>

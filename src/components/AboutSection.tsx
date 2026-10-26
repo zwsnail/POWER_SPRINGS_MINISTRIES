@@ -1,8 +1,7 @@
 import React from 'react';
 import { translations } from '../locales/translations';
 import { Language } from '../types';
-import { Shield, Heart, Users, CheckCircle2, UserCheck, Video } from 'lucide-react';
-import { SpringWaveDivider, CornerWaveAccent, CrossOliveDivider, ChristianCrossMotif } from './WaterMotifs';
+import { UserCheck, Video, ArrowRight } from 'lucide-react';
 
 interface AboutSectionProps {
   language: Language;
@@ -19,59 +18,51 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   const a = t.about;
 
   return (
-    <section id="about" className={`${hideHeader ? 'py-12 sm:py-16' : 'py-20'} bg-white border-b border-slate-200/80`}>
+    <section id="about" className={`${hideHeader ? 'py-16 sm:py-24' : 'py-24 sm:py-32'} bg-[#FBFBF8] border-b border-slate-200/70`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         {!hideHeader && (
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
+          <div className="max-w-3xl mb-16 sm:mb-20">
+            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-3">
               MISSION & FOUNDING PURPOSE
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
               {a.sectionTitle}
             </h2>
-            <CrossOliveDivider className="my-3" lineWidth="w-12 sm:w-16" />
-            <p className="text-slate-600 text-base">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-light">
               {a.sectionSubtitle}
             </p>
           </div>
         )}
 
-        {/* Mission & Vision Block: Classical Ledger Plaque with Subtle Water & Cross Motif */}
-        <div className="bg-slate-50/70 border border-slate-200 rounded-xs p-8 sm:p-12 mb-16 relative overflow-hidden">
-          {/* 简笔水纹角饰 (右上) */}
-          <div className="absolute top-2 right-2 pointer-events-none opacity-15 text-accent-theme">
-            <CornerWaveAccent className="w-16 h-16 sm:w-20 sm:h-20" />
-          </div>
-
-          {/* 简笔十字架活水微水印 (左下) */}
-          <div className="absolute -bottom-6 left-2 pointer-events-none opacity-10 text-accent-theme">
-            <ChristianCrossMotif className="w-24 h-32" />
-          </div>
-
-          <div className="max-w-3xl mx-auto text-center space-y-3 relative z-10">
-            <h3 className="font-serif font-bold text-2xl text-slate-900 tracking-normal">
+        {/* Mission & Vision Block: Linear / Vercel Craftsmanship Plaque */}
+        <div className="craft-card p-8 sm:p-14 mb-20 bg-white">
+          <div className="max-w-3xl space-y-4">
+            <div className="text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold">
+              OUR CALLING · 异象使命
+            </div>
+            <h3 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900 tracking-tight">
               {a.missionTitle}
             </h3>
-            <CrossOliveDivider className="my-2" lineWidth="w-10 sm:w-14" />
-            <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light">
               {a.missionText}
             </p>
           </div>
 
           {/* 3 Values: Editorial Tri-Column */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 pt-10 border-t border-slate-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-10 border-t border-slate-100">
             {a.values.map((val, idx) => {
-              const romanNumerals = ['I', 'II', 'III'];
+              const romanNumerals = ['01', '02', '03'];
               return (
-                <div key={idx} className="bg-white p-6 rounded-xs border border-slate-200 space-y-2">
-                  <div className="font-serif font-bold text-slate-400 text-lg mb-1 tracking-wider">
+                <div key={idx} className="space-y-2">
+                  <div className="font-mono font-medium text-slate-400 text-xs tracking-wider">
                     {romanNumerals[idx]}.
                   </div>
-                  <h4 className="font-serif font-semibold text-slate-900 text-base">
+                  <h4 className="font-serif font-bold text-slate-900 text-lg sm:text-xl tracking-tight">
                     {language === 'zh' ? val.titleZh : val.titleEn}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
                     {language === 'zh' ? val.descZh : val.descEn}
                   </p>
                 </div>
@@ -81,56 +72,57 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         </div>
 
         {/* Leadership & Pastoral Team */}
-        <div className="space-y-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
+        <div className="space-y-12">
+          <div className="max-w-2xl">
+            <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-2">
               STEWARDSHIP & LEADERSHIP
             </div>
-            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-normal">
+            <h3 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
               {a.leadershipTitle}
             </h3>
-            <p className="text-slate-600 text-sm sm:text-base mt-2">
+            <p className="text-slate-600 text-sm sm:text-base mt-2 font-light">
               {a.leadershipSubtitle}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className={`grid grid-cols-1 ${a.leaders.length > 1 ? 'md:grid-cols-2 max-w-5xl' : 'max-w-2xl'} gap-8`}>
             {a.leaders.map((leader, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-slate-200 rounded-xs p-6 sm:p-8 hover:border-slate-300 transition-colors flex flex-col justify-between"
+                className="craft-card p-8 sm:p-10 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xs bg-slate-900 text-amber-300 flex items-center justify-center font-serif font-bold text-xl border border-slate-700 shrink-0">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-14 h-14 rounded-[8px] bg-slate-900 text-accent-theme flex items-center justify-center font-serif font-bold text-xl border border-slate-800 shrink-0 shadow-xs">
                       {leader.avatarPlaceholder}
                     </div>
                     <div>
-                      <h4 className="font-serif font-bold text-xl text-slate-900">
+                      <h4 className="font-serif font-bold text-xl sm:text-2xl text-slate-900 tracking-tight">
                         {language === 'zh' ? leader.nameZh : leader.nameEn}
                       </h4>
-                      <div className="text-xs font-medium text-slate-500 mt-0.5">
+                      <div className="text-xs font-mono font-medium text-accent-theme mt-0.5">
                         {language === 'zh' ? leader.roleZh : leader.roleEn}
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-3 border-t border-slate-100">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-4 border-t border-slate-100 font-light">
                     {language === 'zh' ? leader.bioZh : leader.bioEn}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs gap-2">
-                  <span className="text-slate-500 font-medium flex items-center gap-1.5">
-                    {idx === 0 ? <UserCheck className="w-4 h-4 text-emerald-600" /> : <Video className="w-4 h-4 text-purple-600" />}
+                <div className="mt-8 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs gap-3">
+                  <span className="text-slate-500 font-medium flex items-center gap-2">
+                    {idx === 0 ? <UserCheck className="w-4 h-4 text-primary-theme" /> : <Video className="w-4 h-4 text-primary-theme" />}
                     <span>{language === 'zh' ? leader.contactNoteZh : leader.contactNoteEn}</span>
                   </span>
                   {idx === 0 && (
                     <button
                       onClick={onContactDirector}
-                      className="text-primary-theme font-semibold hover:underline cursor-pointer"
+                      className="text-primary-theme font-semibold hover:underline cursor-pointer flex items-center gap-1 font-mono text-xs"
                     >
-                      {language === 'zh' ? '发信交流 →' : 'Connect →'}
+                      <span>{language === 'zh' ? '发信交流' : 'Connect'}</span>
+                      <ArrowRight className="w-3 h-3" />
                     </button>
                   )}
                 </div>
@@ -138,6 +130,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
