@@ -87,37 +87,37 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
           <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-slate-200 pb-3">
             <button
               onClick={() => setActiveTab('terms')}
-              className={`px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-3 sm:px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'terms'
                   ? 'bg-slate-900 text-white shadow-2xs'
                   : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
               }`}
             >
-              <FileText className="w-4 h-4" />
+              <FileText className="w-4 h-4 shrink-0" />
               <span>{language === 'zh' ? '服务条款与免责声明' : 'Terms & Disclaimers'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab('donation')}
-              className={`px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-3 sm:px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'donation'
                   ? 'bg-slate-900 text-white shadow-2xs'
                   : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
               }`}
             >
-              <Heart className="w-4 h-4" />
+              <Heart className="w-4 h-4 shrink-0" />
               <span>{language === 'zh' ? '爱心捐赠与相关政策' : 'Donation & Giving Policies'}</span>
             </button>
 
             <button
               onClick={() => setActiveTab('privacy')}
-              className={`px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-3 sm:px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${
                 activeTab === 'privacy'
                   ? 'bg-slate-900 text-white shadow-2xs'
                   : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
               }`}
             >
-              <Lock className="w-4 h-4" />
+              <Lock className="w-4 h-4 shrink-0" />
               <span>{language === 'zh' ? '隐私政策与 GA4 统计说明' : 'Privacy & GA4 Policy'}</span>
             </button>
           </div>
@@ -493,26 +493,6 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
             </div>
           )}
 
-          {/* Quick Footer Navigation */}
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 pt-4 border-t border-slate-200">
-            <Link to="/" className="text-primary-theme hover:underline flex items-center gap-1 font-semibold">
-              <span>← {language === 'zh' ? '返回网站首页' : 'Return to Home'}</span>
-            </Link>
-            <div className="flex items-center gap-3">
-              <Link to="/contact" className="hover:text-slate-700 transition-colors">
-                {language === 'zh' ? '联系我们' : 'Contact Us'}
-              </Link>
-              <span>·</span>
-              <Link to="/donate/thank-you" className="hover:text-slate-700 transition-colors">
-                {language === 'zh' ? '捐赠致谢' : 'Donation Gratitude'}
-              </Link>
-            </div>
-          </div>
-
-          {/* Official Domain & Nonprofit Disclaimer Note */}
-          <div className="mt-6 text-center text-xs text-slate-400 font-sans leading-relaxed">
-            powerspring.org is the official online platform and digital domain of POWER Spring Ministries Inc. (a 501(c)(3) non-profit organization).
-          </div>
 
         </div>
       </section>

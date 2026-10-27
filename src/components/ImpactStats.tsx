@@ -96,17 +96,17 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
                 </div>
 
                 {/* Large Serif Number */}
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-slate-900 tracking-tight tabular-nums">
+                <div className="text-2xl sm:text-3xl lg:text-[1.75rem] xl:text-4xl font-serif font-bold text-slate-900 tracking-tight tabular-nums">
                   {stat.number}
                 </div>
 
-                {/* Label / Title */}
-                <div className="font-serif font-bold text-slate-800 text-sm sm:text-base mt-1.5">
+                {/* Label / Title with balanced height across languages */}
+                <div className="font-serif font-bold text-slate-800 text-sm sm:text-base mt-1.5 min-h-[2.6rem] sm:min-h-[3rem] flex items-center leading-snug">
                   {language === 'zh' ? stat.labelZh : stat.labelEn}
                 </div>
 
                 {/* Subtle Divider Hairline */}
-                <div className="w-full border-t border-slate-100 my-3.5 sm:my-4" />
+                <div className="w-full border-t border-slate-100 my-3 sm:my-3.5" />
 
                 {/* Description */}
                 <p className="text-xs text-slate-500 leading-relaxed font-sans">

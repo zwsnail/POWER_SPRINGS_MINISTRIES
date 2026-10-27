@@ -111,15 +111,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   </p>
                 </div>
 
-                <div className="mt-8 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs gap-3">
+                <div className="mt-8 pt-5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-3">
                   <span className="text-slate-500 font-medium flex items-center gap-2">
-                    {idx === 0 ? <UserCheck className="w-4 h-4 text-primary-theme" /> : <Video className="w-4 h-4 text-primary-theme" />}
-                    <span>{language === 'zh' ? leader.contactNoteZh : leader.contactNoteEn}</span>
+                    {idx === 0 ? <UserCheck className="w-4 h-4 text-primary-theme shrink-0" /> : <Video className="w-4 h-4 text-primary-theme shrink-0" />}
+                    <span className="leading-relaxed">{language === 'zh' ? leader.contactNoteZh : leader.contactNoteEn}</span>
                   </span>
                   {idx === 0 && (
                     <button
                       onClick={onContactDirector}
-                      className="text-primary-theme font-semibold hover:underline cursor-pointer flex items-center gap-1 font-mono text-xs"
+                      className="text-primary-theme font-semibold hover:underline cursor-pointer flex items-center gap-1 font-mono text-xs shrink-0 self-start sm:self-auto"
                     >
                       <span>{language === 'zh' ? '发信交流' : 'Connect'}</span>
                       <ArrowRight className="w-3 h-3" />

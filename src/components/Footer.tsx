@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="font-serif font-bold text-white text-lg tracking-normal block">
                   {t.brand.name}
                 </span>
-                <span className="text-xs text-accent-theme font-semibold">
+                <span className="text-xs text-accent-theme font-semibold block mt-0.5 leading-relaxed">
                   {t.brand.chineseName} · {t.brand.slogan}
                 </span>
               </div>
@@ -124,7 +124,7 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Bottom Sub-bar */}
-        <div className="pt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-3 flex flex-row flex-wrap items-center justify-between gap-y-3 gap-x-4 text-xs text-slate-500">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 leading-relaxed">
             <span>© {new Date().getFullYear()} Power Spring Ministries INC. {f.rights}</span>
             <span className="text-slate-700 hidden sm:inline">|</span>
@@ -141,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({
             </Link>
           </div>
 
-          <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-800">
+          <div className="flex items-center gap-3 shrink-0">
             {/* Clear, refined language switcher */}
             <div className="flex items-center gap-1 bg-slate-800/90 py-1 px-1.5 rounded-xs border border-slate-700/80 shadow-2xs">
               <Globe className="w-3.5 h-3.5 text-slate-400 ml-1 shrink-0" />
@@ -169,7 +169,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             <button
               onClick={scrollToTop}
-              className="text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors py-1.5 px-2.5 rounded-xs hover:bg-slate-800"
+              className="text-slate-400 hover:text-white flex items-center gap-1 cursor-pointer transition-colors py-1.5 px-2.5 rounded-xs hover:bg-slate-800 shrink-0"
               title="Back to Top"
             >
               <ArrowUp className="w-3.5 h-3.5" />

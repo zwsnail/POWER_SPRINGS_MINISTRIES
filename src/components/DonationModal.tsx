@@ -133,7 +133,7 @@ export const DonationModal: React.FC<DonationModalProps> = ({
               href={DONATION_CONFIG.stripeDonationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary w-full py-3 px-4 rounded-xs font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 tracking-wide shadow-xs hover:shadow-md transition-all cursor-pointer text-center"
+              className="btn-primary w-full py-3 px-3 sm:px-4 rounded-xs font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 tracking-wide shadow-xs hover:shadow-md transition-all cursor-pointer text-center leading-snug"
             >
               <Lock className="w-4 h-4 text-accent-theme shrink-0" />
               <span>{language === 'zh' ? '前往 Stripe 自主输入金额并奉献' : 'Proceed to Stripe (Enter Amount & Give)'}</span>

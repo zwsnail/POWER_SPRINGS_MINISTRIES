@@ -123,14 +123,14 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
 
       {/* 5. Dignified Direct Contact Banner with subtle water and cross motif */}
       <section className="py-14 sm:py-16 bg-slate-900 text-white border-t border-slate-800 relative overflow-hidden">
-        {/* 简笔十字架微水印 (左下) */}
-        <div className="absolute -left-4 sm:left-10 -bottom-4 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
-          <ChristianCrossMotif className="w-36 h-48 sm:w-44 sm:h-56" strokeWidth={1.2} />
+        {/* 极简十字架微水印 (左下) */}
+        <div className="absolute -left-4 sm:left-10 -bottom-4 pointer-events-none opacity-10 sm:opacity-15 text-accent-theme">
+          <ChristianCrossMotif className="w-36 h-48 sm:w-44 sm:h-56" strokeWidth={1.0} />
         </div>
 
-        {/* 祥云流水简笔水纹微水印 (右侧) */}
-        <div className="absolute right-4 sm:right-16 top-1/2 -translate-y-1/2 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
-          <CloudWaterMotif className="w-56 h-28 sm:w-72 sm:h-36" strokeWidth={1.2} />
+        {/* 极简流水微水印 (右侧) */}
+        <div className="absolute right-4 sm:right-16 top-1/2 -translate-y-1/2 pointer-events-none opacity-10 sm:opacity-15 text-accent-theme">
+          <CloudWaterMotif className="w-52 h-26 sm:w-64 sm:h-32" strokeWidth={1.0} />
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-5 relative z-10">

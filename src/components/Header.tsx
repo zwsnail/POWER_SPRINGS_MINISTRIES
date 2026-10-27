@@ -13,12 +13,11 @@ import {
 
 interface HeaderProps {
   language: Language;
-  setLanguage: (lang: Language) => void;
+  setLanguage?: (lang: Language) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   language,
-  setLanguage,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [donationModalOpen, setDonationModalOpen] = useState(false);
@@ -80,26 +79,28 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Zone 1: Brand Wordmark (Responsive lockup) */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 sm:gap-3 text-left group cursor-pointer focus:outline-none shrink-0 min-w-0"
+            className="flex items-center gap-2 sm:gap-3 text-left group cursor-pointer focus:outline-none min-w-0 shrink-0"
             onClick={() => setMobileMenuOpen(false)}
           >
             <div className="shrink-0">
               <Logo size={40} className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 drop-shadow-xs" />
             </div>
             <div className="min-w-0">
-              <div className="font-serif font-bold text-slate-900 text-sm sm:text-base lg:text-lg tracking-tight leading-snug truncate">
+              <div className="font-serif font-bold text-slate-900 text-sm sm:text-base lg:text-lg tracking-tight leading-snug whitespace-nowrap">
                 {t.brand.name}
               </div>
-              <div className="text-[11px] sm:text-xs text-slate-500 font-medium flex items-center gap-1.5 mt-0.5 min-w-0">
+              <div className="text-[10px] sm:text-xs text-slate-500 font-medium flex items-center gap-1 sm:gap-1.5 mt-0.5 whitespace-nowrap">
                 <span className="text-primary-theme font-semibold shrink-0">{t.brand.chineseName}</span>
-                <span className="text-slate-300 shrink-0" aria-hidden="true">·</span>
-                <span className="text-slate-500 truncate">{t.brand.slogan}</span>
+                <span className="text-slate-300 shrink-0 select-none" aria-hidden="true">·</span>
+                <span className="text-slate-500 tracking-tight">
+                  {t.brand.slogan}
+                </span>
               </div>
             </div>
           </Link>
 
           {/* Zone 2: Desktop Horizontal Nav Links (Always shown on md:flex and up) */}
-          <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8 shrink-0">
+          <nav className="hidden md:flex items-center gap-2.5 lg:gap-5 xl:gap-7 shrink-0">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -132,13 +133,12 @@ export const Header: React.FC<HeaderProps> = ({
             ))}
           </nav>
 
-          {/* Zone 3: Desktop Language Switcher & Donate CTA (Always shown on md:flex and up) */}
+          {/* Zone 3: Desktop Actions (Donate CTA) */}
           <div className="hidden md:flex items-center gap-2 lg:gap-3 shrink-0">
-
             {/* Donate CTA Button */}
             <button
               onClick={() => setDonationModalOpen(true)}
-              className="btn-donate px-3 lg:px-4 py-1.5 lg:py-2 rounded-[6px] text-xs lg:text-sm font-semibold tracking-wide flex items-center gap-1.5 cursor-pointer group shadow-2xs"
+              className="btn-donate px-3.5 lg:px-4 py-1.5 lg:py-2 rounded-[6px] text-xs lg:text-sm font-semibold tracking-wide flex items-center gap-1.5 cursor-pointer group shadow-2xs whitespace-nowrap"
               title={language === 'zh' ? '支持能量泉爱心捐款' : 'Donate to Power Spring Ministries'}
             >
               <Heart className="w-3.5 h-3.5" />
@@ -197,7 +197,7 @@ export const Header: React.FC<HeaderProps> = ({
                     >
                       <span className="flex items-center gap-2">
                         <span>{item.label}</span>
-                        {item.path === '/' && (
+                        {item.path === '/' && language === 'zh' && (
                           <span className="text-[11px] text-slate-400 font-normal">Home</span>
                         )}
                       </span>

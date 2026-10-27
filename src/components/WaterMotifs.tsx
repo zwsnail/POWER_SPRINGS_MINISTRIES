@@ -13,12 +13,12 @@ interface MotifProps {
 }
 
 /**
- * 1. 泉涌清泉纹 (Spring Plume Motif)
- * 简笔画：中心活泉向上涌跃，左右水波涟漪层层荡开，伴随几点轻盈水滴。
+ * 1. 泉涌清泉纹 (Spring Plume Motif) - 极简白描线条
+ * 简笔画：极简活泉向上涌跃，左右涟漪微波，清新简约、不喧宾夺主。
  */
 export const SpringPlumeMotif: React.FC<MotifProps> = ({
-  className = "w-48 h-32 text-accent-theme/20",
-  strokeWidth = 1.3,
+  className = "w-48 h-32 text-accent-theme/15",
+  strokeWidth = 1.1,
 }) => {
   return (
     <svg
@@ -28,75 +28,53 @@ export const SpringPlumeMotif: React.FC<MotifProps> = ({
       className={className}
       aria-hidden="true"
     >
-      {/* 底部基底波纹 (Base Ripple Curves) */}
+      {/* 底部基底波纹 (Clean Ripple Curves) */}
       <path
-        d="M20 115 C55 105, 85 118, 100 115 C115 112, 145 105, 180 115"
+        d="M30 112 C70 106, 130 106, 170 112"
         stroke="currentColor"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
+        opacity="0.65"
       />
       <path
-        d="M38 123 C68 116, 92 124, 100 122 C108 120, 132 116, 162 123"
+        d="M55 120 C85 116, 115 116, 145 120"
         stroke="currentColor"
         strokeWidth={strokeWidth * 0.8}
         strokeLinecap="round"
-        strokeDasharray="1 0"
-        opacity="0.75"
+        opacity="0.4"
       />
 
-      {/* 左右外侧回旋泉纹 (Outer water swirls) */}
+      {/* 极简涌泉流线 (Smooth Fountain Arcs) */}
       <path
-        d="M30 98 C45 92, 60 96, 75 88 C82 84, 85 75, 78 68 C72 62, 63 65, 62 72 C61 78, 66 84, 74 86"
+        d="M96 112 C96 70, 78 44, 60 44 C52 44, 48 50, 54 54"
         stroke="currentColor"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
       <path
-        d="M170 98 C155 92, 140 96, 125 88 C118 84, 115 75, 122 68 C128 62, 137 65, 138 72 C139 78, 134 84, 126 86"
+        d="M104 112 C104 70, 122 44, 140 44 C148 44, 152 50, 146 54"
         stroke="currentColor"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      {/* 中心泉涌主束 (Central Gushing Spring Streams) */}
-      <path
-        d="M93 115 C92 85, 84 55, 78 40 C75 32, 80 24, 88 24 C97 24, 98 34, 98 46"
-        stroke="currentColor"
-        strokeWidth={strokeWidth * 1.15}
-        strokeLinecap="round"
       />
       <path
-        d="M107 115 C108 85, 116 55, 122 40 C125 32, 120 24, 112 24 C103 24, 102 34, 102 46"
+        d="M100 112 C100 60, 96 32, 100 20"
         stroke="currentColor"
-        strokeWidth={strokeWidth * 1.15}
+        strokeWidth={strokeWidth * 1.1}
         strokeLinecap="round"
       />
-      <path
-        d="M100 115 C100 70, 96 35, 100 15 C101 12, 102 12, 103 14 C105 20, 101 32, 100 45"
-        stroke="currentColor"
-        strokeWidth={strokeWidth * 0.9}
-        strokeLinecap="round"
-      />
-
-      {/* 泉跃水滴 (Rising Water Droplets - Minimalist dots) */}
-      <circle cx="100" cy="8" r="2.2" fill="currentColor" opacity="0.85" />
-      <circle cx="86" cy="16" r="1.6" fill="currentColor" opacity="0.75" />
-      <circle cx="114" cy="16" r="1.6" fill="currentColor" opacity="0.75" />
-      <circle cx="70" cy="48" r="1.4" fill="currentColor" opacity="0.6" />
-      <circle cx="130" cy="48" r="1.4" fill="currentColor" opacity="0.6" />
+      <circle cx="100" cy="13" r="1.6" fill="currentColor" opacity="0.8" />
     </svg>
   );
 };
 
 /**
- * 2. 祥云流水纹 (Cloud & Stream Wave Motif)
- * 简笔画：传统回形如意祥云与自然奔流泉水融为一体，寓意「祥云霖雨，化为甘泉」。
+ * 2. 祥云流水纹 (Cloud & Stream Wave Motif) - 极简白描线条
+ * 简笔画：极简如意云纹与舒缓水纹，线条流畅自然。
  */
 export const CloudWaterMotif: React.FC<MotifProps> = ({
-  className = "w-40 h-20 text-accent-theme/20",
-  strokeWidth = 1.3,
+  className = "w-40 h-20 text-accent-theme/15",
+  strokeWidth = 1.1,
 }) => {
   return (
     <svg
@@ -106,41 +84,26 @@ export const CloudWaterMotif: React.FC<MotifProps> = ({
       className={className}
       aria-hidden="true"
     >
-      {/* 祥云如意卷头 + 延伸水波 (Cloud Spiral into Water Ripple) */}
       <path
-        d="M25 45 C15 45, 10 36, 15 28 C20 20, 32 20, 36 28 C40 18, 54 18, 58 28 C62 24, 72 24, 75 32 C85 32, 95 38, 105 38 C120 38, 135 34, 150 36"
+        d="M20 40 C28 26, 46 26, 54 36 C64 28, 80 30, 88 40 C106 38, 124 34, 145 36"
         stroke="currentColor"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
-
-      {/* 内部回转卷纹 (Internal cloud scroll) */}
       <path
-        d="M24 38 C21 35, 23 30, 27 30 C31 30, 33 34, 30 37"
+        d="M15 54 C40 50, 75 56, 110 52 C125 50, 140 53, 150 53"
         stroke="currentColor"
         strokeWidth={strokeWidth * 0.9}
         strokeLinecap="round"
-      />
-
-      {/* 下方流淌水纹 (Underflowing Water Currents) */}
-      <path
-        d="M10 55 C30 52, 45 60, 65 56 C85 52, 105 58, 125 54 C138 52, 148 55, 155 55"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
+        opacity="0.6"
       />
       <path
-        d="M35 66 C55 63, 75 68, 95 65 C115 62, 130 66, 145 65"
+        d="M40 64 C65 61, 95 65, 125 63"
         stroke="currentColor"
-        strokeWidth={strokeWidth * 0.8}
+        strokeWidth={strokeWidth * 0.75}
         strokeLinecap="round"
-        opacity="0.75"
+        opacity="0.4"
       />
-
-      {/* 泉花微沫 (Droplets) */}
-      <circle cx="82" cy="24" r="1.3" fill="currentColor" opacity="0.65" />
-      <circle cx="92" cy="28" r="1.0" fill="currentColor" opacity="0.5" />
     </svg>
   );
 };
@@ -216,12 +179,12 @@ export const CornerWaveAccent: React.FC<{ className?: string }> = ({
 };
 
 /**
- * 5. 圣爱活水十字架简笔画 (Christian Cross with Living Water & Radiance Motif)
- * 简笔画：修长庄严的圣十字架，底部连接生命涌泉之涟漪波纹，十字交会处带有清雅微芒与甘露水滴。
+ * 5. 圣爱活水十字架简笔画 (Christian Cross with Living Water Motif) - 极简白描线条
+ * 简笔画：极简圣十字架与纯净光环，底部点缀两道柔和活水微澜，庄严圣洁、轻雅简素。
  */
 export const ChristianCrossMotif: React.FC<MotifProps> = ({
-  className = "w-40 h-52 text-accent-theme/20",
-  strokeWidth = 1.3,
+  className = "w-40 h-52 text-accent-theme/15",
+  strokeWidth = 1.1,
 }) => {
   return (
     <svg
@@ -231,75 +194,51 @@ export const ChristianCrossMotif: React.FC<MotifProps> = ({
       className={className}
       aria-hidden="true"
     >
-      {/* 圣架光芒微芒 (Subtle Radiant Burst from Cross Center) */}
-      <circle cx="60" cy="52" r="14" stroke="currentColor" strokeWidth={strokeWidth * 0.7} strokeDasharray="2 3" opacity="0.45" />
-      <path d="M60 32 L60 26 M60 72 L60 78 M40 52 L34 52 M80 52 L86 52" stroke="currentColor" strokeWidth={strokeWidth * 0.8} strokeLinecap="round" opacity="0.55" />
-      <path d="M47 39 L42 34 M73 65 L78 70 M47 65 L42 70 M73 39 L78 34" stroke="currentColor" strokeWidth={strokeWidth * 0.7} strokeLinecap="round" opacity="0.4" />
-
-      {/* 经典圣十字架主体线条 (Classical Slender Latin Cross) */}
-      {/* 竖柱 (Vertical Post) */}
-      <path
-        d="M60 14 L60 124"
+      {/* 极简圣光圆环 (Clean subtle halo ring) */}
+      <circle
+        cx="60"
+        cy="52"
+        r="14"
         stroke="currentColor"
-        strokeWidth={strokeWidth * 1.5}
-        strokeLinecap="round"
-      />
-      {/* 横梁 (Horizontal Beam) */}
-      <path
-        d="M32 52 L88 52"
-        stroke="currentColor"
-        strokeWidth={strokeWidth * 1.5}
-        strokeLinecap="round"
-      />
-      
-      {/* 十字架端头典雅小短线 (Classical Serifs) */}
-      <path d="M57 14 L63 14" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" opacity="0.8" />
-      <path d="M32 49 L32 55" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" opacity="0.8" />
-      <path d="M88 49 L88 55" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" opacity="0.8" />
-
-      {/* 十字架基底承托的「活水涟漪」 (Living Water Spring Ripples at the Base) */}
-      <path
-        d="M36 130 C46 124, 74 124, 84 130"
-        stroke="currentColor"
-        strokeWidth={strokeWidth * 1.1}
-        strokeLinecap="round"
-      />
-      <path
-        d="M24 138 C42 131, 78 131, 96 138"
-        stroke="currentColor"
-        strokeWidth={strokeWidth}
-        strokeLinecap="round"
-        opacity="0.8"
-      />
-      <path
-        d="M16 147 C38 140, 82 140, 104 147"
-        stroke="currentColor"
-        strokeWidth={strokeWidth * 0.8}
-        strokeLinecap="round"
-        opacity="0.6"
+        strokeWidth={strokeWidth * 0.75}
+        opacity="0.45"
       />
 
-      {/* 左右回转的小水花浪线 (Delicate Swirls at Base) */}
-      <path
-        d="M34 128 C26 128, 22 122, 26 116 C30 110, 36 114, 34 120"
+      {/* 极简十字架主体 (Minimalist Latin Cross) */}
+      <line
+        x1="60"
+        y1="18"
+        x2="60"
+        y2="132"
         stroke="currentColor"
-        strokeWidth={strokeWidth * 0.8}
+        strokeWidth={strokeWidth * 1.3}
         strokeLinecap="round"
-        opacity="0.65"
       />
-      <path
-        d="M86 128 C94 128, 98 122, 94 116 C90 110, 84 114, 86 120"
+      <line
+        x1="34"
+        y1="52"
+        x2="86"
+        y2="52"
         stroke="currentColor"
-        strokeWidth={strokeWidth * 0.8}
+        strokeWidth={strokeWidth * 1.3}
         strokeLinecap="round"
-        opacity="0.65"
       />
 
-      {/* 圣洁水珠甘霖 (Sacred Dew / Water Droplets) */}
-      <circle cx="60" cy="6" r="1.8" fill="currentColor" opacity="0.85" />
-      <circle cx="50" cy="116" r="1.3" fill="currentColor" opacity="0.75" />
-      <circle cx="70" cy="116" r="1.3" fill="currentColor" opacity="0.75" />
-      <circle cx="60" cy="122" r="1.5" fill="currentColor" opacity="0.9" />
+      {/* 底部极简活水微澜 (Gentle base water ripples) */}
+      <path
+        d="M36 138 C48 133, 72 133, 84 138"
+        stroke="currentColor"
+        strokeWidth={strokeWidth * 0.9}
+        strokeLinecap="round"
+        opacity="0.7"
+      />
+      <path
+        d="M24 146 C44 140, 76 140, 96 146"
+        stroke="currentColor"
+        strokeWidth={strokeWidth * 0.7}
+        strokeLinecap="round"
+        opacity="0.4"
+      />
     </svg>
   );
 };

@@ -38,7 +38,8 @@ export const APP_IMAGES = {
   galleryAiSeminar: '/images/gallery/ai_seminar.svg',
   galleryLakeMichiganBaptism: '/images/gallery/lake_michigan_baptism.svg',
   galleryHunanVisit: '/images/gallery/hunan_visit.svg',
-  galleryFloridaTrip: '/images/gallery/florida_trip.svg',
+  // 已替换为真实社区活动照片 (SEO 语义化命名：power-spring-florida-winter-sunshine-trip.jpg)
+  galleryFloridaTrip: '/images/gallery/power-spring-florida-winter-sunshine-trip.jpg',
   galleryBibleStudy: '/images/gallery/bible_study.svg',
   galleryBeautifulMoms: '/images/gallery/beautiful_moms.svg',
   galleryPlaceholder: '/images/gallery/placeholder_blank.svg',

@@ -40,18 +40,18 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
             </p>
 
             {/* 3 simple sentences (no button styling, no flashy colorful icons) */}
-            <ul className="space-y-2 pt-1 text-xs sm:text-sm text-slate-300 font-light">
-              <li className="flex items-center gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-theme shrink-0" />
-                <span>{s.scheduleTime}</span>
+            <ul className="space-y-2.5 pt-1 text-xs sm:text-sm text-slate-300 font-light">
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-theme shrink-0 mt-1.5" />
+                <span className="leading-relaxed">{s.scheduleTime}</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-theme shrink-0" />
-                <span>{s.attendeeCount}</span>
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-theme shrink-0 mt-1.5" />
+                <span className="leading-relaxed">{s.attendeeCount}</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-theme shrink-0" />
-                <span>{language === 'zh' ? '免费开放 · 严格保密' : 'Free & Confidential'}</span>
+              <li className="flex items-start gap-2.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-theme shrink-0 mt-1.5" />
+                <span className="leading-relaxed">{language === 'zh' ? '免费开放 · 严格保密' : 'Free & Confidential'}</span>
               </li>
             </ul>
 
@@ -73,7 +73,12 @@ export const SaturdaySeminarBanner: React.FC<SaturdaySeminarBannerProps> = ({
             <div className="relative rounded-[8px] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
               <img
                 src={APP_IMAGES.counseling}
-                alt="Saturday Zoom Pastoral Counseling with Philip & Dora Wu"
+                alt={language === 'zh' 
+                  ? '周六线上心灵关怀与辅导研讨会 - Philip & Dora Wu 牧师主领 | 能量泉' 
+                  : 'Saturday Zoom Pastoral Counseling with Rev. Philip & Dora Wu | Power Spring Ministries'}
+                title={language === 'zh' ? '周六线上心灵辅导讲座' : 'Saturday Pastoral Counseling Seminar'}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-64 sm:h-80 lg:h-96 object-cover"
                 referrerPolicy="no-referrer"
               />

@@ -50,12 +50,12 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
         )}
 
         {/* Filter Tabs: Linear-style Segmented Buttons */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 w-fit">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 w-fit max-w-full">
           {filterButtons.map((btn) => (
             <button
               key={btn.key}
               onClick={() => setActiveCategory(btn.key)}
-              className={`px-3.5 py-1.5 rounded-[6px] text-xs sm:text-sm font-medium transition-all cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-1.5 rounded-[6px] text-xs sm:text-sm font-medium transition-all cursor-pointer ${
                 activeCategory === btn.key
                   ? 'bg-white text-slate-900 shadow-2xs font-semibold'
                   : 'text-slate-600 hover:text-slate-900'
@@ -67,7 +67,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
         </div>
 
         {/* Photo Gallery Grid: Linear / Vercel Craftsmanship Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredItems.map((item) => (
             <div
               key={item.id}
@@ -75,10 +75,15 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
               className="craft-card overflow-hidden group cursor-pointer flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-60 sm:h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
+                <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-100 border-b border-slate-100">
                   <img
                     src={item.image}
-                    alt={language === 'zh' ? item.titleZh : item.titleEn}
+                    alt={language === 'zh' 
+                      ? `${item.titleZh} - ${item.categoryZh} | 能量泉非营利社区关怀` 
+                      : `${item.titleEn} - ${item.categoryEn} | Power Spring Ministries INC`}
+                    title={language === 'zh' ? `${item.titleZh} (${item.categoryZh})` : `${item.titleEn} (${item.categoryEn})`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                     referrerPolicy="no-referrer"
                   />
@@ -88,13 +93,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
                     </span>
                   </div>
 
-                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-[4px] border border-slate-200/80 text-[11px] font-mono uppercase tracking-wider font-medium text-slate-700 shadow-xs">
+                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-[4px] border border-slate-200/80 text-[11px] font-mono uppercase tracking-wider font-medium text-slate-700 shadow-xs max-w-[calc(100%-24px)] truncate">
                     {language === 'zh' ? item.categoryZh : item.categoryEn}
                   </span>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="font-serif font-bold text-lg sm:text-xl text-slate-900 group-hover:text-primary-theme transition-colors tracking-tight">
+                <div className="p-5 sm:p-6">
+                  <h3 className="font-serif font-bold text-lg sm:text-xl text-slate-900 group-hover:text-primary-theme transition-colors tracking-tight line-clamp-2 min-h-[3rem] sm:min-h-[3.25rem] leading-snug">
                     {language === 'zh' ? item.titleZh : item.titleEn}
                   </h3>
                   <p className="text-slate-600 text-xs sm:text-sm mt-2 line-clamp-2 leading-relaxed font-light">
@@ -104,9 +109,9 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
               </div>
 
               {item.dateZh && (
-                <div className="px-6 pb-4 pt-1 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 font-mono">
-                  <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                  <span>{language === 'zh' ? item.dateZh : item.dateEn}</span>
+                <div className="px-5 sm:px-6 pb-4 pt-1 flex items-center gap-2 text-xs text-slate-400 border-t border-slate-100 font-mono">
+                  <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                  <span className="truncate">{language === 'zh' ? item.dateZh : item.dateEn}</span>
                 </div>
               )}
             </div>
@@ -117,25 +122,30 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
       {/* Image Lightbox Modal */}
       {previewItem && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
           onClick={() => setPreviewItem(null)}
         >
           <div 
-            className="bg-white rounded-[8px] overflow-hidden max-w-3xl w-full shadow-2xl relative border border-slate-200 animate-in zoom-in-95 duration-150"
+            className="bg-white rounded-[8px] overflow-hidden max-w-3xl w-full shadow-2xl relative border border-slate-200 animate-in zoom-in-95 duration-150 max-h-[92vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setPreviewItem(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-[6px] bg-slate-900/80 hover:bg-slate-900 text-white transition-colors cursor-pointer border border-slate-700"
+              className="absolute top-3 right-3 z-10 p-2 rounded-[6px] bg-slate-900/80 hover:bg-slate-900 text-white transition-colors cursor-pointer border border-slate-700"
               aria-label="Close"
             >
               <X className="w-4 h-4" />
             </button>
 
-            <div className="h-80 sm:h-96 w-full bg-slate-100 border-b border-slate-200">
+            <div className="h-64 sm:h-80 md:h-96 w-full bg-slate-100 border-b border-slate-200">
               <img
                 src={previewItem.image}
-                alt={language === 'zh' ? previewItem.titleZh : previewItem.titleEn}
+                alt={language === 'zh' 
+                  ? `${previewItem.titleZh} - ${previewItem.categoryZh} | 能量泉非营利社区关怀` 
+                  : `${previewItem.titleEn} - ${previewItem.categoryEn} | Power Spring Ministries INC`}
+                title={language === 'zh' ? previewItem.titleZh : previewItem.titleEn}
+                loading="eager"
+                decoding="async"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

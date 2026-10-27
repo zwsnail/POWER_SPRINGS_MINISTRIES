@@ -154,7 +154,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
                     className="w-full p-3.5 text-left font-serif font-semibold text-xs sm:text-sm text-slate-800 flex items-center justify-between gap-3 hover:bg-slate-100/60 cursor-pointer transition-colors"
                   >
-                    <span>{faq.q}</span>
+                    <span className="flex-1 pr-2 leading-snug">{faq.q}</span>
                     {isOpen ? <ChevronUp className="w-4 h-4 text-slate-500 shrink-0" /> : <ChevronDown className="w-4 h-4 text-slate-500 shrink-0" />}
                   </button>
                   {isOpen && (

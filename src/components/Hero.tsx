@@ -12,14 +12,14 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
 
   return (
     <div className="bg-gradient-to-b from-slate-900 via-slate-850 to-slate-800 text-white py-14 sm:py-20 border-b border-slate-700 relative overflow-hidden">
-      {/* 简笔圣爱活水十字架微水印 (Subtle Christian Cross Line Art Watermark on Left) */}
-      <div className="absolute -left-6 sm:left-4 lg:left-12 -bottom-6 pointer-events-none opacity-15 sm:opacity-20 text-accent-theme">
-        <ChristianCrossMotif className="w-40 h-52 sm:w-48 sm:h-64" strokeWidth={1.2} />
+      {/* 极简圣爱活水十字架微水印 (Subtle Clean Christian Cross Watermark on Left) */}
+      <div className="absolute -left-6 sm:left-4 lg:left-12 -bottom-6 pointer-events-none opacity-10 sm:opacity-15 text-accent-theme">
+        <ChristianCrossMotif className="w-36 h-48 sm:w-44 sm:h-56" strokeWidth={1.0} />
       </div>
 
-      {/* 简笔泉水纹样背景微水印 (Subtle Spring Water Line Art Watermark on Right) */}
-      <div className="absolute right-4 sm:right-12 lg:right-24 top-1/2 -translate-y-1/2 pointer-events-none opacity-20 sm:opacity-25 text-accent-theme">
-        <SpringPlumeMotif className="w-60 h-40 sm:w-80 sm:h-52 transition-opacity" strokeWidth={1.2} />
+      {/* 极简泉水纹样背景微水印 (Subtle Clean Spring Water Watermark on Right) */}
+      <div className="absolute right-4 sm:right-12 lg:right-24 top-1/2 -translate-y-1/2 pointer-events-none opacity-10 sm:opacity-15 text-accent-theme">
+        <SpringPlumeMotif className="w-48 h-32 sm:w-64 sm:h-44 transition-opacity" strokeWidth={1.0} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
