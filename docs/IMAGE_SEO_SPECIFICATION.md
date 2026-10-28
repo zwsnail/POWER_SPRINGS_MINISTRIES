@@ -128,19 +128,19 @@ Google、Bing 等搜索引擎的图像检索爬虫（如 Googlebot-Image）在�
 | 图集 ID | 功能/活动名称 | 当前资源状态 | 对应文件路径 | SEO 标准命名建议 |
 | :--- | :--- | :--- | :--- | :--- |
 | **g15** | **冬季佛罗里达温暖之旅** | ✅ **已替换真实高清照片** (1706×1279) | `/public/images/gallery/power-spring-florida-winter-sunshine-trip.jpg` | `power-spring-florida-winter-sunshine-trip.jpg` |
+| **g13** | **密歇根大湖户外圣洁洗礼** | ✅ **已替换真实高清照片** (1024×768) | `/public/images/gallery/power-spring-lake-michigan-great-lake-baptism.jpg` | `power-spring-lake-michigan-great-lake-baptism.jpg` |
+| **g2** / 事工 | **爱心水饺热餐与每周物资** | ✅ **已替换真实高清照片** (1024×768) | `/public/images/gallery/power-spring-visiting-scholars-fellowship-dumpling-meal.jpg` | `power-spring-visiting-scholars-fellowship-dumpling-meal.jpg` |
+| **g8** | **美东长途自驾与学者借宿** | ✅ **已替换真实高清照片** (1024×768) | `/public/images/gallery/power-spring-east-coast-tour-pastor-home-lodging.jpg` | `power-spring-east-coast-tour-pastor-home-lodging.jpg` |
+| **g3** / Banner | **心灵辅导研讨与周六讲座** | ✅ **已替换真实高清照片** (1024×768) | `/public/images/gallery/power-spring-pastoral-counseling-development-meeting.jpg` | `power-spring-pastoral-counseling-development-meeting.jpg` |
+| **g10** | **团长老家欢送聚会与团契** | ✅ **已替换真实高清照片** (1024×768) | `/public/images/gallery/power-spring-community-fellowship-farewell-gathering.jpg` | `power-spring-community-fellowship-farewell-gathering.jpg` |
 | g1 | 初到学者临时落脚点 | 🎨 高清写实插画 | `housing_shelter_*.jpg` | `power-spring-student-temporary-housing.jpg` |
-| g2 | 每周新鲜蔬果派发 | 🎨 高清写实插画 | `food_pantry_*.jpg` | `power-spring-weekly-fresh-food-pantry.jpg` |
-| g3 | 周六 Zoom 心灵辅导 | 🎨 高清写实插画 | `counseling_care_*.jpg` | `power-spring-saturday-zoom-counseling.jpg` |
 | g4 | 道路爆胎抢修与救援 | 🎨 高清写实插画 | `car_roadside_*.jpg` | `power-spring-emergency-roadside-aid.jpg` |
 | g5 | 英语口语角与茶话会 | 🎨 高清写实插画 | `english_tax_*.jpg` | `power-spring-conversational-english-club.jpg` |
 | g6 | 长者长期关怀公寓 | 🎨 高清写实插画 | `housing_shelter_*.jpg` | `power-spring-senior-assisted-housing.jpg` |
 | g7 | 举办校园创业论坛 | ⏳ 待替换真实照片 | `/public/images/gallery/entrepreneurship_forum.svg` | `power-spring-campus-entrepreneurship-forum.jpg` |
-| g8 | 每年长途自驾旅行 | ⏳ 待替换真实照片 | `/public/images/gallery/road_trips.svg` | `power-spring-annual-community-road-trip.jpg` |
 | g9 | 企管培训专家讲座 | ⏳ 待替换真实照片 | `/public/images/gallery/business_seminar.svg` | `power-spring-business-management-seminar.jpg` |
-| g10 | Maumee大河别墅retreat | ⏳ 待替换真实照片 | `/public/images/gallery/maumee_retreat.svg` | `power-spring-maumee-river-villa-retreat.jpg` |
 | g11 | 圣诞晚会欢聚 | ⏳ 待替换真实照片 | `/public/images/gallery/christmas_party.svg` | `power-spring-christmas-celebration-gathering.jpg` |
 | g12 | 微软高管AI讲座 | ⏳ 待替换真实照片 | `/public/images/gallery/ai_seminar.svg` | `power-spring-microsoft-ai-tech-seminar.jpg` |
-| g13 | Lake Michigan Baptism | ⏳ 待替换真实照片 | `/public/images/gallery/lake_michigan_baptism.svg` | `power-spring-lake-michigan-baptism-ceremony.jpg` |
 | g14 | 湖南跨洋宣教探访 | ⏳ 待替换真实照片 | `/public/images/gallery/hunan_visit.svg` | `power-spring-hunan-mission-community-visit.jpg` |
 | g16 | 美籍同工英文查经 | ⏳ 待替换真实照片 | `/public/images/gallery/bible_study.svg` | `power-spring-cross-cultural-bible-study.jpg` |
 | g17 | 华人妈妈互助小家 | ⏳ 待替换真实照片 | `/public/images/gallery/beautiful_moms.svg` | `power-spring-beautiful-moms-mutual-support.jpg` |

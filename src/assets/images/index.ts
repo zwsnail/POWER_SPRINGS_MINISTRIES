@@ -18,27 +18,32 @@ import housingShelterImg from './housing_shelter_1788301862128.jpg';
 export const APP_IMAGES = {
   hero: heroCommunityImg,
   housing: housingShelterImg,
-  meals: foodPantryImg,
+  // 核心事工：暖心餐饮与查经聚会（真实照片：为访问学者家属及医学博士包水饺聚餐）
+  meals: '/images/gallery/power-spring-visiting-scholars-fellowship-dumpling-meal.jpg',
   mobility: carRoadsideImg,
   englishTax: englishTaxImg,
-  counseling: counselingImg,
+  // 核心事工与周六讲座：心灵关怀与辅导研讨会（真实照片：同工研讨餐会策划心灵辅导体系）
+  counseling: '/images/gallery/power-spring-pastoral-counseling-development-meeting.jpg',
   // 额外图集占位或备用
-  communityPantry: foodPantryImg,
+  communityPantry: '/images/gallery/power-spring-visiting-scholars-fellowship-dumpling-meal.jpg',
   shelterCozy: housingShelterImg,
-  zoomCounseling: counselingImg,
+  zoomCounseling: '/images/gallery/power-spring-pastoral-counseling-development-meeting.jpg',
   vehicleRescue: carRoadsideImg,
   englishClub: englishTaxImg,
 
-  // 待替换真实照片的爱心图集新项目 (New Gallery Items - Ready for real photos)
+  // 爱心图集真实照片与占位对照
   galleryEntrepreneurshipForum: '/images/gallery/entrepreneurship_forum.svg',
-  galleryRoadTrips: '/images/gallery/road_trips.svg',
+  // 已替换为真实社区活动照片 (美东自驾游与学者家庭借宿接待)
+  galleryRoadTrips: '/images/gallery/power-spring-east-coast-tour-pastor-home-lodging.jpg',
   galleryBusinessSeminar: '/images/gallery/business_seminar.svg',
-  galleryMaumeeRetreat: '/images/gallery/maumee_retreat.svg',
+  // 已替换为真实社区活动照片 (团长老家欢送聚会与团契相聚)
+  galleryMaumeeRetreat: '/images/gallery/power-spring-community-fellowship-farewell-gathering.jpg',
   galleryChristmasParty: '/images/gallery/christmas_party.svg',
   galleryAiSeminar: '/images/gallery/ai_seminar.svg',
-  galleryLakeMichiganBaptism: '/images/gallery/lake_michigan_baptism.svg',
+  // 已替换为真实社区活动照片 (密歇根大湖户外圣洁洗礼)
+  galleryLakeMichiganBaptism: '/images/gallery/power-spring-lake-michigan-great-lake-baptism.jpg',
   galleryHunanVisit: '/images/gallery/hunan_visit.svg',
-  // 已替换为真实社区活动照片 (SEO 语义化命名：power-spring-florida-winter-sunshine-trip.jpg)
+  // 已替换为真实社区活动照片 (冬季佛罗里达温暖之旅)
   galleryFloridaTrip: '/images/gallery/power-spring-florida-winter-sunshine-trip.jpg',
   galleryBibleStudy: '/images/gallery/bible_study.svg',
   galleryBeautifulMoms: '/images/gallery/beautiful_moms.svg',
