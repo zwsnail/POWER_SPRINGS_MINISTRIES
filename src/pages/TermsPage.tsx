@@ -14,9 +14,13 @@ import {
   Home,
   Video,
   ExternalLink,
-  ChevronRight
+  ChevronRight,
+  MapPin,
+  Building2,
+  Globe
 } from 'lucide-react';
 import { CrossOliveDivider, ChristianCrossMotif } from '../components/WaterMotifs';
+import { ORGANIZATION_DETAILS } from '../config/organization';
 
 interface TermsPageProps {
   language: Language;
@@ -59,27 +63,48 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
       <section className="py-12 sm:py-16 bg-slate-50/70 border-b border-slate-200/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Institutional Integrity Notice */}
-          <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-6 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xs">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xs bg-slate-900 text-white flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-accent-theme" />
+          {/* Institutional Integrity & Legal Verification Notice */}
+          <div className="bg-white border border-slate-200 rounded-xs p-5 sm:p-6 mb-8 space-y-4 shadow-2xs">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xs bg-slate-900 text-white flex items-center justify-center shrink-0">
+                  <ShieldCheck className="w-5 h-5 text-accent-theme" />
+                </div>
+                <div>
+                  <h3 className="font-serif font-bold text-slate-900 text-base">
+                    {ORGANIZATION_DETAILS.legalName}
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium">
+                    {language === 'zh' 
+                      ? '美国国税局 501(c)(3) 正式注册非营利公共慈善机构 · 能量泉' 
+                      : 'IRS-Recognized 501(c)(3) Non-Profit Public Charity · Power Spring Ministries'}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-serif font-bold text-slate-900 text-base">
-                  Power Spring Ministries INC (能量泉)
-                </h3>
-                <p className="text-xs text-slate-500 font-medium">
-                  {language === 'zh' 
-                    ? '正式注册非营利公共慈善机构 (Public Charity)' 
-                    : 'Registered Non-Profit Public Charity'}
-                </p>
+
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="flex items-center gap-2 text-xs font-mono text-slate-700 bg-slate-100 px-3 py-1.5 rounded-xs border border-slate-200">
+                  <span className="text-slate-500 font-sans font-medium">{language === 'zh' ? '机构代码' : 'Charity ID'}:</span>
+                  <span className="font-bold text-slate-900">{ORGANIZATION_DETAILS.charityId}</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xs border border-slate-200">
+                  <Mail className="w-3.5 h-3.5 text-primary-theme shrink-0" />
+                  <span className="truncate break-all">{ORGANIZATION_DETAILS.contactEmail}</span>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xs border border-slate-200 max-w-full">
-              <Mail className="w-3.5 h-3.5 text-primary-theme shrink-0" />
-              <span className="truncate break-all">{email}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500">
+              <div className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <span>{language === 'zh' ? '法定注册地址:' : 'Registered Physical Address:'}</span>
+                <span className="font-mono text-slate-700 font-medium">{ORGANIZATION_DETAILS.address.fullFormatted}</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-slate-500">
+                <Globe className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                <span>{language === 'zh' ? '官方主域名:' : 'Official Primary Domain:'}</span>
+                <span className="font-mono text-slate-700 font-medium">{ORGANIZATION_DETAILS.officialDomain}</span>
+              </div>
             </div>
           </div>
 

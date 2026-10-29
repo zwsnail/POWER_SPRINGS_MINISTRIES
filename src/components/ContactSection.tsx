@@ -8,9 +8,14 @@ import {
   HelpCircle,
   ChevronDown,
   ChevronUp,
-  SendHorizontal
+  SendHorizontal,
+  MapPin,
+  Building2,
+  ShieldCheck,
+  Globe
 } from 'lucide-react';
 import { CrossOliveDivider } from './WaterMotifs';
+import { ORGANIZATION_DETAILS } from '../config/organization';
 
 interface ContactSectionProps {
   language: Language;
@@ -23,15 +28,31 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 }) => {
   const t = translations[language];
   const c = t.contact;
-  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedEin, setCopiedEin] = useState(false);
+  const [copiedAddress, setCopiedAddress] = useState(false);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
 
-  const emailAddress = 'peterqu@powerspring.org';
+  const emailAddress = ORGANIZATION_DETAILS.contactEmail;
+  const charityId = ORGANIZATION_DETAILS.charityId;
+  const fullAddress = ORGANIZATION_DETAILS.address.fullFormatted;
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(emailAddress);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyEin = () => {
+    navigator.clipboard.writeText(charityId);
+    setCopiedEin(true);
+    setTimeout(() => setCopiedEin(false), 2000);
+  };
+
+  const handleCopyAddress = () => {
+    navigator.clipboard.writeText(fullAddress);
+    setCopiedAddress(true);
+    setTimeout(() => setCopiedAddress(false), 2000);
   };
 
   const faqs = language === 'zh' ? [
@@ -83,56 +104,142 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
           </div>
         )}
 
-        {/* Single Dedicated Contact Card (只有一个联系版面) */}
-        <div className="mb-10">
-          <div className="bg-white border border-slate-200 rounded-xs p-6 sm:p-10 hover:border-slate-300 transition-colors shadow-2xs">
-            <div className="space-y-5">
-              <div className="w-12 h-12 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
-                <Mail className="w-6 h-6" />
+        {/* Dual Primary Contact & Registered Nonprofit Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {/* Card 1: Direct Director Contact */}
+          <div className="bg-white border border-slate-200 rounded-xs p-6 sm:p-8 hover:border-slate-300 transition-colors shadow-2xs flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-11 h-11 rounded-xs border border-slate-200 bg-slate-50 text-primary-theme flex items-center justify-center">
+                <Mail className="w-5 h-5" />
               </div>
 
               <div>
-                <h3 className="font-serif font-bold text-2xl text-slate-900">
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-slate-900">
                   {language === 'zh' ? '负责人直通电子邮箱' : 'Director Direct Email'}
                 </h3>
-                <p className="text-slate-500 text-sm mt-1">
+                <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
                   {language === 'zh' ? '机构负责人: Peter Qu' : 'Executive Director: Peter Qu'}
                 </p>
               </div>
 
               {/* Highlighted Email Box with Copy Action */}
-              <div className="bg-slate-50 border border-slate-200 rounded-xs p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="break-all font-mono font-bold text-slate-900 text-base sm:text-lg">
+              <div className="bg-slate-50 border border-slate-200 rounded-xs p-3.5 flex items-center justify-between gap-3">
+                <div className="break-all font-mono font-bold text-slate-900 text-sm sm:text-base">
                   {emailAddress}
                 </div>
                 <button
+                  type="button"
                   onClick={handleCopyEmail}
-                  className="px-4 py-2 rounded-xs text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer shrink-0 shadow-2xs"
+                  className="px-3 py-1.5 rounded-xs text-xs font-semibold bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 transition-colors cursor-pointer shrink-0 shadow-2xs"
                   title="Copy email to clipboard"
                 >
-                  {copied ? (
+                  {copiedEmail ? (
                     <>
-                      <Check className="w-4 h-4 text-primary-theme" />
+                      <Check className="w-3.5 h-3.5 text-primary-theme" />
                       <span className="text-primary-theme font-medium">{language === 'zh' ? '已复制' : 'Copied'}</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4 text-slate-500" />
-                      <span>{language === 'zh' ? '复制邮箱' : 'Copy'}</span>
+                      <Copy className="w-3.5 h-3.5 text-slate-500" />
+                      <span>{language === 'zh' ? '复制' : 'Copy'}</span>
                     </>
                   )}
                 </button>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 mt-6">
+            <div className="pt-5 border-t border-slate-100 mt-6">
               <a
                 href={`mailto:${emailAddress}`}
-                className="btn-primary w-full py-3 rounded-xs text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="btn-primary w-full py-2.5 rounded-xs text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 cursor-pointer shadow-xs"
               >
                 <SendHorizontal className="w-4 h-4" />
                 <span>{language === 'zh' ? '直接打开邮箱发信' : 'Open Email Client'}</span>
               </a>
+            </div>
+          </div>
+
+          {/* Card 2: Registered Organization & Physical Street Address (Google for Nonprofits Transparency) */}
+          <div className="bg-white border border-slate-200 rounded-xs p-6 sm:p-8 hover:border-slate-300 transition-colors shadow-2xs flex flex-col justify-between">
+            <div className="space-y-4">
+              <div className="w-11 h-11 rounded-xs border border-slate-200 bg-slate-50 text-accent-theme flex items-center justify-center">
+                <Building2 className="w-5 h-5" />
+              </div>
+
+              <div>
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-slate-900">
+                  {language === 'zh' ? '注册实体与实体街道地址' : 'Registered Office & Charity ID'}
+                </h3>
+                <p className="text-slate-500 text-xs sm:text-sm mt-0.5 font-medium">
+                  {ORGANIZATION_DETAILS.legalName}
+                </p>
+              </div>
+
+              {/* Physical Street Address Block with Copy */}
+              <div className="bg-slate-50 border border-slate-200 rounded-xs p-3.5 space-y-2">
+                <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-primary-theme shrink-0" />
+                    <span>{language === 'zh' ? '物理街道地址 (Physical Address)' : 'Physical Street Address'}</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleCopyAddress}
+                    className="text-xs text-slate-600 hover:text-slate-900 flex items-center gap-1 cursor-pointer"
+                    title="Copy address"
+                  >
+                    {copiedAddress ? (
+                      <span className="text-primary-theme font-medium text-[11px]">{language === 'zh' ? '已复制' : 'Copied'}</span>
+                    ) : (
+                      <span className="text-[11px] underline underline-offset-2">{language === 'zh' ? '复制' : 'Copy'}</span>
+                    )}
+                  </button>
+                </div>
+                <div className="font-mono text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed">
+                  {fullAddress}
+                </div>
+              </div>
+
+              {/* Charity ID & 501(c)(3) Status Block */}
+              <div className="bg-slate-50 border border-slate-200 rounded-xs p-3.5 space-y-1.5">
+                <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-accent-theme shrink-0" />
+                    <span>{language === 'zh' ? '国税局免税代码 (Charity ID)' : 'IRS EIN / Charity ID'}</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleCopyEin}
+                    className="text-xs text-slate-600 hover:text-slate-900 flex items-center gap-1 cursor-pointer"
+                    title="Copy EIN"
+                  >
+                    {copiedEin ? (
+                      <span className="text-primary-theme font-medium text-[11px]">{language === 'zh' ? '已复制' : 'Copied'}</span>
+                    ) : (
+                      <span className="text-[11px] underline underline-offset-2">{language === 'zh' ? '复制' : 'Copy'}</span>
+                    )}
+                  </button>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-sm sm:text-base font-bold text-slate-900">
+                    {charityId}
+                  </span>
+                  <span className="text-xs text-slate-500 font-sans">
+                    ({language === 'zh' ? '501(c)(3) 公共慈善机构' : '501(c)(3) Public Charity'})
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-slate-100 mt-5 flex items-center justify-between text-xs text-slate-500">
+              <span className="flex items-center gap-1.5">
+                <Globe className="w-3.5 h-3.5 text-slate-400" />
+                <span>{language === 'zh' ? '官方验证主域名:' : 'Official Primary Domain:'}</span>
+                <strong className="text-slate-800 font-mono">{ORGANIZATION_DETAILS.officialDomain}</strong>
+              </span>
+              <span className="text-emerald-700 font-medium text-[11px]">
+                {language === 'zh' ? '✓ 已验证实体' : '✓ Verified Entity'}
+              </span>
             </div>
           </div>
         </div>
@@ -169,8 +276,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         </div>
 
         {/* Official Domain & Nonprofit Disclaimer Note */}
-        <div className="mt-8 text-center text-xs text-slate-500 font-sans leading-relaxed">
-          powerspring.org is the official online platform and digital domain of POWER Spring Ministries Inc. (a 501(c)(3) non-profit organization).
+        <div className="mt-8 text-center text-xs text-slate-600 font-sans leading-relaxed max-w-2xl mx-auto space-y-1">
+          <p className="font-medium text-slate-700">
+            {language === 'zh' ? ORGANIZATION_DETAILS.domainOwnershipZh : ORGANIZATION_DETAILS.domainOwnershipEn}
+          </p>
+          <p className="text-[11px] text-slate-500">
+            {ORGANIZATION_DETAILS.legalName} · {language === 'zh' ? '机构代码' : 'Charity ID'}: {ORGANIZATION_DETAILS.charityId} · {ORGANIZATION_DETAILS.address.fullFormatted}
+          </p>
         </div>
       </div>
     </section>

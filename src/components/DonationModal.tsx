@@ -84,9 +84,11 @@ export const DonationModal: React.FC<DonationModalProps> = ({
             <h3 className="font-serif font-bold text-lg sm:text-xl text-slate-900 leading-snug">
               {language === 'zh' ? '支持能量泉 · 爱心奉献' : 'Support Power Spring · Giving'}
             </h3>
-            <p className="text-xs text-slate-600 flex items-center gap-1.5 mt-0.5 font-medium">
+            <p className="text-xs text-slate-600 flex flex-wrap items-center gap-1.5 mt-0.5 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-primary-theme shrink-0" />
-              <span>{language === 'zh' ? '非营利社区慈善 · 爱心奉献' : 'Non-Profit Community Charity'}</span>
+              <span>{language === 'zh' ? '非营利社区慈善 (501(c)(3))' : 'Non-Profit 501(c)(3) Charity'}</span>
+              <span className="text-slate-400" aria-hidden="true">·</span>
+              <span className="font-mono text-[11px] text-slate-500 font-semibold">EIN: {DONATION_CONFIG.charityId}</span>
             </p>
           </div>
         </div>

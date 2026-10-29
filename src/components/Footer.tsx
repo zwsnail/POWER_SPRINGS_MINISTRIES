@@ -5,6 +5,7 @@ import { Language } from '../types';
 import { Logo } from './Logo';
 import { Globe, ArrowUp } from 'lucide-react';
 import { CrossOliveDivider } from './WaterMotifs';
+import { ORGANIZATION_DETAILS } from '../config/organization';
 
 interface FooterProps {
   language: Language;
@@ -118,9 +119,35 @@ export const Footer: React.FC<FooterProps> = ({
           <CrossOliveDivider className="my-0" lineWidth="w-16 sm:w-32" />
         </div>
 
-        {/* Official Online Platform & 501(c)(3) Domain Notice */}
-        <div className="pt-3 pb-1 text-[11px] sm:text-xs text-slate-400 font-sans leading-relaxed text-center sm:text-left">
-          powerspring.org is the official online platform and digital domain of POWER Spring Ministries Inc. (a 501(c)(3) non-profit organization).
+        {/* Official Online Platform & Institutional Transparency Notice (Google for Nonprofits Compliance) */}
+        <div className="pt-4 pb-3 border-t border-slate-800/80 text-xs text-slate-400 font-sans leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+            <div className="lg:col-span-7 space-y-1.5">
+              <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+                <span className="font-semibold text-white tracking-wide">{ORGANIZATION_DETAILS.legalName}</span>
+                <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
+                <span className="text-accent-theme font-mono font-medium">
+                  {language === 'zh' ? '免税机构代码 (EIN)' : 'Charity ID (EIN)'}: {ORGANIZATION_DETAILS.charityId}
+                </span>
+                <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
+                <span className="text-slate-300">
+                  {language === 'zh' ? ORGANIZATION_DETAILS.taxStatusZh : ORGANIZATION_DETAILS.taxStatusEn}
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-2 text-[11px] sm:text-xs text-slate-400">
+                <span className="text-slate-500">{language === 'zh' ? '注册实体地址:' : 'Registered Physical Address:'}</span>
+                <span className="text-slate-300 font-mono">{ORGANIZATION_DETAILS.address.fullFormatted}</span>
+                <span className="text-slate-600 hidden sm:inline" aria-hidden="true">·</span>
+                <span>{language === 'zh' ? '负责人' : 'Director'}: {ORGANIZATION_DETAILS.directorName}</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 text-[11px] sm:text-xs text-slate-400 lg:border-l lg:border-slate-800 lg:pl-4 pt-2 lg:pt-0">
+              <p className="italic text-slate-300 leading-snug">
+                {language === 'zh' ? ORGANIZATION_DETAILS.domainOwnershipZh : ORGANIZATION_DETAILS.domainOwnershipEn}
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Sub-bar */}

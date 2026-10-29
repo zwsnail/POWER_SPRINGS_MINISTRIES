@@ -12,6 +12,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { ChristianCrossMotif, CrossOliveDivider } from '../components/WaterMotifs';
+import { ORGANIZATION_DETAILS } from '../config/organization';
 
 interface DonationThankYouPageProps {
   language: Language;
@@ -137,9 +138,15 @@ export const DonationThankYouPage: React.FC<DonationThankYouPageProps> = ({ lang
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-primary-theme shrink-0 mt-0.5" />
                     <span>
-                      {language === 'zh'
-                        ? 'Power Spring Ministries INC 是正式注册的公共慈善非营利机构，所有爱心奉献依法享有税收抵免资格。'
-                        : 'Power Spring Ministries INC is an approved public charity. All contributions are tax-deductible to the extent allowed by law.'}
+                      {language === 'zh' ? (
+                        <>
+                          <strong>{ORGANIZATION_DETAILS.legalName}</strong> 是经美国国税局认定的 501(c)(3) 免税公共慈善机构（免税机构代码 / EIN: <span className="font-mono font-semibold">{ORGANIZATION_DETAILS.charityId}</span>，实体地址: {ORGANIZATION_DETAILS.address.fullFormatted}），所有爱心奉献依法享有联邦所得税税前扣除资格。
+                        </>
+                      ) : (
+                        <>
+                          <strong>{ORGANIZATION_DETAILS.legalName}</strong> is an IRS-recognized 501(c)(3) public charity (Charity ID / EIN: <span className="font-mono font-semibold">{ORGANIZATION_DETAILS.charityId}</span>, Physical Address: {ORGANIZATION_DETAILS.address.fullFormatted}). All contributions are tax-deductible to the full extent of the law.
+                        </>
+                      )}
                     </span>
                   </div>
                   <div className="flex items-start gap-2">
