@@ -142,8 +142,8 @@ Google、Bing 等搜索引擎的图像检索爬虫（如 Googlebot-Image）在�
 | g11 | 圣诞晚会欢聚 | ⏳ 待替换真实照片 | `/public/images/gallery/christmas_party.svg` | `power-spring-christmas-celebration-gathering.jpg` |
 | g12 | 微软高管AI讲座 | ⏳ 待替换真实照片 | `/public/images/gallery/ai_seminar.svg` | `power-spring-microsoft-ai-tech-seminar.jpg` |
 | g14 | 湖南跨洋宣教探访 | ⏳ 待替换真实照片 | `/public/images/gallery/hunan_visit.svg` | `power-spring-hunan-mission-community-visit.jpg` |
-| g16 | 美籍同工英文查经 | ⏳ 待替换真实照片 | `/public/images/gallery/bible_study.svg` | `power-spring-cross-cultural-bible-study.jpg` |
-| g17 | 华人妈妈互助小家 | ⏳ 待替换真实照片 | `/public/images/gallery/beautiful_moms.svg` | `power-spring-beautiful-moms-mutual-support.jpg` |
+| **g16** | **美籍同工英文查经** | ✅ **已替换真实高清照片** | `/public/images/gallery/power-spring-cross-cultural-bible-study.jpg` | `power-spring-cross-cultural-bible-study.jpg` |
+| **g17** | **华人妈妈互助小家** | ✅ **已替换真实高清照片** | `/public/images/gallery/power-spring-beautiful-moms-mutual-support.jpg` | `power-spring-beautiful-moms-mutual-support.jpg` |
 
 ---
 

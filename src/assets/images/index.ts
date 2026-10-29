@@ -45,7 +45,9 @@ export const APP_IMAGES = {
   galleryHunanVisit: '/images/gallery/hunan_visit.svg',
   // 已替换为真实社区活动照片 (冬季佛罗里达温暖之旅)
   galleryFloridaTrip: '/images/gallery/power-spring-florida-winter-sunshine-trip.jpg',
-  galleryBibleStudy: '/images/gallery/bible_study.svg',
-  galleryBeautifulMoms: '/images/gallery/beautiful_moms.svg',
+  // 已替换为真实社区活动照片 (美籍资深同工带领沉浸式英文查经与生活对话)
+  galleryBibleStudy: '/images/gallery/power-spring-cross-cultural-bible-study.jpg',
+  // 已替换为真实社区活动照片 (华人妈妈与家庭温馨互助支持聚会)
+  galleryBeautifulMoms: '/images/gallery/power-spring-beautiful-moms-mutual-support.jpg',
   galleryPlaceholder: '/images/gallery/placeholder_blank.svg',
 };
