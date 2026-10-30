@@ -28,6 +28,26 @@ export const HomePage: React.FC<HomePageProps> = ({ language }) => {
       {/* 1. Hero Section (Clean dark gradient matching PageHeader) */}
       <Hero language={language} />
 
+      {/* Official Mission Statement Highlight Strip */}
+      <section className="bg-white border-b border-slate-200/80 py-8 sm:py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-slate-50 via-amber-50/30 to-slate-50 border border-slate-200/90 rounded-[8px] p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xs text-center flex flex-col items-center">
+            <div className="space-y-4 max-w-4xl mx-auto flex flex-col items-center text-center">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-accent-theme font-mono font-semibold px-3 py-1 bg-accent-theme/10 rounded-full border border-accent-theme/20 inline-flex items-center justify-center">
+                  {language === 'zh' ? '官方使命宣言 · Mission Statement' : 'Official Mission Statement'}
+                </span>
+              </div>
+              <blockquote className="font-serif text-slate-900 text-lg sm:text-xl lg:text-2xl font-bold leading-relaxed italic border-y border-accent-theme/30 py-3.5 px-4 sm:px-6 max-w-3xl mx-auto text-center">
+                "{language === 'zh'
+                  ? '能量泉致力于为海外中国留学生、学者、家庭及新移民群体（SSFI）提供全方位的支持与关怀：涵盖机场接机、临时与长期安居、食物物资、交通接送、职业发展及身心健康辅导，助力每一个人安居落脚、立足成长、蓬勃发展！'
+                  : 'Power Spring Ministries is dedicated to serve overseas Chinese students, scholars, families and immigrants(SSFI) with comprehensive support: airport pick up, temporary and long-term housing, foods, rides, career and health counseling to help individuals to settle down, to build up and thrive!'}"
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2. Real Milestone & Impact Stats */}
       <ImpactStats language={language} />
 

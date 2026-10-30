@@ -27,6 +27,13 @@ export interface OrganizationDetails {
   address: OrganizationAddress;
   domainOwnershipEn: string;
   domainOwnershipZh: string;
+  missionStatementEn: string;
+  missionStatementZh: string;
+  ssfiAcronym: string;
+  ssfiFullNameEn: string;
+  ssfiFullNameZh: string;
+  threePillarsEn: string[];
+  threePillarsZh: string[];
 }
 
 export const ORGANIZATION_DETAILS: OrganizationDetails = {
@@ -66,4 +73,13 @@ export const ORGANIZATION_DETAILS: OrganizationDetails = {
   // Explicit Domain Ownership Declaration required by Google for Nonprofits
   domainOwnershipEn: 'powerspring.org is the official primary domain and online platform owned and operated by POWER SPRING MINISTRIES INC (a registered 501(c)(3) non-profit public charity).',
   domainOwnershipZh: 'powerspring.org 是由 POWER SPRING MINISTRIES INC（美国国税局 501(c)(3) 注册非营利公共慈善机构）全权拥有并运营的官方主域名及在线平台。',
+
+  // Official Mission Statement
+  missionStatementEn: 'Power Spring Ministries is dedicated to serve overseas Chinese students, scholars, families and immigrants(SSFI) with comprehensive support: airport pick up, temporary and long-term housing, foods, rides, career and health counseling to help individuals to settle down, to build up and thrive!',
+  missionStatementZh: '能量泉（Power Spring Ministries）致力于为海外中国留学生、学者、家庭及新移民群体（SSFI）提供全方位的支持与关怀：涵盖机场接机、临时与长期安居、食物物资、爱心接送、职业发展及身心健康辅导，助力每一个人安居落脚、立足成长、蓬勃发展！',
+  ssfiAcronym: 'SSFI',
+  ssfiFullNameEn: 'Overseas Chinese Students, Scholars, Families and Immigrants',
+  ssfiFullNameZh: '海外中国留学生、访问学者、华人家庭与新移民',
+  threePillarsEn: ['Settle Down', 'Build Up', 'Thrive'],
+  threePillarsZh: ['安居落脚', '立足成长', '蓬勃发展'],
 };

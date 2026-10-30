@@ -36,21 +36,21 @@ export const GallerySection: React.FC<GallerySectionProps> = ({
         
         {/* Section Header */}
         {!hideHeader && (
-          <div className="max-w-3xl mb-16 sm:mb-20">
+          <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20 flex flex-col items-center">
             <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-3">
-              MINISTRY IN ACTION · PHOTO ARCHIVE
+              {language === 'zh' ? '事工剪影与活动纪实' : 'MINISTRY IN ACTION · PHOTO ARCHIVE'}
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight text-center">
               {g.sectionTitle}
             </h2>
-            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-light">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-light text-center">
               {g.sectionSubtitle}
             </p>
           </div>
         )}
 
-        {/* Filter Tabs: Linear-style Segmented Buttons */}
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 w-fit max-w-full">
+        {/* Filter Tabs: Linear-style Segmented Buttons (Centered) */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 mx-auto w-fit max-w-full">
           {filterButtons.map((btn) => (
             <button
               key={btn.key}

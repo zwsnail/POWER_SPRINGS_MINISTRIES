@@ -90,7 +90,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         {!hideHeader && (
           <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
             <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-1">
-              INQUIRIES & DIRECT CONTACT
+              {language === 'zh' ? '联络垂询与直接沟通' : 'INQUIRIES & DIRECT CONTACT'}
             </div>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-normal">
               {c.sectionTitle}

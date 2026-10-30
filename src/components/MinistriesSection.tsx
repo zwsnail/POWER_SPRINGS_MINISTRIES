@@ -51,21 +51,21 @@ export const MinistriesSection: React.FC<MinistriesSectionProps> = ({
         
         {/* Section Header with Generous Negative Space */}
         {!hideHeader && (
-          <div className="max-w-3xl mb-16 sm:mb-20">
+          <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20 flex flex-col items-center">
             <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-3">
-              MINISTRY PROGRAMS & INITIATIVES
+              {language === 'zh' ? '关怀事工与服事项目' : 'MINISTRY PROGRAMS & INITIATIVES'}
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight text-center">
               {t.ministries.sectionTitle}
             </h2>
-            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-light">
+            <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed font-light text-center">
               {t.ministries.sectionSubtitle}
             </p>
           </div>
         )}
 
-        {/* Filter Controls: Linear-style Segmented Buttons (Functional interactive filters) */}
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 w-fit max-w-full">
+        {/* Filter Controls: Linear-style Segmented Buttons (Centered) */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12 bg-slate-100/80 p-1.5 rounded-[8px] border border-slate-200/80 mx-auto w-fit max-w-full">
           <button
             onClick={() => setSelectedFilter('all')}
             className={`px-3 sm:px-3.5 py-1.5 rounded-[6px] text-xs sm:text-sm font-medium transition-all cursor-pointer ${

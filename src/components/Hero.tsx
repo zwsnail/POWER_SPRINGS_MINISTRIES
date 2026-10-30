@@ -23,33 +23,30 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl space-y-4">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center space-y-4">
           <div>
-            <span className="text-xs sm:text-sm text-accent-theme font-serif tracking-widest font-semibold inline-flex items-center gap-1.5">
+            <span className="text-xs sm:text-sm text-accent-theme font-serif tracking-widest font-semibold inline-flex items-center justify-center gap-1.5">
               <span>{language === 'zh' ? '主恩如泉 · 润泽社区' : 'Grace Like Living Waters'}</span>
             </span>
           </div>
 
           {/* Main Headline in Classic Serif */}
-          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight tracking-normal">
+          <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight tracking-normal max-w-3xl">
             {t.hero.title}
           </h1>
 
           {/* Dual-color Classical Divider (Primary Blue + Accent Gold/Bronze/Jade) */}
-          <div className="flex items-center gap-2 my-2">
-            <div className="w-14 h-0.5 bg-primary-theme" />
+          <div className="flex items-center justify-center gap-2 my-2">
+            <div className="w-1.5 h-0.5 bg-accent-theme/60" />
+            <div className="w-4 h-0.5 bg-accent-theme" />
+            <div className="w-16 h-0.5 bg-primary-theme" />
             <div className="w-4 h-0.5 bg-accent-theme" />
             <div className="w-1.5 h-0.5 bg-accent-theme/60" />
           </div>
 
-          {/* Subtitle */}
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
-            {t.hero.subtitle}
-          </p>
-
-          {/* Classical Scripture Motto with Accent Border */}
-          <div className="pt-2">
-            <blockquote className="border-l-2 border-accent-theme pl-3.5 py-1 text-xs sm:text-sm text-slate-300 italic font-serif bg-white/5 rounded-r-xs max-w-2xl">
+          {/* Classical Scripture Motto with Accent Border - Centered */}
+          <div className="pt-2 w-full max-w-2xl">
+            <blockquote className="py-2.5 px-6 text-xs sm:text-sm text-slate-300 italic font-serif bg-white/5 rounded-xs border-y border-accent-theme/30 text-center">
               {language === 'zh'
                 ? '「神能将各样的恩惠多多的加给你们，使你们凡事常常充足，能多行各样善事。」—— 哥林多后书 9:8'
                 : '"And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work." — 2 Cor 9:8'}

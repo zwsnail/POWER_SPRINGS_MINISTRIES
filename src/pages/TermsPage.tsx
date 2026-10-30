@@ -109,7 +109,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
           </div>
 
           {/* Tab Selector */}
-          <div className="flex flex-wrap items-center gap-2 mb-8 border-b border-slate-200 pb-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8 border-b border-slate-200 pb-3">
             <button
               onClick={() => setActiveTab('terms')}
               className={`px-3 sm:px-4 py-2 rounded-xs text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-2 ${

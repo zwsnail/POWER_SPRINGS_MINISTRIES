@@ -52,7 +52,7 @@ export const ImpactStats: React.FC<ImpactStatsProps> = ({ language }) => {
         {/* Centered Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium mb-2">
-            ANNUAL MILESTONES & REPORT
+            {language === 'zh' ? '年度服事实效与关怀纪实' : 'ANNUAL MILESTONES & REPORT'}
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
             {t.impact.sectionTitle}
